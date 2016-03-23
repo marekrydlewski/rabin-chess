@@ -21,6 +21,6 @@ Thumbs.db
 **/[Bb]in/
 *.lib
 *.sbr
-**/obj/
+**/[Oo]bj/
 **/packages/*
 !**/packages/repositories.config
