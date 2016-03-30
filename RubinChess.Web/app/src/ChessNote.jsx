@@ -1,3 +1,3 @@
 import React from 'react';
 
-export default () => <div>Learn this shitty Webpack</div>;
+export default () => <div>Chess note powered by webpack</div>;
