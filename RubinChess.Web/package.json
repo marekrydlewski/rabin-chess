@@ -1,0 +1,20 @@
+{
+  "name": "rubin-chess",
+  "version": "0.1.0",
+  "description": "Frontend of Rubin Chess application project for Software Engineering classes",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server"
+  },
+  "author": "Marcin Jabłoński, Marek Rydlewski, Konrad Matusiak, Michał Panowicz",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "npm-install-webpack-plugin": "^3.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.8.4"
+  }
+}
