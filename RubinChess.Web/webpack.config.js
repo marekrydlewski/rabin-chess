@@ -36,6 +36,7 @@ const common = {
         // Include accepts either a path or an array of paths.
         include: PATHS.app
       },
+
       // Set up jsx. This accepts js too thanks to RegExp
       {
         test: /\.jsx?$/,
