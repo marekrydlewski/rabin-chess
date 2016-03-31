@@ -1,3 +1,6 @@
-# Frontend files
+**/.DS_Store
+
 node_modules/
-build/*.js
+build/
+
+**/*.log
