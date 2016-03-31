@@ -1,8 +1,8 @@
 {
-  "name": "react-boilerplate",
+  "name": "rabin-chess",
   "version": "1.0.0",
-  "description": "Webpack based react boilerplate.",
-  "author": "Jan-Kanty Pawelski <contact@pawelski.io> (http://pawelski.io)",
+  "description": "Rabin Chess - chess app built in react",
+  "author": "Marek Rydlewski Marcin Jabloński Konrad Matusiak Michał Panowicz",
   "license": "MIT",
   "config": {
     "port": 9000
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JanKantyPawelski/react-boilerplate.git"
+    "url": "https://github.com/marcin-jablonski/rabin-chess.git"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.0",
