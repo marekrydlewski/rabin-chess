@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -97,13 +98,13 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RubinChess.Server.Database\RubinChess.Server.Database.csproj">
+    <ProjectReference Include="..\RubinChess.Server.Database\RabinChess.Server.Database.csproj">
       <Project>{28073fba-2df2-4df6-a519-e4ddff3cded9}</Project>
-      <Name>RubinChess.Server.Database</Name>
+      <Name>RabinChess.Server.Database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RubinChess.Server.Logic\RubinChess.Server.Logic.csproj">
+    <ProjectReference Include="..\RubinChess.Server.Logic\RabinChess.Server.Logic.csproj">
       <Project>{07351139-6d20-4748-a41d-6b0cfe0086b2}</Project>
-      <Name>RubinChess.Server.Logic</Name>
+      <Name>RabinChess.Server.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -42,9 +42,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RubinChess.Server.Database\RubinChess.Server.Database.csproj">
+    <ProjectReference Include="..\RubinChess.Server.Database\RabinChess.Server.Database.csproj">
       <Project>{28073fba-2df2-4df6-a519-e4ddff3cded9}</Project>
-      <Name>RubinChess.Server.Database</Name>
+      <Name>RabinChess.Server.Database</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

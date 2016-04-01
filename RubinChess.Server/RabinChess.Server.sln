@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubinChess.Server.Logic", "RubinChess.Server.Logic\RubinChess.Server.Logic.csproj", "{07351139-6D20-4748-A41D-6B0CFE0086B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabinChess.Server.Logic", "RubinChess.Server.Logic\RabinChess.Server.Logic.csproj", "{07351139-6D20-4748-A41D-6B0CFE0086B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubinChess.Server.Database", "RubinChess.Server.Database\RubinChess.Server.Database.csproj", "{28073FBA-2DF2-4DF6-A519-E4DDFF3CDED9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabinChess.Server.Database", "RubinChess.Server.Database\RabinChess.Server.Database.csproj", "{28073FBA-2DF2-4DF6-A519-E4DDFF3CDED9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubinChess.Server.API", "RubinChess.Server.API\RubinChess.Server.API.csproj", "{CB66D529-1C78-4751-ADC2-AE0E58F5AEF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabinChess.Server.API", "RubinChess.Server.API\RabinChess.Server.API.csproj", "{CB66D529-1C78-4751-ADC2-AE0E58F5AEF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
