@@ -9,12 +9,8 @@ import sampleComponent from './components/sampleComponent.jsx'
 
 ReactDOM.render((
   <Router>
-    <Route path="/"
-      component={ app }
-    >
-      <Route path="routed"
-        component={ sampleComponent }
-      />
+    <Route path="/" component={ app } >
+      <Route path="routed" component={ sampleComponent } />
     </Route>
   </Router>
 ), document.getElementById('root'));
