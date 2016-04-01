@@ -56,6 +56,8 @@ module.exports = {
     path: path.join(__dirname, '../build'),
   },
   plugins: [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
     new extractTextPlugin('[hash].css'),
     new htmlPlugin({
       minify: {
