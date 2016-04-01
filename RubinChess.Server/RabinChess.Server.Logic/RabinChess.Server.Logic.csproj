@@ -42,7 +42,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RubinChess.Server.Database\RabinChess.Server.Database.csproj">
+    <ProjectReference Include="..\RabinChess.Server.Database\RabinChess.Server.Database.csproj">
       <Project>{28073fba-2df2-4df6-a519-e4ddff3cded9}</Project>
       <Name>RabinChess.Server.Database</Name>
     </ProjectReference>
