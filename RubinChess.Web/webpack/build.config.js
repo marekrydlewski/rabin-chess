@@ -10,7 +10,7 @@ var webpack           = require('webpack')
 
 module.exports = {
   context: path.join(__dirname, '../src'),
-  entry: './scripts/main.jsx',
+  entry: './scripts/index.jsx',
   module: {
     loaders: [
       {
