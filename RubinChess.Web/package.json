@@ -15,7 +15,8 @@
     "flow": "flow check --color always --show-all-errors",
     "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "eslint src/scripts/**/*",
-    "lint:sass": "sass-lint -v src/styles/**/*"
+    "lint:sass": "sass-lint -v src/styles/**/*",
+    "docs": "esdoc -c esdoc.json"
   },
   "repository": {
     "type": "git",
