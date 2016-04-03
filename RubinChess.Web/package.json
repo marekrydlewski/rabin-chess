@@ -15,7 +15,8 @@
     "flow": "flow check --color always --show-all-errors",
     "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "eslint src/scripts/**/*",
-    "lint:sass": "sass-lint -v src/styles/**/*"
+    "lint:sass": "sass-lint -v src/styles/**/*",
+    "docs": "esdoc -c esdoc.json"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "eslint-plugin-flowtype": "^2.2.0",
     "eslint-plugin-import": "^1.4.0",
     "eslint-plugin-react": "^4.2.0",
+    "esdoc": "^0.4.6",
     "extract-text-webpack-plugin": "^1.0.0",
     "file-loader": "^0.8.0",
     "flow-bin": "^0.22.0",
