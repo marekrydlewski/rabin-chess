@@ -1,4 +1,7 @@
 import React from 'react'
+import ToolboxApp from 'react-toolbox/lib/app'
+
+import CustomButton from './CustomButton.jsx'
 
 /**
  * App class
@@ -6,16 +9,16 @@ import React from 'react'
 export default class App extends React.Component {
   /**
    * Display heading
-   * @return {h1} My awesome app
+   * @return {div} App
    */
   render() {
     return (
-      <div className="app">
-        <h1>My awesome app</h1>
-        <main>
+      <ToolboxApp>
+        <div>
+          <CustomButton />
           { this.props.children }
-        </main>
-      </div>
+        </div>
+      </ToolboxApp>
     )
   }
 }
