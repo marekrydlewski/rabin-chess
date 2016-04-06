@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabinChess.Server.Logic", "RabinChess.Server.Logic\RabinChess.Server.Logic.csproj", "{07351139-6D20-4748-A41D-6B0CFE0086B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabinChess.Server.Database", "RabinChess.Server.Database\RabinChess.Server.Database.csproj", "{28073FBA-2DF2-4DF6-A519-E4DDFF3CDED9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabinChess.Server.API", "RabinChess.Server.API\RabinChess.Server.API.csproj", "{CB66D529-1C78-4751-ADC2-AE0E58F5AEF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabinChess.Server.API", "RabinChess.Server.API\RabinChess.Server.API.csproj", "{81411047-62C5-46E3-88A4-B16F8688052B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{28073FBA-2DF2-4DF6-A519-E4DDFF3CDED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28073FBA-2DF2-4DF6-A519-E4DDFF3CDED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28073FBA-2DF2-4DF6-A519-E4DDFF3CDED9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB66D529-1C78-4751-ADC2-AE0E58F5AEF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB66D529-1C78-4751-ADC2-AE0E58F5AEF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB66D529-1C78-4751-ADC2-AE0E58F5AEF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB66D529-1C78-4751-ADC2-AE0E58F5AEF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81411047-62C5-46E3-88A4-B16F8688052B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81411047-62C5-46E3-88A4-B16F8688052B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81411047-62C5-46E3-88A4-B16F8688052B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81411047-62C5-46E3-88A4-B16F8688052B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

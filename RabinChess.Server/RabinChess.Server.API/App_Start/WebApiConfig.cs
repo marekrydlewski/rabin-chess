@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace RabinChess.Server
+namespace RabinChess.Server.API
 {
     public static class WebApiConfig
     {
