@@ -1,4 +1,5 @@
 import React from 'react'
+import style from './sample_component.scss'
 
 /**
  * SampleComponent class
@@ -10,7 +11,7 @@ export default class SampleComponent extends React.Component {
    */
   render() {
     return (
-      <div>Routed thing</div>
+      <div className={ style['sample'] }>Routed thing</div>
     )
   }
 }
