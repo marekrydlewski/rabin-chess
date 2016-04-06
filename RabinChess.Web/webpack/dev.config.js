@@ -30,7 +30,7 @@ module.exports = {
         test: /\.scss$/,
         loaders: [
           'style',
-          'css?minimize',
+          'css-loader?modules',
           'postcss',
           'sass',
         ],
