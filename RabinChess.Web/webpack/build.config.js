@@ -20,7 +20,6 @@ module.exports = {
       },
       {
         test: /\.sass$/,
-        include: /styles/,
         loader: extractTextPlugin.extract([
           'css?minimize',
           'postcss',
@@ -29,7 +28,6 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        include: /styles/,
         loader: extractTextPlugin.extract([
           'css?minimize',
           'postcss',

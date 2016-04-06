@@ -19,7 +19,6 @@ module.exports = {
       },
       {
         test: /\.sass$/,
-        include: /styles/,
         loaders: [
           'style',
           'css?minimize',
@@ -29,7 +28,6 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        include: /styles/,
         loaders: [
           'style',
           'css?minimize',
