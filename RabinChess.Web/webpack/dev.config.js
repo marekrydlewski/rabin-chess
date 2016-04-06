@@ -30,7 +30,7 @@ module.exports = {
         test: /\.scss$/,
         loaders: [
           'style',
-          'css-loader?modules',
+          'css-loader?sourceMap&modules',
           'postcss',
           'sass',
         ],
