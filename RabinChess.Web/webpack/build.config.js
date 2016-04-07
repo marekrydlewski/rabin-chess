@@ -29,7 +29,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: extractTextPlugin.extract([
-          'css?minimize',
+          'css-loader?modules',
           'postcss',
           'sass',
         ]),
@@ -56,7 +56,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
-    new extractTextPlugin('[hash].css'),
+    new extractTextPlugin('style.css', { allChunks: true }),
     new htmlPlugin({
       minify: {
         collapseWhitespace: true,
