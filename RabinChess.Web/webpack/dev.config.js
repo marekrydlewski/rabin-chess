@@ -1,9 +1,9 @@
 /* eslint-disable */
 
 var autoprefixer = require('autoprefixer')
-var htmlPlugin   = require('html-webpack-plugin')
-var path         = require('path')
-var webpack      = require('webpack')
+var htmlPlugin = require('html-webpack-plugin')
+var path = require('path')
+var webpack = require('webpack')
 
 
 
@@ -11,44 +11,42 @@ module.exports = {
   context: path.join(__dirname, '../src'),
   entry: './scripts/main.jsx',
   module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        include: /scripts/,
-        loader: 'babel',
+    loaders: [{
+      test: /\.jsx?$/,
+      include: /scripts/,
+      loader: 'babel',
+    }, {
+      test: /\.css$/,
+      loader: 'style!css?modules',
+      include: /flexboxgrid/,
+    }, {
+      test: /\.sass$/,
+      loaders: [
+        'style',
+        'css?minimize',
+        'postcss',
+        'sass?indentedSyntax',
+      ],
+    }, {
+      test: /\.scss$/,
+      loaders: [
+        'style',
+        'css-loader?sourceMap&modules',
+        'postcss',
+        'sass',
+      ],
+    }, {
+      test: /\.(jpg|png|svg)$/,
+      include: /assets/,
+      loader: 'file',
+      query: {
+        name: 'assets/[hash].[ext]',
       },
-      {
-        test: /\.sass$/,
-        loaders: [
-          'style',
-          'css?minimize',
-          'postcss',
-          'sass?indentedSyntax',
-        ],
-      },
-      {
-        test: /\.scss$/,
-        loaders: [
-          'style',
-          'css-loader?modules',
-          'postcss',
-          'sass',
-        ],
-      },
-      {
-        test: /\.(jpg|png|svg)$/,
-        include: /assets/,
-        loader: 'file',
-        query: {
-          name: 'assets/[hash].[ext]',
-        },
-      },
-      {
-        test: /\.json$/,
-        include: /scripts|assets/,
-        loader: 'json',
-      },
-    ],
+    }, {
+      test: /\.json$/,
+      include: /scripts|assets/,
+      loader: 'json',
+    }, ],
   },
   output: {
     filename: '[hash].js',
