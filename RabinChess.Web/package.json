@@ -59,10 +59,12 @@
   },
   "dependencies": {
     "classnames": "^2.2.3",
+    "flexboxgrid": "^6.3.0",
     "normalize.css": "^3.0.3",
     "react": "^0.14.0",
     "react-addons-css-transition-group": "^0.14.8",
     "react-dom": "^0.14.0",
+    "react-flexbox-grid": "^0.9.5",
     "react-router": "^2.0.1",
     "react-toolbox": "^0.15.0"
   }
