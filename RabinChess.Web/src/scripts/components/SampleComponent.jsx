@@ -11,8 +11,8 @@ export default class SampleComponent extends React.Component {
    */
   render() {
     return (
-      <div className={style['sample']}>
-        <Grid>
+      <div>
+        <Grid className={style['sample']}>
           <Row>
             <Col className={style['col1']} xs={6} md={3}>Hello, world!</Col>
             <Col className={style['col2']} xs={6} md={3}>Hello, world!</Col>

@@ -19,6 +19,11 @@ module.exports = {
         loader: 'babel',
       },
       {
+        test: /\.css$/,
+        loader: 'style!css?modules',
+        include: /flexboxgrid/,
+      },
+      {
         test: /\.sass$/,
         loader: extractTextPlugin.extract([
           'css?minimize',
