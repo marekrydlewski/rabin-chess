@@ -1,6 +1,8 @@
 import React from 'react'
 import style from './sample_component'
 import {Grid, Row, Col} from 'react-flexbox-grid'
+
+import ChessBoard from  './chessboard/ChessBoard'
 /**
  * SampleComponent class
  */
@@ -19,6 +21,10 @@ export default class SampleComponent extends React.Component {
             <Col className={style['col3']} xs={6} md={6}>Hello, world!</Col>
           </Row>
         </Grid>
+        <Grid>
+          <ChessBoard/>
+        </Grid>
+
       </div>
     )
   }
