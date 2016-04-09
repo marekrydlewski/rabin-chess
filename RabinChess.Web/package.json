@@ -9,8 +9,8 @@
   },
   "scripts": {
     "clean": "rimraf build/ *.log",
-    "build": "npm run clean && cross-env NODE_ENV=production && webpack --config webpack/build.config.js",
-    "dev": "npm run clean && webpack-dev-server --config webpack/dev.config.js",
+    "build": "npm run clean && webpack --config webpack/config.build.js",
+    "dev": "npm run clean && webpack-dev-server --config webpack/config.dev.js",
     "test": "jest",
     "flow": "flow check --color always --show-all-errors",
     "lint": "npm run lint:js && npm run lint:sass",
