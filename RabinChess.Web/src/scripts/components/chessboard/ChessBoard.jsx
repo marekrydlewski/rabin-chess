@@ -21,4 +21,4 @@ class ChessBoard extends React.Component {
   }
 }
 
-export default ChessBoard;
+export default ChessBoard
