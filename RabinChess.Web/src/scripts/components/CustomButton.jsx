@@ -10,7 +10,7 @@ class CustomButton extends React.Component {
 
   render() {
     let { onClick, label } = this.props;
-    return (<Button label={label} onClick={onClick} raised accent/>)
+    return (<Button label={label.toString() || ''} onClick={onClick} raised accent/>)
   }
 }
 
