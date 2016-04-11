@@ -1,6 +1,8 @@
 import React from 'react'
-import style from './sample_component.scss'
+import style from './sample_component'
+import {Grid, Row, Col} from 'react-flexbox-grid'
 
+import ChessBoard from  './chessboard/ChessBoard'
 /**
  * SampleComponent class
  */
@@ -11,7 +13,19 @@ export default class SampleComponent extends React.Component {
    */
   render() {
     return (
-      <div className={ style['sample'] }>Routed thing</div>
+      <div>
+        <Grid className={style['sample']}>
+          <Row>
+            <Col className={style['col1']} xs={6} md={3}>Hello, world!</Col>
+            <Col className={style['col2']} xs={6} md={3}>Hello, world!</Col>
+            <Col className={style['col3']} xs={6} md={6}>Hello, world!</Col>
+          </Row>
+        </Grid>
+        <Grid>
+          <ChessBoard/>
+        </Grid>
+
+      </div>
     )
   }
 }

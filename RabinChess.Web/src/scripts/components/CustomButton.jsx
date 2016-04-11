@@ -1,8 +1,17 @@
-import React from 'react';
-import Button from 'react-toolbox/lib/button';
+import React, {PropTypes} from 'react'
+import Button from 'react-toolbox/lib/button'
 
-const CustomButton = () => (
-  <Button label="Hello world" raised accent />
-);
+class CustomButton extends React.Component {
 
-export default CustomButton;
+  static PropTypes = {
+    onClick: PropTypes.func.isRequired,
+    label: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  }
+
+  render() {
+    let { onClick, label } = this.props;
+    return (<Button label={String(label) || ''} onClick={onClick} raised accent/>)
+  }
+}
+
+export default CustomButton

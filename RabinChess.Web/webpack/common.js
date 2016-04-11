@@ -3,12 +3,11 @@
 var autoprefixer = require('autoprefixer')
 var htmlPlugin   = require('html-webpack-plugin')
 var path         = require('path')
-var webpack      = require('webpack')
 
 
 
 module.exports = {
-  context: path.join(__dirname, '../src'),
+  context: path.resolve('./src'),
   entry: './scripts/main.jsx',
   module: {
     loaders: [
@@ -18,25 +17,7 @@ module.exports = {
         loader: 'babel',
       },
       {
-        test: /\.sass$/,
-        loaders: [
-          'style',
-          'css?minimize',
-          'postcss',
-          'sass?indentedSyntax',
-        ],
-      },
-      {
-        test: /\.scss$/,
-        loaders: [
-          'style',
-          'css-loader?modules',
-          'postcss',
-          'sass',
-        ],
-      },
-      {
-        test: /\.(jpg|png|svg)$/,
+        test: /\.(jpg|png|svg|woff)$/,
         include: /assets/,
         loader: 'file',
         query: {
@@ -45,17 +26,21 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        include: /scripts|assets/,
+        include: /assets/,
         loader: 'json',
+      },
+      {
+      test: /\.css$/,
+      loader: 'style!css?modules',
+      include: /flexboxgrid/,
       },
     ],
   },
   output: {
     filename: '[hash].js',
-    path: path.join(__dirname, '../build'),
+    path: path.resolve('./build'),
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new htmlPlugin({
       minify: {
         collapseWhitespace: true,
@@ -70,6 +55,10 @@ module.exports = {
     ]
   },
   resolve: {
+    alias: {
+      assets: path.resolve('./src/assets'),
+      styles: path.resolve('./src/styles'),
+    },
     extensions: [
       '',
       '.js',
@@ -79,13 +68,4 @@ module.exports = {
       '.scss',
     ],
   },
-
-
-
-  devServer: {
-    contentBase: 'build',
-    hot: true,
-    inline: true,
-    port: process.env.npm_package_config_port,
-  }
 }
