@@ -1,10 +1,17 @@
 import React from 'react';
-import App from './App.jsx';
+import ToolboxApp from 'react-toolbox/lib/app'
+
+import CounterContainer from '../containers/CounterContainer.jsx'
 
 export default class Root extends React.Component {
   render() {
     return (
-          <App />
+      <ToolboxApp>
+        <div>
+          <CounterContainer />
+          { this.props.children }
+        </div>
+      </ToolboxApp>
     );
   }
 }
