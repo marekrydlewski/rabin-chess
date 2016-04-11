@@ -8,11 +8,9 @@ export default class Root extends React.Component {
   render() {
     return (
       <ToolboxApp>
-        <div>
-          <CounterContainer />
-          { this.props.children }
-          <DevTools />
-        </div>
+        <CounterContainer />
+        { this.props.children }
+        <DevTools />
       </ToolboxApp>
     );
   }
