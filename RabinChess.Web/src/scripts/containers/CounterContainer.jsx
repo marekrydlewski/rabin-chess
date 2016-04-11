@@ -4,7 +4,7 @@ import CustomButton from '../components/CustomButton.jsx'
 
 const mapStateToProps = (state) => {
   return {
-    counter: state.counter.toString()
+    label: state.counter
   }
 }
 
