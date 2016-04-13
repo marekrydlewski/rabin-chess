@@ -54,6 +54,7 @@ class Layout extends React.Component {
             <Checkbox label='Pin drawer' checked={this.state.drawerPinned} onChange={this.toggleDrawerPinned}/>
             <Checkbox label='Show sidebar' checked={this.state.sidebarPinned} onChange={this.toggleSidebar}/>
           </div>
+          { this.props.children }
         </Panel>
         <Sidebar pinned={this.state.sidebarPinned} width={5}>
           <div><IconButton icon='close' onClick={this.toggleSidebar}/></div>
@@ -63,6 +64,7 @@ class Layout extends React.Component {
             <p>Supplemental content goes here.</p>
           </div>
         </Sidebar>
+
       </RTLayout>
     );
   }
