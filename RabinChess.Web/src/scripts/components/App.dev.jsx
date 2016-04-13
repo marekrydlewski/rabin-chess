@@ -1,5 +1,5 @@
 import React from 'react';
-import ToolboxApp from 'react-toolbox/lib/app'
+import ToolboxApp from 'react-toolbox'
 
 import CounterContainer from '../containers/CounterContainer.jsx'
 import DevTools from '../containers/DevTools';
@@ -7,11 +7,12 @@ import DevTools from '../containers/DevTools';
 export default class App extends React.Component {
   render() {
     return (
-      <ToolboxApp>
+      <div>
         <CounterContainer />
         { this.props.children }
         <DevTools />
-      </ToolboxApp>
+      </div>
+
     );
   }
 }

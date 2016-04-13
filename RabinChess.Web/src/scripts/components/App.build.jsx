@@ -6,10 +6,10 @@ import CounterContainer from '../containers/CounterContainer.jsx'
 export default class App extends React.Component {
   render() {
     return (
-      <ToolboxApp>
+      <div>
         <CounterContainer />
         { this.props.children }
-      </ToolboxApp>
+      </div>
     );
   }
 }
