@@ -7,8 +7,9 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <CounterContainer />
-        { this.props.children }
+        <Layout>
+          { this.props.children }
+        </Layout>
       </div>
     );
   }
