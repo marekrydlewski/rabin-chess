@@ -1,5 +1,5 @@
 import React from 'react';
-import ToolboxApp from 'react-toolbox/lib/app'
+import Layout from './layout'
 
 import CounterContainer from '../containers/CounterContainer.jsx'
 

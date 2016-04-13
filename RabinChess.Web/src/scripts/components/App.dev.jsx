@@ -1,6 +1,5 @@
 import React from 'react';
-import ToolboxApp from 'react-toolbox'
-
+import Layout from './layout'
 import CounterContainer from '../containers/CounterContainer.jsx'
 import DevTools from '../containers/DevTools';
 
@@ -8,8 +7,9 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <CounterContainer />
-        { this.props.children }
+        <Layout>
+          { this.props.children }
+        </Layout>
         <DevTools />
       </div>
 

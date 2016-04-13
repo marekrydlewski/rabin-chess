@@ -2,7 +2,7 @@ import React from 'react'
 import style from './sample_component'
 import {Grid, Row, Col} from 'react-flexbox-grid'
 
-import ChessBoard from  './chessboard/ChessBoard'
+import ChessBoard from  './chessboard'
 /**
  * SampleComponent class
  */
