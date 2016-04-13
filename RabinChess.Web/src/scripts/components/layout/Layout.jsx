@@ -37,7 +37,7 @@ class Layout extends React.Component {
   render() {
     return (
       <RTLayout>
-        <NavDrawer active={this.state.drawerActive} pinned={this.state.drawerPinned} permanentAt='xxxl' onOverlayClick={this.toggleDrawerActive}>
+        <NavDrawer active={this.state.drawerActive} pinned={this.state.drawerPinned} onOverlayClick={this.toggleDrawerActive}>
           <p>
             Navigation, account switcher, etc. go here.
           </p>
