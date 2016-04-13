@@ -6,11 +6,12 @@ import { Router, Route, hashHistory } from 'react-router'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers/index.jsx'
+import configureStore from './store/configureStore.jsx'
 
 import App from './components/App.jsx'
 import SampleComponent from './components/SampleComponent.jsx'
 
-let store = createStore(reducer)
+let store = configureStore()
 
 ReactDOM.render((
   <Provider store={ store }>
