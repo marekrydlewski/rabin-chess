@@ -1,19 +1,21 @@
 import React, {PropTypes} from 'react'
-import {AppBar, Checkbox, IconButton} from 'react-toolbox';
+import {AppBar, Checkbox, IconButton, Button} from 'react-toolbox';
 import {Layout as RTLayout, NavDrawer, Panel, Sidebar} from 'react-toolbox';
+import style from './main_layout';
+import RouterContext from 'react-router'
 class Layout extends React.Component {
-
+  contextTypes: {
+    router: React.PropTypes.func.isRequired;
+  }
+  someHandler() {
+    this.context.router.push('/')
+  }
   constructor(props) {
-    super(props);
-
+    super(props, context);
     this.state = {
       drawerActive: false,
-      drawerPinned: false,
-      sidebarPinned: false
     };
     this.toggleDrawerActive = this.toggleDrawerActive.bind(this);
-    this.toggleDrawerPinned = this.toggleDrawerPinned.bind(this);
-    this.toggleSidebar = this.toggleSidebar.bind(this);
   }
 
   toggleDrawerActive() {
@@ -22,49 +24,24 @@ class Layout extends React.Component {
     });
   };
 
-  toggleDrawerPinned() {
-    this.setState({
-      drawerPinned: !this.state.drawerPinned
-    });
-  }
-
-  toggleSidebar() {
-    this.setState({
-      sidebarPinned: !this.state.sidebarPinned
-    });
-  };
 
   render() {
     return (
-      <RTLayout>
+      <RTLayout className={style['main']}>
         <NavDrawer active={this.state.drawerActive} pinned={this.state.drawerPinned} onOverlayClick={this.toggleDrawerActive}>
-          <p>
-            Navigation, account switcher, etc. go here.
-          </p>
+          <Button  className={style['menuItem']}><p>Clear</p></Button>
+          <Button className={style['menuItem']}><p>Start</p></Button>
         </NavDrawer>
         <Panel>
-          <AppBar><IconButton icon='menu' inverse={true} onClick={this.toggleDrawerActive}/></AppBar>
-          <div style={{
-            flex: 1,
-            overflowY: 'auto',
-            padding: '1.8rem'
-          }}>
-            <h1>Main Content</h1>
-            <p>Main content goes here.</p>
-            <Checkbox label='Pin drawer' checked={this.state.drawerPinned} onChange={this.toggleDrawerPinned}/>
-            <Checkbox label='Show sidebar' checked={this.state.sidebarPinned} onChange={this.toggleSidebar}/>
-          </div>
-          { this.props.children }
+          <AppBar className={style['header']}><IconButton icon='menu' inverse={true} onClick={this.toggleDrawerActive}/>
+            <img className={style['logo']} src='./logo.png' onClick={this.someHandler()}/>
+            <h1>Rabin Chess</h1>
+          </AppBar>
+            { this.props.children }
+          <footer className={style['footer']}>
+            <h5 className={style['text']}>Software Engineering Project</h5>
+          </footer>
         </Panel>
-        <Sidebar pinned={this.state.sidebarPinned} width={5}>
-          <div><IconButton icon='close' onClick={this.toggleSidebar}/></div>
-          <div style={{
-            flex: 1
-          }}>
-            <p>Supplemental content goes here.</p>
-          </div>
-        </Sidebar>
-
       </RTLayout>
     );
   }
