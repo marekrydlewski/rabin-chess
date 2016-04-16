@@ -17,10 +17,8 @@ class ChessBoard extends React.Component {
     }
 
     setTimeout(()=>{
-      console.log('Sth shitty with rendering but it works!');
       this.board = BoardJS('board', cfg);
     }, 0);
-
   }
 
 
