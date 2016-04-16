@@ -1,17 +1,18 @@
 import React from 'react';
-import ToolboxApp from 'react-toolbox/lib/app'
-
+import Layout from './layout'
 import CounterContainer from '../containers/CounterContainer.jsx'
 import DevTools from '../containers/DevTools';
 
 export default class App extends React.Component {
   render() {
     return (
-      <ToolboxApp>
-        <CounterContainer />
-        { this.props.children }
+      <div>
+        <Layout>
+          { this.props.children }
+        </Layout>
         <DevTools />
-      </ToolboxApp>
+      </div>
+
     );
   }
 }
