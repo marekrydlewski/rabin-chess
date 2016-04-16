@@ -28,7 +28,7 @@ class Layout extends React.Component {
   }
 
   goChessBoard() {
-    this.context.state=('/routed');
+    this.context.router.push('/routed');
     this.setState({
       drawerActive: false
     });
