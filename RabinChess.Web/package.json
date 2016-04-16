@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "rimraf build/ *.log",
     "build": "npm run clean && webpack --config webpack/config.build.js && npm run copy",
-    "dev": "npm run build && webpack-dev-server --config webpack/config.dev.js",
+    "dev": "npm run clean && npm run mkdir && npm run copy && webpack-dev-server --config webpack/config.dev.js",
     "test": "jest",
     "flow": "flow check --color always --show-all-errors",
     "lint": "npm run lint:js && npm run lint:sass",
@@ -20,7 +20,8 @@
     "copy": "npm run copy:chessboard",
     "copy:chessboard": "npm run copy:chessboard:img && npm run copy:chessboard:css",
     "copy:chessboard:img": "ncp node_modules/chessboardjs/www/img/ build/img/",
-    "copy:chessboard:css": "ncp node_modules/chessboardjs/www/css/ build/css/"
+    "copy:chessboard:css": "ncp node_modules/chessboardjs/www/css/ build/css/",
+    "mkdir": "mkdirp build"
   },
   "repository": {
     "type": "git",
@@ -49,6 +50,7 @@
     "html-webpack-plugin": "^2.15.0",
     "jest-cli": "^11.0.0",
     "json-loader": "^0.5.0",
+    "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
     "node-sass": "^3.4.0",
     "postcss-loader": "^0.8.0",
