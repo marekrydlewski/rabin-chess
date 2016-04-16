@@ -10,12 +10,17 @@ class ChessBoard extends React.Component {
   }
 
   componentDidMount() {
-    var cfg = {
+    let cfg = {
       draggable: true,
       dropOffBoard: 'trash',
       position: 'start'
     }
-    this.board = BoardJS('board', cfg);
+
+    setTimeout(()=>{
+      console.log('Sth shitty with rendering but it works!');
+      this.board = BoardJS('board', cfg);
+    }, 0);
+
   }
 
 
