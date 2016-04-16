@@ -15,12 +15,11 @@
 }
 
 .menu{
-  background-color: #BDBDBD;
-  display: block;
-  text-align: center;
+  width: 100%;
 
   .menuItem{
     font-size: 20px;
+    min-width: 100%;
     text-align: center;
     color: white;
   }

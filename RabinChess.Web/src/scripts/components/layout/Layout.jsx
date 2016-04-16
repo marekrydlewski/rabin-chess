@@ -1,21 +1,37 @@
 import React, {PropTypes} from 'react'
 import {AppBar, Checkbox, IconButton, Button} from 'react-toolbox';
-import {Layout as RTLayout, NavDrawer, Panel, Sidebar} from 'react-toolbox';
+import {Layout as RTLayout, Drawer, Panel, Sidebar} from 'react-toolbox';
+import {Grid, Row, Col} from 'react-flexbox-grid'
+
 import style from './main_layout';
-import RouterContext from 'react-router'
+
 class Layout extends React.Component {
-  contextTypes: {
-    router: React.PropTypes.func.isRequired;
-  }
-  someHandler() {
-    this.context.router.push('/')
-  }
-  constructor(props) {
+
+  static contextTypes= {
+      router: React.PropTypes.object.isRequired
+  };
+
+  constructor(props, context) {
     super(props, context);
+
     this.state = {
       drawerActive: false,
     };
     this.toggleDrawerActive = this.toggleDrawerActive.bind(this);
+  }
+
+  goHome() {
+    this.context.router.push('/');
+    this.setState({
+      drawerActive: false
+    });
+  }
+
+  goChessBoard() {
+    this.context.state=('/routed');
+    this.setState({
+      drawerActive: false
+    });
   }
 
   toggleDrawerActive() {
@@ -28,14 +44,20 @@ class Layout extends React.Component {
   render() {
     return (
       <RTLayout className={style['main']}>
-        <NavDrawer active={this.state.drawerActive} pinned={this.state.drawerPinned} onOverlayClick={this.toggleDrawerActive}>
-          <Button  className={style['menuItem']}><p>Clear</p></Button>
-          <Button className={style['menuItem']}><p>Start</p></Button>
-        </NavDrawer>
+        <Drawer active={this.state.drawerActive} pinned={this.state.drawerPinned} onOverlayClick={this.toggleDrawerActive}>
+          <Grid className={style['menu']}>
+            <Row>
+              <Button className={style['menuItem']} onClick={this.goChessBoard.bind(this)}><p>Chessboard</p></Button>
+            </Row>
+            <Row>
+              <Button className={style['menuItem']}><p>Docs</p></Button>
+            </Row>
+          </Grid>
+        </Drawer>
         <Panel>
           <AppBar className={style['header']}><IconButton icon='menu' inverse={true} onClick={this.toggleDrawerActive}/>
-            <img className={style['logo']} src='./logo.png' onClick={this.someHandler()}/>
-            <h1>Rabin Chess</h1>
+            <img className={style['logo']} src='./logo.png' onClick={this.goHome.bind(this)}/>
+            <h1 onClick={this.goHome.bind(this)}>Rabin Chess</h1>
           </AppBar>
             { this.props.children }
           <footer className={style['footer']}>
