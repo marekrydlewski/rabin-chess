@@ -8,8 +8,7 @@ import { Provider } from 'react-redux'
 import reducer from './reducers/index.jsx'
 import configureStore from './store/configureStore.jsx'
 
-import MainLayout from './components/MainLayout.jsx'
-import ChessBoard from './components/chessboard/ChessBoard.jsx'
+import App from './components/App.jsx'
 import SampleComponent from './components/SampleComponent.jsx'
 
 let store = configureStore()
@@ -17,8 +16,7 @@ let store = configureStore()
 ReactDOM.render((
   <Provider store={ store }>
     <Router history={ hashHistory }>
-      <Route path="/" component={ MainLayout } >
-        <IndexRoute component={ ChessBoard }/>
+      <Route path="/" component={ App } >
         <Route path="routed" component={ SampleComponent } />
       </Route>
     </Router>
