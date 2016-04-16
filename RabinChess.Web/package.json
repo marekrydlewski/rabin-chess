@@ -9,14 +9,18 @@
   },
   "scripts": {
     "clean": "rimraf build/ *.log",
-    "build": "npm run clean && webpack --config webpack/config.build.js",
-    "dev": "npm run clean && webpack-dev-server --config webpack/config.dev.js",
+    "build": "npm run clean && webpack --config webpack/config.build.js && npm run copy",
+    "dev": "npm run build && webpack-dev-server --config webpack/config.dev.js",
     "test": "jest",
     "flow": "flow check --color always --show-all-errors",
     "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "eslint src/scripts/**/*",
     "lint:sass": "sass-lint -v src/styles/**/*",
-    "docs": "esdoc -c esdoc.json"
+    "docs": "esdoc -c esdoc.json",
+    "copy": "npm run copy:chessboard",
+    "copy:chessboard": "npm run copy:chessboard:img && npm run copy:chessboard:css",
+    "copy:chessboard:img": "ncp node_modules/chessboardjs/www/img/ build/img/",
+    "copy:chessboard:css": "ncp node_modules/chessboardjs/www/css/ build/css/"
   },
   "repository": {
     "type": "git",
@@ -45,6 +49,7 @@
     "html-webpack-plugin": "^2.15.0",
     "jest-cli": "^11.0.0",
     "json-loader": "^0.5.0",
+    "ncp": "^2.0.0",
     "node-sass": "^3.4.0",
     "postcss-loader": "^0.8.0",
     "redux-devtools": "^3.2.0",
