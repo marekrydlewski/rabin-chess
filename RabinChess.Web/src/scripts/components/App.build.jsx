@@ -6,11 +6,13 @@ import CounterContainer from '../containers/CounterContainer.jsx'
 export default class App extends React.Component {
   render() {
     return (
-      <div>
         <Layout>
           { this.props.children }
         </Layout>
-      </div>
     );
   }
 }
+
+App.contextTypes = {
+  router: React.PropTypes.object
+};
