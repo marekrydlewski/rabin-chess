@@ -47,7 +47,7 @@ class Layout extends React.Component {
             <img className={style['logo']} src='./logo.png' onClick={this.goHome.bind(this)}/>
             <h1 onClick={this.goHome.bind(this)}>Rabin Chess</h1>
           </AppBar>
-          <div style={{ flex: 1, overflowY: 'auto', padding: '1.8rem' }}>
+          <div className={style['content']}>
             { this.props.children }
           </div>
           <footer className={style['footer']}>

@@ -1,12 +1,12 @@
 .main{
   height: 100%;
-  min-width: 400px;
-  min-height: 300px;
 }
 
 .header{
   background-color: #ff4081;
-  min-height: 50px;
+  min-height: 60px;
+  height: 60px;
+  white-space: nowrap;
 
   .logo{
     max-width: 40px;
@@ -23,6 +23,13 @@
     text-align: center;
     color: white;
   }
+}
+
+.content{
+  margin-bottom: 50px;
+  flex: 1;
+  padding: 1.8rem;
+  overflow-y: auto;
 }
 
 .footer{
