@@ -4,6 +4,12 @@ import {Grid, Row} from 'react-flexbox-grid'
 
 import style from './main_layout';
 
+const menuElements = [
+  { name: 'Home',       path: '/' },
+  { name: 'Chessboard', path: '/board' },
+  { name: 'Docs',       path: '/docs' }
+];
+
 class Menu extends React.Component {
 
   static contextTypes= {
@@ -19,19 +25,11 @@ class Menu extends React.Component {
   }
 
   render() {
-    var menuElements = [
-      { name: 'Home',       path: '/' },
-      { name: 'Chessboard', path: '/routed' },
-      { name: 'Docs',       path: '/docs' }
-    ];
-    var rows = menuElements.map(function(elem){
-                console.log(elem.path);
-                return (
-                  <Row>
-                    <Button className={style['menuItem']} onClick={this.goPage.bind(this, elem.path)}><p>{elem.name}</p></Button>
-                  </Row>
-                )
-              }, this)
+    let rows = menuElements.map((elem) => {
+              return (
+                <Row>
+                  <Button className={style['menuItem']} onClick={this.goPage.bind(this, elem.path)}><p>{ elem.name }</p></Button>
+                </Row>)});
     return (
       <div>
         { rows }
