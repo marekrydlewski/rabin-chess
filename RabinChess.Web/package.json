@@ -41,7 +41,7 @@
     "cross-env": "^1.0.0",
     "css-loader": "^0.23.0",
     "esdoc": "^0.4.6",
-    "esdoc-es7-doc":"^0.0.3",
+    "esdoc-es7-plugin":"^0.0.3",
     "eslint": "^2.5.0",
     "eslint-plugin-flowtype": "^2.2.0",
     "eslint-plugin-import": "^1.4.0",
