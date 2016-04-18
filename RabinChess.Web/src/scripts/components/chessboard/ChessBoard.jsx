@@ -13,7 +13,8 @@ class ChessBoard extends React.Component {
     let cfg = {
       draggable: true,
       dropOffBoard: 'trash',
-      position: 'start'
+      position: 'start',
+      sparePieces: true
     }
 
     setTimeout(()=>{
