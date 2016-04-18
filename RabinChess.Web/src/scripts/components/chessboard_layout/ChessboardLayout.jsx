@@ -8,8 +8,8 @@ import ChessBoard from  '../chessboard'
  */
 export default class ChessboardLayout extends React.Component {
   /**
-   * Display div
-   * @return {div} Routed thing
+   * Display chessboard layout
+   * @return {Grid} Grid containing playable chessboard
    */
   render() {
     return (
