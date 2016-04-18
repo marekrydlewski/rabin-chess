@@ -1,13 +1,13 @@
 import React from 'react'
-import style from './sample_component'
+import style from './chessboard_layout'
 import {Grid, Row, Col} from 'react-flexbox-grid'
 
 import ChessBoard from  '../chessboard'
-import CounterContainer from '../../containers/CounterContainer'
+
 /**
- * SampleComponent class
+ * ChessboardLayout class
  */
-export default class SampleComponent extends React.Component {
+export default class ChessboardLayout extends React.Component {
   /**
    * Display div
    * @return {div} Routed thing
