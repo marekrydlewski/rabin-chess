@@ -1,5 +1,4 @@
 import React from 'react'
-import style from './chessboard_layout'
 import {Grid, Row, Col} from 'react-flexbox-grid'
 
 import ChessBoard from  '../chessboard'
@@ -14,11 +13,9 @@ export default class ChessboardLayout extends React.Component {
    */
   render() {
     return (
-      <div>
-        <Grid>
-          <ChessBoard/>
-        </Grid>
-      </div>
+      <Grid>
+        <ChessBoard />
+      </Grid>
     )
   }
 }

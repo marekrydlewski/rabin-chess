@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './reducers/index.jsx'
+
 import configureStore from './store/configureStore'
 
 import App from './components/App.jsx'
