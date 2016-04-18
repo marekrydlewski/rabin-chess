@@ -2,7 +2,7 @@ import '../styles/main_style'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers/index.jsx'

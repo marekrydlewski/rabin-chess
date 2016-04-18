@@ -17,10 +17,11 @@
     "lint:js": "eslint src/scripts/**/*",
     "lint:sass": "sass-lint -v src/styles/**/*",
     "docs": "esdoc -c esdoc.json",
-    "copy": "npm run copy:chessboard",
+    "copy": "npm run copy:chessboard && npm run copy:logo",
     "copy:chessboard": "npm run copy:chessboard:img && npm run copy:chessboard:css",
     "copy:chessboard:img": "ncp node_modules/chessboardjs/www/img/ build/img/",
     "copy:chessboard:css": "ncp node_modules/chessboardjs/www/css/ build/css/",
+    "copy:logo": "ncp src/assets/logo.png build/logo.png",
     "mkdir": "mkdirp build"
   },
   "repository": {
