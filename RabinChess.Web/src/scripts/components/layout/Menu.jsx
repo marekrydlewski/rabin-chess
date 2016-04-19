@@ -10,11 +10,13 @@ const menuElements = [
   { name: 'Docs',       path: '/docs' }
 ];
 /**
-* Menu class
 * Side menu containig links to subpages
 */
 class Menu extends React.Component {
 
+  /**
+  * Field containing context type requirements.
+  */
   static contextTypes= {
       router: React.PropTypes.object.isRequired
   };

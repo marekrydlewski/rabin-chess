@@ -10,6 +10,9 @@ import style from './main_layout';
 */
 class Layout extends React.Component {
 
+  /**
+  * Field containing context type requirements
+  */
   static contextTypes= {
       router: React.PropTypes.object.isRequired
   };
