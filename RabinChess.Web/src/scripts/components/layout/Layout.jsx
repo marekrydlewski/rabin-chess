@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react'
 import {AppBar, Checkbox, IconButton, Button} from 'react-toolbox';
 import {Layout as RTLayout, NavDrawer, Panel, Sidebar} from 'react-toolbox';
 import {Grid, Row, Col} from 'react-flexbox-grid'
-import Menu from './menu'
+import Menu from './Menu'
 
 import style from './main_layout';
 
