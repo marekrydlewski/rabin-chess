@@ -5,13 +5,24 @@ import {Grid, Row, Col} from 'react-flexbox-grid'
 import Menu from './Menu'
 
 import style from './main_layout';
-
+/**
+* Main layout for application.
+*/
 class Layout extends React.Component {
 
+  /**
+  * Field containing context type requirements
+  */
   static contextTypes= {
       router: React.PropTypes.object.isRequired
   };
 
+  /**
+  * Basic constructor.
+  * @param props Passed properties
+  * @param context Application context
+  * @returns {Layout} New Layout instance
+  */
   constructor(props, context) {
     super(props, context);
 
@@ -21,6 +32,9 @@ class Layout extends React.Component {
     this.toggleDrawerActive = this.toggleDrawerActive.bind(this);
   }
 
+  /**
+  * Returns to home page.
+  */
   goHome() {
     this.context.router.push('/');
     this.setState({
@@ -28,12 +42,19 @@ class Layout extends React.Component {
     });
   }
 
+  /**
+  * Shows/hides side menu.
+  */
   toggleDrawerActive() {
     this.setState({
       drawerActive: !this.state.drawerActive
     });
   };
 
+  /**
+  * Renders application layout.
+  * @returns {RTLayout} Layout containing header, footer and side menu
+  */
   render() {
     return (
       <RTLayout className={style['main']}>
