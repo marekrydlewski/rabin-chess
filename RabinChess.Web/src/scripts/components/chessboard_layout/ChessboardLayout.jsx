@@ -4,12 +4,12 @@ import {Grid, Row, Col} from 'react-flexbox-grid'
 import ChessBoard from  '../chessboard'
 
 /**
- * ChessboardLayout class
+ * Layout containing playable chessboard.
  */
 export default class ChessboardLayout extends React.Component {
   /**
-   * Display chessboard layout
-   * @return {Grid} Grid containing playable chessboard
+   * Display chessboard layout.
+   * @returns {Grid} Grid containing playable chessboard
    */
   render() {
     return (

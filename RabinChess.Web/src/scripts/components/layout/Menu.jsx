@@ -9,21 +9,38 @@ const menuElements = [
   { name: 'Chessboard', path: '/board' },
   { name: 'Docs',       path: '/docs' }
 ];
-
+/**
+* Menu class
+* Side menu containig links to subpages
+*/
 class Menu extends React.Component {
 
   static contextTypes= {
       router: React.PropTypes.object.isRequired
   };
 
+  /**
+  * Basic constructor.
+  * @param props Passed properties
+  * @param context Application context
+  * @returns {Menu} New Menu instance
+  */
   constructor(props, context) {
     super(props, context);
   }
 
+  /**
+  * Routes to pointed path.
+  * @param {string} path Path to route to
+  */
   goPage(path) {
     this.context.router.push(path);
   }
 
+  /**
+  * Renders menu.
+  * @returns {div} Div containing menu
+  */
   render() {
     let rows = menuElements.map((elem) => {
               return (
