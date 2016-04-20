@@ -1,6 +1,8 @@
 import React from 'react';
-import Layout from './layout'
+import Favicon from 'react-favicon';
+import Layout from './layout';
 import DevTools from '../containers/DevTools';
+import logo from '../../assets/logo.png'
 
 
 /**
@@ -15,6 +17,7 @@ export default class App extends React.Component {
   render() {
     return (
         <Layout>
+          <Favicon url={logo} />
           { this.props.children }
           <DevTools />
         </Layout>
