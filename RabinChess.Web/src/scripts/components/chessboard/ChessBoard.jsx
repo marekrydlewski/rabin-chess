@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import BoardJS from 'chessboardjs'
+import ChessJS from 'chess'
 
 import style from './chess_board'
 
