@@ -6,6 +6,11 @@ const enhancer = compose(
   DevTools.instrument(),
 );
 
+/**
+* Development version of function configuring store with root reducer and optional inital state for use with Redux DevTools.
+* @param  [initialState] Inital store state
+* @returns Application store
+*/
 export default function configureStore(initialState) {
   const store = createStore(reducer, initialState, enhancer);
 
