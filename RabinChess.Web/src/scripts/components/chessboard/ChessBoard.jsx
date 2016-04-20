@@ -31,26 +31,29 @@ class ChessBoard extends React.Component {
   constructor(props) {
     super(props);
     this.game = ChessJS();
-    console.log(this.game);
   }
-
-
 
   /**
   * Contains actions following component mount.
   */
   componentDidMount() {
-    let cfg = {
+    let { onlyValid, sparePieces } = this.props;
+    let cfg = onlyValid ? {
       draggable: true,
       position: 'start',
       onDragStart: this._onDragStart.bind(this),
       onDrop: this._onDrop.bind(this),
       onSnapEnd: this._onSnapEnd.bind(this)
-    }
+    } : {
+        draggable: true,
+        position: 'start',
+        dropOffBoard: 'trash',
+        sparePieces
+      };
 
     setTimeout(()=>{
       this.board = BoardJS('board', cfg);
-      this._updateStatus();
+      if (onlyValid) this._updateStatus();
     }, 0);
   }
 
