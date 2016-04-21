@@ -19,8 +19,8 @@ class ChessBoard extends React.Component {
   * Field containing props types requirements
   */
   static PropTypes = {
-    onlyValid: PropTypes.bool.isRequired,
-    sparePieces: PropTypes.bool.isRequired
+    onlyValid: PropTypes.bool,
+    sparePieces: PropTypes.bool
   }
 
   /**
