@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.0",
-    "babel-core": "^6.7.6",
+    "babel-core": "^6.7.7",
     "babel-eslint": "^6.0.3",
     "babel-jest": "^11.0.0",
     "babel-loader": "^6.2.0",
@@ -81,6 +81,6 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.1.1",
     "react-toolbox": "^0.16.2",
-    "redux": "^3.5.0"
+    "redux": "^3.5.1"
   }
 }
