@@ -14,7 +14,7 @@ export default class ChessboardLayout extends React.Component {
   render() {
     return (
       <Grid>
-        <ChessBoard />
+        <ChessBoard onlyValid = { true } sparePieces = { false }/>
       </Grid>
     )
   }
