@@ -17,11 +17,10 @@
     "lint:js": "eslint src/scripts/**/*",
     "lint:sass": "sass-lint -v src/styles/**/*",
     "docs": "esdoc -c esdoc.json",
-    "copy": "npm run copy:chessboard && npm run copy:logo",
+    "copy": "npm run copy:chessboard",
     "copy:chessboard": "npm run copy:chessboard:img && npm run copy:chessboard:css",
     "copy:chessboard:img": "ncp node_modules/chessboardjs/www/img/ build/img/",
     "copy:chessboard:css": "ncp node_modules/chessboardjs/www/css/ build/css/",
-    "copy:logo": "ncp src/assets/logo.png build/logo.png",
     "mkdir": "mkdirp build"
   },
   "repository": {
@@ -77,6 +76,7 @@
     "react": "^15.0.1",
     "react-addons-css-transition-group": "^15.0.1",
     "react-dom": "^15.0.1",
+    "react-favicon": "0.0.4",
     "react-flexbox-grid": "^0.9.6",
     "react-redux": "^4.4.5",
     "react-router": "^2.1.1",

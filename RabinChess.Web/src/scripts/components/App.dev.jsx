@@ -1,7 +1,6 @@
-import React from 'react';
+import React from 'react'
 import Layout from './layout'
-import DevTools from '../containers/DevTools';
-
+import DevTools from '../containers/DevTools'
 
 /**
 * Development version of App class.
