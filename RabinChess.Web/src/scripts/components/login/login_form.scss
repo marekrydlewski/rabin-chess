@@ -1,0 +1,23 @@
+.card {
+  padding-bottom: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.content {
+  padding: 25px;
+  padding-top: 0;
+}
+
+.accept {
+  background-color: #ff4081;
+  width: 30%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+
+  p {
+    color: white;
+    font-size: 20px;
+  }
+}
