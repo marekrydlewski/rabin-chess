@@ -38,8 +38,8 @@ class Login extends React.Component {
         />
         <CardMedia>
           <section className={style['content']}>
-              <Input type='text' label='Username' value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
-              <Input type='password' label='Password' value={this.state.password} onChange={this.handleChange.bind(this, 'password')}/>
+              <Input type='text' label='Username' icon='person' value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
+              <Input type='password' label='Password' icon='lock' value={this.state.password} onChange={this.handleChange.bind(this, 'password')}/>
           </section>
           <Button className={style['accept']}><p>Login</p></Button>
         </CardMedia>
