@@ -12,7 +12,7 @@ export default class ChessboardLayout extends React.Component {
    * @returns {Grid} Grid containing playable chessboard
    */
   render() {
-
+    //This is one of my favorites, super cool 11 ...Nh5
     let pgn = ['[Event "Fischer - Spassky World Championship Match"]',
         '[Site "Reykjavik ISL"]',
         '[Date "1972.07.16"]',
@@ -36,7 +36,7 @@ export default class ChessboardLayout extends React.Component {
         Bd3+ 0-1`];
     return (
       <Grid>
-        <SmartChessBoard/>
+        <SmartChessBoard pgn = { pgn }/>
       </Grid>
     )
   }

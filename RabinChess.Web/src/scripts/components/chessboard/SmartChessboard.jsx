@@ -18,6 +18,10 @@ class SmartChessBoard extends React.Component {
   constructor(props) {
     super(props);
     this.game = ChessJS();
+
+    let { pgn } = this.props;
+    if (pgn) this.game.load_pgn(pgn.join('\n'));
+
     this.state = {
       fen: this.game.fen()
     };
