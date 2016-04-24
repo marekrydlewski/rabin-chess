@@ -1,7 +1,7 @@
 import React from 'react'
 import {Grid, Row, Col} from 'react-flexbox-grid'
 
-import ChessBoard from  '../chessboard'
+import SmartChessBoard from  '../chessboard'
 
 /**
  * Layout containing playable chessboard.

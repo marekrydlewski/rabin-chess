@@ -37,10 +37,13 @@ class ChessBoard extends React.Component {
   * Contains actions following component mount.
   */
   componentDidMount() {
-    let { onlyValid, sparePieces, fen } = this.props;
+    let { onlyValid, sparePieces, fen, onDragStart, onDrop } = this.props;
     let cfg = onlyValid ? {
       draggable: true,
-      position: fen
+      position: fen,
+      onDragStart,
+      onDrop,
+      onSnapEnd: this.onSnapEnd
     } : {
         draggable: true,
         position: 'start',
@@ -53,9 +56,11 @@ class ChessBoard extends React.Component {
     }, 0);
   }
 
-      //onDragStart: this._onDragStart.bind(this),
-      //onDrop: this._onDrop.bind(this),
-      //onSnapEnd: this._onSnapEnd.bind(this)
+  _onSnapEnd() {
+    this.props.onSnapEnd();
+    this.board.position(this.props.fen);
+  }
+
   /**
   * Renders chessboard.
   * @returns {div} Playable chessboard

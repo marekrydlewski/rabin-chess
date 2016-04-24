@@ -19,27 +19,8 @@ class SmartChessBoard extends React.Component {
     super(props);
     this.game = ChessJS();
     this.state = {
-      pgn: ''
+      fen: this.game.fen()
     };
-  }
-
-  /**
-  * Contains actions following component mount.
-  */
-  componentDidMount() {
-    let { onlyValid, sparePieces } = this.props;
-    let cfg = onlyValid ? {
-      draggable: true,
-      position: 'start',
-      onDragStart: this._onDragStart.bind(this),
-      onDrop: this._onDrop.bind(this),
-      onSnapEnd: this._onSnapEnd.bind(this)
-    } : {
-        draggable: true,
-        position: 'start',
-        dropOffBoard: 'trash',
-        sparePieces
-      };
   }
 
   _onDragStart(source, piece, position, orientation) {
@@ -57,41 +38,12 @@ class SmartChessBoard extends React.Component {
     });
 
     if (move === null) return 'snapback';
-    this._updateStatus();
   }
 
   _onSnapEnd() {
-    this.board.position(this.game.fen());
-  }
-
-  _updateStatus() {
-    let status = '';
-
-    let moveColor = 'White';
-    if (this.game.turn() === 'b') {
-      moveColor = 'Black';
-    }
-
-    // checkmate?
-    if (this.game.in_checkmate() === true) {
-      status = 'Game over, ' + moveColor + ' is in checkmate.';
-    }
-
-    // draw?
-    else if (this.game.in_draw() === true) {
-      status = 'Game over, drawn position';
-    }
-
-    // game still on
-    else {
-      status = moveColor + ' to move';
-
-      // check?
-      if (this.game.in_check() === true) {
-        status += ', ' + moveColor + ' is in check';
-      }
-    }
-    console.log(status);
+    this.setState({
+      fen: this.game.fen()
+    });
   }
 
   /**
@@ -100,7 +52,14 @@ class SmartChessBoard extends React.Component {
   */
   render () {
     return (
-      <ChessBoard onlyValid = { true } sparePieces = { false }/>
+      <ChessBoard
+        fen = { this.state.fen }
+        onlyValid = { true }
+        sparePieces = { false }
+        onDragStart = { this._onDragStart.bind(this) }
+        onDrop = { this._onDrop.bind(this) }
+        onSnapEnd = { this._onSnapEnd.bind(this) }
+      />
     )
   }
 }
