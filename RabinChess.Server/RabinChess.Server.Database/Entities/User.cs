@@ -17,6 +17,12 @@ namespace RubinChess.Server.Database.Entities
         [Required]
         public string Email { get; set; }
 
+        [Required, MaxLength(25)]
+        public string FirstName { get; set; }
+
+        [Required, MaxLength(40)]
+        public string LastName { get; set; }
+
         public virtual List<Game> Games { get; set; } 
     }
 }
