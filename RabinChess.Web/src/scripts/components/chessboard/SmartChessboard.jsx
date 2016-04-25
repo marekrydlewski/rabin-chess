@@ -5,7 +5,7 @@ import ChessBoard from './Chessboard'
 
 
 /**
-* Renders playable chessboard (uses chessboard.js library).
+* Renders chessboard with logic (uses chess.js library).
 */
 class SmartChessBoard extends React.Component {
 
@@ -13,7 +13,7 @@ class SmartChessBoard extends React.Component {
   /**
   * Basic constructor.
   * @param props Passed properties
-  * @returns {Menu} New SmartChessBoard instance
+  * @returns New SmartChessBoard instance
   */
   constructor(props) {
     super(props);
@@ -51,8 +51,8 @@ class SmartChessBoard extends React.Component {
   }
 
   /**
-  * Renders chessboard.
-  * @returns {div} Playable chessboard
+  * Renders wrapped chessboard
+  * @returns Chessboard with logic
   */
   render () {
     return (

@@ -4,11 +4,13 @@ import BoardJS from 'chessboardjs'
 import style from './chess_board'
 
 /**
-* Renders playable chessboard (uses chessboard.js library).
+* Renders stateless chessboard (uses chessboard.js library).
 */
 class ChessBoard extends React.Component {
 
-
+  /**
+  * Field containing default props values
+  */
   static defaultProps = {
     onlyValid: false,
     sparePieces: false,
@@ -27,7 +29,7 @@ class ChessBoard extends React.Component {
   /**
   * Basic constructor.
   * @param props Passed properties
-  * @returns {Menu} New ChessBoard instance
+  * @returns New ChessBoard instance
   */
   constructor(props) {
     super(props);
