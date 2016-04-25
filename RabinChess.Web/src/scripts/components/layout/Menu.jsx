@@ -44,9 +44,9 @@ class Menu extends React.Component {
   * @returns {div} Div containing menu
   */
   render() {
-    let rows = menuElements.map((elem) => {
+    let rows = menuElements.map((elem, i) => {
               return (
-                <Row>
+                <Row key={i}>
                   <Button className={style['menuItem']} onClick={this.goPage.bind(this, elem.path)}><p>{ elem.name }</p></Button>
                 </Row>)});
     return (

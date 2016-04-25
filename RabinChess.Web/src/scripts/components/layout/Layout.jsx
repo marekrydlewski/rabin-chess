@@ -2,7 +2,6 @@ import React, {PropTypes} from 'react'
 import {AppBar, Checkbox, IconButton, Button} from 'react-toolbox';
 import {Layout as RTLayout, NavDrawer, Panel, Sidebar} from 'react-toolbox';
 import {Grid, Row, Col} from 'react-flexbox-grid'
-import Favicon from 'react-favicon'
 import Menu from './Menu'
 import logo from '../../../assets/logo.png'
 
@@ -60,7 +59,6 @@ class Layout extends React.Component {
   render() {
     return (
       <RTLayout className={style['main']}>
-        <Favicon url={logo} />
         <NavDrawer active={this.state.drawerActive} pinned={this.state.drawerPinned} onOverlayClick={this.toggleDrawerActive}>
           <Grid className={style['menu']}>
           <Menu/>
