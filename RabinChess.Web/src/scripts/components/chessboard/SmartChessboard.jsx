@@ -52,7 +52,7 @@ class SmartChessBoard extends React.Component {
 
   /**
   * Renders wrapped chessboard
-  * @returns Chessboard with logic
+  * @returns {ChessBoard} Chessboard with logic
   */
   render () {
     return (
