@@ -1,3 +1,3 @@
-import ChessBoard from './ChessBoard'
+import SmartChessBoard from './SmartChessBoard'
 
-export default ChessBoard
+export default SmartChessBoard
