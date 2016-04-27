@@ -5,7 +5,7 @@ import {Grid, Row} from 'react-flexbox-grid'
 import style from './main_layout';
 
 const menuElements = [
-  { name: 'Home',       path: '/' },
+  { name: 'Home',       path: '/dashboard' },
   { name: 'Chessboard', path: '/board' },
   { name: 'Docs',       path: '/docs' }
 ];

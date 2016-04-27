@@ -10,6 +10,7 @@ import configureStore from './store/configureStore'
 
 import App from './components/App.jsx'
 import ChessboardLayout from './components/chessboard_layout'
+import Dashboard from './components/dashboard/Dashboard'
 
 let store = configureStore()
 
@@ -18,6 +19,7 @@ ReactDOM.render((
     <Router history={ hashHistory }>
       <Route path="/" component={ App } >
         <Route path="board" component={ ChessboardLayout } />
+		<Route path="dashboard" component={Dashboard}/>
       </Route>
     </Router>
   </Provider>
