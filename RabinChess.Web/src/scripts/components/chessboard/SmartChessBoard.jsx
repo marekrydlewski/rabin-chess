@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import ChessJS from 'chess.js'
 
-import ChessBoard from './Chessboard'
+import ChessBoard from './ChessBoard'
 
 
 /**
