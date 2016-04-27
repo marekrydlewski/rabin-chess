@@ -32,18 +32,13 @@ class Login extends React.Component {
 
   render() {
     return (
-      <Card className={style['card']}>
-        <CardTitle
-          title = 'Login'
-        />
         <CardMedia>
           <section className={style['content']}>
-              <Input type='text' label='Username' icon='person' value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
-              <Input type='password' label='Password' icon='lock' value={this.state.password} onChange={this.handleChange.bind(this, 'password')}/>
+              <Input className={style['input']} type='text' label='Username' icon='person' value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
+              <Input className={style['input']} type='password' label='Password' icon='lock' value={this.state.password} onChange={this.handleChange.bind(this, 'password')}/>
           </section>
-          <Button className={style['accept']}><p>Login</p></Button>
+          <Button className={style['accept']} raised accent><p>Login</p></Button>
         </CardMedia>
-      </Card>
     )
   }
 

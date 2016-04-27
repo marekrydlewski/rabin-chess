@@ -23,7 +23,7 @@ class Signup extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    this.state = { firstname: '', surname: '', email: '', username: '', pass: '' };
+    this.state = { firstname: '', surname: '', email: '', username: '', password: '' };
   }
 
   handleChange = (name, value) => {
@@ -32,10 +32,6 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <Card className={style['card']}>
-        <CardTitle
-          title = 'Sign Up'
-        />
         <CardMedia>
           <section className={style['content']}>
               <Input className={style['input']} type='text' label='First name' value={this.state.firstname} onChange={this.handleChange.bind(this, 'firstname')}/>
@@ -44,9 +40,8 @@ class Signup extends React.Component {
               <Input className={style['input']} type='text' label='Username' icon='person' value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
               <Input className={style['input']} type='password' label='Password' icon='lock' value={this.state.password} onChange={this.handleChange.bind(this, 'password')}/>
           </section>
-          <Button className={style['accept']}><p>Sign up</p></Button>
+          <Button className={style['accept']} raised accent><p>Sign up</p></Button>
         </CardMedia>
-      </Card>
     )
   }
 
