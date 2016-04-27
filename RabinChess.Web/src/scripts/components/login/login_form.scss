@@ -1,24 +1,13 @@
-.card {
-  padding-bottom: 10px;
-  max-width: 500px;
-  margin: auto;
-}
-
 .content {
-  padding: 25px;
+  padding: 0px;
   padding-top: 0;
-}
-
-.accept {
-  background-color: #ff4081;
-  width: 30%;
-  height: 40px;
-  margin-left: auto;
-  margin-right: auto;
-
-  p {
-    color: white;
-    font-size: 20px;
+  min-width: 250px !important;
+  button[data-react-toolbox="button"]{
+    background-color: #ff4081 !important;
+    width: 35% !important;
+    height: 40px !important;
+    color: white !important;
+    font-size: 20px !important;
   }
 }
 
@@ -30,14 +19,12 @@
   span {
     color: rgba(0, 0, 0, 0.4);
   }
-  &:active {
-    color: #ff4081 !important;
-  }
 }
 
-
-.tabMenu {
-   nav + span {
-    background-color: #ff4081;
-  }
+.barButton {
+  background-color: white !important;
+  width: 35%;
+  height: 40px;
+  color: #ff4081 !important;
+  font-size: 20px;
 }
