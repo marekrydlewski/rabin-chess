@@ -6,7 +6,12 @@ import stonoga3 from '../../../assets/stonoga3.jpg'
 import stonoga4 from '../../../assets/stonoga4.jpg'
 import stonoga5 from '../../../assets/stonoga5.jpg'
 
+
+
 export default class Dashboard extends React.Component{
+  componentWillMount() {
+      window.addEventListener("resize", this.reRender);
+  }
   render() {
     let settings = {
       dots: true,
@@ -17,19 +22,23 @@ export default class Dashboard extends React.Component{
       centerMode: true,
       adaptiveHeight : true,
       autoplay: true,
-      arrows: false
+      arrows: false,
+      pauseOnHover: true,
+      autoplaySpeed: 2000,
+      adaptiveHeight: true
     };
+    let height=Math.floor(window.innerHeight * 0.4)
     return(
-	<div>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.css" />
-		   <Slider {...settings}>
-				<div><center><img height="500" src={stonoga1}></img></center></div>
-				<div><center><img height="500" src={stonoga2}></img></center></div>
-				<div><center><img height="500" src={stonoga3}></img></center></div>
-				<div><center><img height="500" src={stonoga4}></img></center></div>
-				<div><center><img height="500" src={stonoga5}></img></center></div>
-		   </Slider>
-	</div>
+    <div >
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.css" />
+        <Slider {...settings}>
+				    <div><center><img height={height} src={stonoga1}></img></center></div>
+				    <div><center><img height={height} src={stonoga2}></img></center></div>
+				    <div><center><img height={height} src={stonoga3}></img></center></div>
+				    <div><center><img height={height} src={stonoga4}></img></center></div>
+				    <div><center><img height={height} src={stonoga5}></img></center></div>
+		    </Slider>
+    </div>
 	);
   }
 }
