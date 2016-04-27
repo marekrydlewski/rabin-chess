@@ -1,7 +1,5 @@
 import React, {PropTypes} from 'react'
-import { Taba, Tab } from 'react-toolbox';
-import { Card, CardTitle, CardMedia } from 'react-toolbox';
-import { Button, Input } from 'react-toolbox';
+import { CardMedia, Button, Input  } from 'react-toolbox';
 
 import style from './login_form'
 
@@ -18,7 +16,7 @@ class Signup extends React.Component {
   * Basic constructor.
   * @param props Passed properties
   * @param context Application context
-  * @returns {Signup} Signup card
+  * @returns {Signup} Signup card media
   */
   constructor(props, context) {
     super(props, context);
@@ -40,7 +38,6 @@ class Signup extends React.Component {
               <Input className={style['input']} type='text' label='Username' icon='person' value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
               <Input className={style['input']} type='password' label='Password' icon='lock' value={this.state.password} onChange={this.handleChange.bind(this, 'password')}/>
           </section>
-          <Button className={style['accept']} raised accent><p>Sign up</p></Button>
         </CardMedia>
     )
   }
