@@ -19,7 +19,7 @@ ReactDOM.render((
     <Router history={ hashHistory }>
       <Route path="/" component={ App } >
         <Route path="board" component={ ChessboardLayout } />
-        <Route path="dashboard" component={Dashboard}/>
+        <IndexRoute path="dashboard" component={Dashboard}/>
       </Route>
     </Router>
   </Provider>
