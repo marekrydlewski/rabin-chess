@@ -1,5 +1,10 @@
 import React from 'react'
 import Slider from 'react-slick';
+import stonoga1 from '../../../assets/stonoga1.jpg'
+import stonoga2 from '../../../assets/stonoga2.jpg'
+import stonoga3 from '../../../assets/stonoga3.jpg'
+import stonoga4 from '../../../assets/stonoga4.jpg'
+import stonoga5 from '../../../assets/stonoga5.jpg'
 
 export default class Dashboard extends React.Component{
   render() {
@@ -18,11 +23,11 @@ export default class Dashboard extends React.Component{
 	<div>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.css" />
 		   <Slider {...settings}>
-				<div><center><img height="500" src="http://x3.cdn03.imgwykop.pl/c3201142/comment_u5GN5LE2tHHpV8EbymMwFAuKSopqo06z.jpg"></img></center></div>
-				<div><center><img height="500" src="http://fs.cdn.smcloud.net/hotplota.prod/Mo2052352t642.jpg"></img></center></div>
-				<div><center><img height="500" src="http://i1.wp.com/pressmix.eu/wp-content/uploads/2015/06/Zbigniew-Stonoga.jpg"></img></center></div>
-				<div><center><img height="500" src="http://stonoga-zbigniew.pl/wp-content/uploads/2015/09/zbigniew-stonoga-na-zywo.jpg"></img></center></div>
-				<div><center><img height="500" src="http://stonoga-zbigniew.pl/wp-content/uploads/2015/07/11693928-177698896919444-d24c36620.jpg"></img></center></div>
+				<div><center><img height="500" src={stonoga1}></img></center></div>
+				<div><center><img height="500" src={stonoga2}></img></center></div>
+				<div><center><img height="500" src={stonoga3}></img></center></div>
+				<div><center><img height="500" src={stonoga4}></img></center></div>
+				<div><center><img height="500" src={stonoga5}></img></center></div>
 		   </Slider>
 	</div>
 	);
