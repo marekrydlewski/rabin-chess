@@ -1,5 +1,5 @@
 .card {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   max-width: 500px;
   margin: auto;
 }
@@ -25,5 +25,19 @@
 .input {
   label {
     font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  span {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  &:active {
+    color: #ff4081 !important;
+  }
+}
+
+
+.tabMenu {
+   nav + span {
+    background-color: #ff4081;
   }
 }
