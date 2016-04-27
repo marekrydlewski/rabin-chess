@@ -1,8 +1,8 @@
 import React from 'react'
-import {Card, Tab, Tabs} from 'react-toolbox';
+import {Grid, Row, Col} from 'react-flexbox-grid'
 
-import Login from './Login'
-import Signup from './Signup'
+import Login from './LoginDialog'
+import Signup from './SignupDialog'
 
 import style from './login_form'
 
@@ -32,12 +32,12 @@ class LoginForm extends React.Component {
 
   render () {
     return (
-      <Card className={style['card']}>
-      <Tabs className={style['tabMenu']} index={this.state.index} onChange={this.handleTabChange}>
-        <Tab label='Login'><small><Login/></small></Tab>
-        <Tab label='Signup'><small><Signup/></small></Tab>
-      </Tabs>
-      </Card>
+      <Grid>
+        <Row end='xs'>
+          <Col><Login/></Col>
+          <Col><Signup/></Col>
+        </Row>
+      </Grid>
     );
   }
 }
