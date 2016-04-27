@@ -9,9 +9,6 @@ import stonoga5 from '../../../assets/stonoga5.jpg'
 
 
 export default class Dashboard extends React.Component{
-  componentWillMount() {
-      window.addEventListener("resize", this.reRender);
-  }
   render() {
     let settings = {
       dots: true,
