@@ -3,7 +3,7 @@ import {AppBar, Checkbox, IconButton, Button} from 'react-toolbox';
 import {Layout as RTLayout, NavDrawer, Panel, Sidebar} from 'react-toolbox';
 import {Grid, Row, Col} from 'react-flexbox-grid'
 import Menu from './Menu'
-import Dialog from '../login/LoginForm'
+import LoginSignupForm from '../login/LoginSignupForm'
 import logo from '../../../assets/logo.png'
 
 import style from './main_layout';
@@ -69,7 +69,7 @@ class Layout extends React.Component {
           <AppBar className={style['header']}><IconButton icon='menu' inverse={true} onClick={this.toggleDrawerActive}/>
             <img className={style['logo']} src={logo} onClick={this.goHome.bind(this)}/>
             <h1 onClick={this.goHome.bind(this)}>Rabin Chess</h1>
-            <Dialog/>
+            <LoginSignupForm/>
           </AppBar>
           <div className={style['content']}>
             { this.props.children }
