@@ -6,7 +6,7 @@ import Signup from './SignupDialog'
 
 import style from './login_form'
 
-class LoginForm extends React.Component {
+class LoginSignupForm extends React.Component {
   /**
   * Field containing context type requirements
   */
@@ -42,4 +42,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm
+export default LoginSignupForm
