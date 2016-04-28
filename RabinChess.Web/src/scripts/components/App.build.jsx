@@ -3,7 +3,6 @@ import Favicon from 'react-favicon'
 import Layout from './layout'
 
 import logo from '../../assets/logo.png'
-
 /**
 * Production version of App class.
 * Component containing whole application.

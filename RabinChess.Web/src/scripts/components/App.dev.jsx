@@ -19,7 +19,7 @@ export default class App extends React.Component {
         <Layout>
           <Favicon url={logo} />
           { this.props.children }
-          <DevTools />
+          <DevTools />	
         </Layout>
     );
   }
