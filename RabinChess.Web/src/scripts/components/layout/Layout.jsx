@@ -7,6 +7,7 @@ import LoginSignupForm from '../login/LoginSignupForm'
 import logo from '../../../assets/logo.png'
 
 import style from './main_layout';
+
 /**
 * Main layout for application.
 */
@@ -21,13 +22,17 @@ class Layout extends React.Component {
 
   /**
   * Basic constructor.
-  * @param props Passed properties
-  * @param context Application context
+  * @param {object} props Passed properties
+  * @param {object} context Application context
   * @returns {Layout} New Layout instance
   */
   constructor(props, context) {
     super(props, context);
-
+    
+    /**
+    * @type {object}
+    * @property {bool} drawerActive Drawer state
+    */
     this.state = {
       drawerActive: false,
     };

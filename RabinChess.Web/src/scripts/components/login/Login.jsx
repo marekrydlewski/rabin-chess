@@ -3,6 +3,9 @@ import { CardMedia, Button, Input } from 'react-toolbox';
 
 import style from './login_form'
 
+/**
+* Login Card Media.
+*/
 class Login extends React.Component {
 
   /**
@@ -14,13 +17,18 @@ class Login extends React.Component {
 
   /**
   * Basic constructor.
-  * @param props Passed properties
-  * @param context Application context
+  * @param {object} props Passed properties
+  * @param {object} context Application context
   * @returns {Login} Login card media
   */
   constructor(props, context) {
     super(props, context);
 
+    /**
+    * @type {object}
+    * @property {string} username User name
+    * @property {string} password User password
+    */
     this.state = { username: '', password: '' };
   }
 
@@ -28,6 +36,10 @@ class Login extends React.Component {
     this.setState({[name]: value});
   };
 
+  /**
+  * Renders login CardMedia.
+  * @returns {CardMedia} CardMedia containing login elements
+  */
   render() {
     return (
         <CardMedia>

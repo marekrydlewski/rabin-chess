@@ -6,6 +6,9 @@ import Signup from './SignupDialog'
 
 import style from './login_form'
 
+/**
+* Login and Signup dialogs.
+*/
 class LoginSignupForm extends React.Component {
   /**
   * Field containing context type requirements
@@ -16,20 +19,18 @@ class LoginSignupForm extends React.Component {
 
   /**
   * Basic constructor.
-  * @param props Passed properties
-  * @param context Application context
-  * @returns {Login} Login card
+  * @param {object} props Passed properties
+  * @param {object} context Application context
+  * @returns {LoginSignupForm} Login and Signup dialogs
   */
   constructor(props, context) {
     super(props, context);
-
-    this.state = { index: 0 };
   }
 
-  handleTabChange = (index) => {
-    this.setState({index});
-  };
-
+  /**
+  * Renders Login and Signup form.
+  * @returns {Grid} Grid containing Login and Signup components
+  */
   render () {
     return (
       <Grid>

@@ -5,11 +5,24 @@ import Login from './Login'
 
 import style from './login_form'
 
+/**
+* Login dialog.
+*/
 class LoginDialog extends React.Component{
 
+  /**
+  * Basic constructor.
+  * @param {object} props Passed properties
+  * @param {object} context Application context
+  * @returns {LoginDialog} Login dialog
+  */
   constructor(props, context) {
     super(props, context);
 
+    /**
+    * @type {object}
+    * @property {bool} active Dialog visibility
+    */
     this.state = {
       active: false
     };
@@ -23,6 +36,10 @@ class LoginDialog extends React.Component{
     { label: "Login", onClick: this.handleToggle, raised: true, active: true},
   ];
 
+  /**
+  * Renders Login dialog.
+  * @returns {div} Div containing signup dialog
+  */
   render () {
     return (
       <div>

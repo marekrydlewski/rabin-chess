@@ -3,6 +3,9 @@ import { CardMedia, Button, Input  } from 'react-toolbox';
 
 import style from './login_form'
 
+/**
+* Signup Card Media.
+*/
 class Signup extends React.Component {
 
   /**
@@ -14,13 +17,21 @@ class Signup extends React.Component {
 
   /**
   * Basic constructor.
-  * @param props Passed properties
-  * @param context Application context
+  * @param {object} props Passed properties
+  * @param {object} context Application context
   * @returns {Signup} Signup card media
   */
   constructor(props, context) {
     super(props, context);
 
+    /**
+    * @type {object}
+    * @property {string} firstname User first name
+    * @property {string} surname User last name
+    * @property {string} email User email
+    * @property {string} username User name
+    * @property {string} password User password
+    */
     this.state = { firstname: '', surname: '', email: '', username: '', password: '' };
   }
 
@@ -28,6 +39,10 @@ class Signup extends React.Component {
     this.setState({[name]: value});
   };
 
+  /**
+  * Renders Signup CardMedia.
+  * @returns {CardMedia} CardMedia containing signup elements
+  */
   render() {
     return (
         <CardMedia>

@@ -5,11 +5,24 @@ import Signup from './Signup'
 
 import style from './login_form'
 
+/**
+* Signup dialog.
+*/
 class SignupDialog extends React.Component{
 
+  /**
+  * Basic constructor.
+  * @param {object} props Passed properties
+  * @param {object} context Application context
+  * @returns {SignupDialog} Signup dialog
+  */
   constructor(props, context) {
     super(props, context);
 
+    /**
+    * @type {object}
+    * @property {bool} active Dialog visibility
+    */
     this.state = {
       active: false
     };
@@ -23,6 +36,10 @@ class SignupDialog extends React.Component{
     { label: "Signup", onClick: this.handleToggle, raised: true, active: true},
   ];
 
+  /**
+  * Renders Signup dialog.
+  * @returns {div} Div containing signup dialog
+  */
   render () {
     return (
       <div>
