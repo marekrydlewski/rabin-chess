@@ -27,7 +27,6 @@ export default class Dashboard extends React.Component{
     let height=Math.floor(window.innerHeight * 0.4)
     return(
     <div >
-      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.css" />
         <Slider {...settings}>
 				    <div><center><img height={height} src={stonoga1}></img></center></div>
 				    <div><center><img height={height} src={stonoga2}></img></center></div>
