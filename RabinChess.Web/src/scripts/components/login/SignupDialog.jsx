@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import { Dialog } from 'react-toolbox';
-import { Button } from 'react-toolbox';
+import { Button } from '../ui';
 import Signup from './Signup'
 
 import style from './login_form'
@@ -33,7 +33,7 @@ class SignupDialog extends React.Component{
   }
 
   actions = [
-    { label: "Signup", onClick: this.handleToggle, raised: true, active: true},
+    { label: 'Signup', onClick: this.handleToggle, raised: true, active: true},
   ];
 
   /**

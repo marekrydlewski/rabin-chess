@@ -1,14 +1,11 @@
 .content {
-  padding: 0px;
-  padding-top: 0;
+  padding: 0;
   min-width: 250px;
   button {
-    background-color: #ff4081 !important;
-    color: white !important;
+    width: 100px;
     margin-right: 5px;
   }
 }
-
 .input {
   label {
     font-size: 20px;
@@ -18,11 +15,6 @@
     color: rgba(0, 0, 0, 0.4);
   }
 }
-
 .barButton {
   margin-right: 5px;
-  background-color: white !important;
-  width: 100px;
-  height: 40px;
-  color: #ff4081 !important;
 }

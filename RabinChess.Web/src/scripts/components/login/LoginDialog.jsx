@@ -43,7 +43,7 @@ class LoginDialog extends React.Component{
   render () {
     return (
       <div>
-        <Button label='Login' onClick={this.handleToggle}/>
+        <Button className={style['barButton']} label='Login' onClick={this.handleToggle}/>
         <Dialog
           actions={this.actions}
           active={this.state.active}
