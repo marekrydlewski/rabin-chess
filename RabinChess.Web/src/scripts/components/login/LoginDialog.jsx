@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
-import { Dialog } from 'react-toolbox';
-import { Button } from '../ui';
+import { Dialog } from 'react-toolbox'
+import { Button } from '../ui'
 import Login from './Login'
 
 import style from './login_form'

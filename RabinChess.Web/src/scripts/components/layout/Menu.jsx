@@ -2,7 +2,7 @@ import React from 'react'
 import {Drawer, Button} from 'react-toolbox'
 import {Grid, Row} from 'react-flexbox-grid'
 
-import style from './main_layout';
+import style from './main_layout'
 
 const menuElements = [
   { name: 'Home',       path: '/' },

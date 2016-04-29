@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
-import {AppBar, Checkbox, IconButton, Button} from 'react-toolbox';
-import {Layout as RTLayout, NavDrawer, Panel, Sidebar} from 'react-toolbox';
+import {AppBar, Checkbox, IconButton, Button} from 'react-toolbox'
+import {Layout as RTLayout, NavDrawer, Panel, Sidebar} from 'react-toolbox'
 import {Grid, Row, Col} from 'react-flexbox-grid'
 import Menu from './Menu'
 import LoginSignupForm from '../login/LoginSignupForm'
@@ -28,7 +28,7 @@ class Layout extends React.Component {
   */
   constructor(props, context) {
     super(props, context);
-    
+
     /**
     * @type {object}
     * @property {bool} drawerActive Drawer state

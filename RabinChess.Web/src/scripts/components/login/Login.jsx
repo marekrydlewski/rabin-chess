@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react'
-import { CardMedia, Button, Input } from 'react-toolbox';
+import { CardMedia, Button, Input } from 'react-toolbox'
 
 import style from './login_form'
 
