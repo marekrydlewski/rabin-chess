@@ -1,0 +1,30 @@
+.content {
+  padding: 0px;
+  padding-top: 0;
+  min-width: 250px !important;
+  button[data-react-toolbox="button"]{
+    background-color: #ff4081 !important;
+    width: 35% !important;
+    height: 40px !important;
+    color: white !important;
+    font-size: 20px !important;
+  }
+}
+
+.input {
+  label {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  span {
+    color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.barButton {
+  background-color: white !important;
+  width: 35%;
+  height: 40px;
+  color: #ff4081 !important;
+  font-size: 20px;
+}

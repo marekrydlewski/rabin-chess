@@ -9,6 +9,7 @@ const menuElements = [
   { name: 'Chessboard', path: '/board' },
   { name: 'Docs',       path: '/docs' }
 ];
+
 /**
 * Side menu containig links to subpages
 */
@@ -23,8 +24,8 @@ class Menu extends React.Component {
 
   /**
   * Basic constructor.
-  * @param props Passed properties
-  * @param context Application context
+  * @param {object} props Passed properties
+  * @param {object} context Application context
   * @returns {Menu} New Menu instance
   */
   constructor(props, context) {
@@ -44,9 +45,9 @@ class Menu extends React.Component {
   * @returns {div} Div containing menu
   */
   render() {
-    let rows = menuElements.map((elem) => {
+    let rows = menuElements.map((elem, i) => {
               return (
-                <Row>
+                <Row key={i}>
                   <Button className={style['menuItem']} onClick={this.goPage.bind(this, elem.path)}><p>{ elem.name }</p></Button>
                 </Row>)});
     return (
