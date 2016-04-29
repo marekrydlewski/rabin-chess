@@ -1,6 +1,7 @@
 @import './reset';
+@import './colors';
 
 body {
-  background-color: MediumTurquoise;
+  background-color: $snowy-white;
   font-family: 'Roboto', sans-serif;
 }
