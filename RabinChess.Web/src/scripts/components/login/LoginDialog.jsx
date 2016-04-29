@@ -1,11 +1,10 @@
 import React, {PropTypes} from 'react'
 import { Dialog } from 'react-toolbox';
-import Button from '../ui/Button';
+import { Button } from '../ui';
 import Login from './Login'
 
 import style from './login_form'
 
-console.log(Button);
 /**
 * Login dialog.
 */
