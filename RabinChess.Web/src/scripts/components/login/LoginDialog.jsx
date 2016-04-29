@@ -33,7 +33,7 @@ class LoginDialog extends React.Component{
   }
 
   actions = [
-    { label: "Login", onClick: this.handleToggle, raised: true, active: true},
+    { label: 'Login', onClick: this.handleToggle, raised: true, active: true},
   ];
 
   /**

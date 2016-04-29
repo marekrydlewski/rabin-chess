@@ -1,13 +1,11 @@
 .content {
   padding: 0px;
   padding-top: 0;
-  min-width: 250px !important;
-  button[data-react-toolbox="button"]{
+  min-width: 250px;
+  button {
     background-color: #ff4081 !important;
-    width: 35% !important;
-    height: 40px !important;
     color: white !important;
-    font-size: 20px !important;
+    margin-right: 5px;
   }
 }
 
@@ -22,9 +20,9 @@
 }
 
 .barButton {
+  margin-right: 5px;
   background-color: white !important;
-  width: 35%;
+  width: 100px;
   height: 40px;
   color: #ff4081 !important;
-  font-size: 20px;
 }
