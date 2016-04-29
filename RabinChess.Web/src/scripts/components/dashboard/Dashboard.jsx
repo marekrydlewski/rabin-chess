@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from 'react-slick';
+import Slider from 'react-slick'
 import stonoga1 from '../../../assets/stonoga1.jpg'
 import stonoga2 from '../../../assets/stonoga2.jpg'
 import stonoga3 from '../../../assets/stonoga3.jpg'
@@ -24,7 +24,7 @@ export default class Dashboard extends React.Component{
       autoplaySpeed: 2000,
       adaptiveHeight: true
     };
-    let height=Math.floor(window.innerHeight * 0.4)
+    let height=Math.floor(window.innerHeight * 0.4);
     return(
     <div >
         <Slider {...settings}>
