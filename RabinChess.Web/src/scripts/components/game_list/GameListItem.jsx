@@ -1,8 +1,7 @@
 import React, {PropTypes} from 'react'
-import {Grid, Row, Column} from 'react-flexbox-grid'
 import {ListItem} from 'react-toolbox'
 
-import style from './game_list_item'
+import style from './game_list'
 import avatar from '../../../assets/game_list_item_avatar.png'
 
 class GameListItem extends React.Component {

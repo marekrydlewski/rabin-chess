@@ -1,12 +1,12 @@
 import React from 'react'
 
-import GameListItem from './game_list/GameListItem'
+import GameList from './game_list/GameList'
 
 class TestPage extends React.Component {
   render(){
     return(
       <div>
-        <GameListItem title="Sample item" tags="Here will be tags" gameId="SAMPLE_ID" />
+        <GameList games={[{title: 'Title 1', tags: 'Some tags 1', id: 'ID1'}, {title: 'Title 2', tags: 'Some tags 2', id: 'ID2'}]} />
       </div>
     );
   }
