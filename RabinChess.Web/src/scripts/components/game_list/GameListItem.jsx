@@ -3,6 +3,7 @@ import {Grid, Row, Column} from 'react-flexbox-grid'
 import {ListItem} from 'react-toolbox'
 
 import style from './game_list_item'
+import avatar from '../../../assets/game_list_item_avatar.png'
 
 class GameListItem extends React.Component {
 
@@ -23,7 +24,9 @@ class GameListItem extends React.Component {
   render() {
     let {title, tags} = this.props;
     return(
-      <ListItem className={style['game_list_item']} caption={title} legend={tags} />
+      <ListItem className={style['game_list_item']} avatar={avatar} caption={title} legend={tags} />
     );
   }
 }
+
+export default GameListItem
