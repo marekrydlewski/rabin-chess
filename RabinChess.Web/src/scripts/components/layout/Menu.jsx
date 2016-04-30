@@ -7,7 +7,7 @@ import style from './main_layout'
 const menuElements = [
   { name: 'Home',       path: '/' },
   { name: 'Chessboard', path: '/board' },
-  { name: 'Docs',       path: '/docs' }
+  { name: 'Test',       path: '/test-page' }
 ];
 
 /**
