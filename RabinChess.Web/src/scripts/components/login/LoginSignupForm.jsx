@@ -33,7 +33,7 @@ class LoginSignupForm extends React.Component {
   */
   render () {
     return (
-      <Grid>
+      <Grid className={style['buttons-grid']}>
         <Row end='xs'>
           <Col><Login/></Col>
           <Col><Signup/></Col>

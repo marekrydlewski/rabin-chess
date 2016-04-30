@@ -2,7 +2,7 @@ import React from 'react'
 import {Drawer, Button} from 'react-toolbox'
 import {Grid, Row} from 'react-flexbox-grid'
 
-import style from './main_layout';
+import style from './main_layout'
 
 const menuElements = [
   { name: 'Home',       path: '/' },
@@ -36,7 +36,7 @@ class Menu extends React.Component {
   * Routes to pointed path.
   * @param {string} path Path to route to
   */
-  goPage(path) {
+  _goPage(path) {
     this.context.router.push(path);
   }
 
@@ -47,9 +47,9 @@ class Menu extends React.Component {
   render() {
     let rows = menuElements.map((elem, i) => {
               return (
-                <Row key={i}>
-                  <Button className={style['menuItem']} onClick={this.goPage.bind(this, elem.path)}><p>{ elem.name }</p></Button>
-                </Row>)});
+                <div className={style['menuItem']} key={i}>
+                  <Button onClick={this._goPage.bind(this, elem.path)} label={ elem.name } flat/>
+                </div>)});
     return (
       <div>
         { rows }

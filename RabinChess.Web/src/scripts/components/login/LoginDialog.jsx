@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
-import { Dialog } from 'react-toolbox';
-import { Button } from 'react-toolbox';
+import { Dialog } from 'react-toolbox'
+import { Button } from '../ui'
 import Login from './Login'
 
 import style from './login_form'
@@ -33,7 +33,7 @@ class LoginDialog extends React.Component{
   }
 
   actions = [
-    { label: "Login", onClick: this.handleToggle, raised: true, active: true},
+    { label: 'Login', onClick: this.handleToggle, raised: true, active: true},
   ];
 
   /**
@@ -43,7 +43,7 @@ class LoginDialog extends React.Component{
   render () {
     return (
       <div>
-        <Button className={style['barButton']} label='Login' onClick={this.handleToggle} raised accent/>
+        <Button className={style['barButton']} label='Login' onClick={this.handleToggle}/>
         <Dialog
           actions={this.actions}
           active={this.state.active}
