@@ -6,7 +6,6 @@ class TestPage extends React.Component {
   render(){
     return(
       <div>
-        <SmartGameList />
       </div>
     );
   }

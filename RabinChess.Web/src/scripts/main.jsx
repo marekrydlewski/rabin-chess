@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 
 import configureStore from './store/configureStore'
 
-import { App, ChessboardLayout, Dashboard, TestPage } from './components'
+import { App, ChessboardLayout, GameListLayout, Dashboard, TestPage } from './components'
 
 
 let store = configureStore()
@@ -18,6 +18,7 @@ ReactDOM.render((
     <Router history={ hashHistory }>
       <Route path="/" component={ App } >
         <IndexRoute component={ Dashboard }/>
+        <Route path="games" component={ GameListLayout } />
         <Route path="board" component={ ChessboardLayout } />
         <Route path="test-page" component={ TestPage } />
       </Route>
