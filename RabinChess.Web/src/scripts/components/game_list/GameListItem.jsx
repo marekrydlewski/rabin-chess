@@ -1,6 +1,8 @@
 import React, {PropTypes} from 'react'
 import {ListItem} from 'react-toolbox'
 
+import {Button} from '../ui'
+
 import style from './game_list'
 import avatar from '../../../assets/game_list_item_avatar.png'
 
@@ -22,8 +24,11 @@ class GameListItem extends React.Component {
 
   render() {
     let {title, tags} = this.props;
+    let viewButton = <Button key={1} label='View' />
+    let editButton = <Button key={2} label='Edit' />
+    let deleteButton = <Button key={3} label='Delete' />
     return(
-      <ListItem className={style['game_list_item']} avatar={avatar} caption={title} legend={tags} />
+      <ListItem className={style['game_list_item']} avatar={avatar} caption={title} legend={tags} rightActions={[viewButton, editButton, deleteButton]} ripple={false} />
     );
   }
 }
