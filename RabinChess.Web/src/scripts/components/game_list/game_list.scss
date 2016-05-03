@@ -1,7 +1,13 @@
+@import './game_list_variables';
+
 .game_list {
-  
+
 }
 
 .game_list_item {
 
+}
+
+.game_list_button {
+  background-color: $button-color-background !important;
 }

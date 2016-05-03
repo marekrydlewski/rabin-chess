@@ -24,9 +24,9 @@ class GameListItem extends React.Component {
 
   render() {
     let {title, tags} = this.props;
-    let viewButton = <Button key={1} label='View' />
-    let editButton = <Button key={2} label='Edit' />
-    let deleteButton = <Button key={3} label='Delete' />
+    let viewButton = <Button key={1} className={style['game_list_button']} label='View' />
+    let editButton = <Button key={2} className={style['game_list_button']} label='Edit' />
+    let deleteButton = <Button key={3} className={style['game_list_button']} label='Delete' />
     return(
       <ListItem className={style['game_list_item']} avatar={avatar} caption={title} legend={tags} rightActions={[viewButton, editButton, deleteButton]} ripple={false} />
     );
