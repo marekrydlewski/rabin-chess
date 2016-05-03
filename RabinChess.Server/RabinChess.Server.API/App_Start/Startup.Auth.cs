@@ -28,7 +28,7 @@ namespace RabinChess.Server.API
 
             OAuthOptions = new OAuthAuthorizationServerOptions
             {
-                TokenEndpointPath = new PathString("api/token"),
+                TokenEndpointPath = new PathString("/api/token"),
                 Provider = new ApplicationOAuthProvider(PublicClientId, UserManagerFactory),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
                 AllowInsecureHttp = true
