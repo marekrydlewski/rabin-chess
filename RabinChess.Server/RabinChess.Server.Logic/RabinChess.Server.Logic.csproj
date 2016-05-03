@@ -48,7 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContextFactory.cs" />
+    <Compile Include="GamesContext.cs" />
     <Compile Include="GamesRetriever.cs" />
+    <Compile Include="IGamesContext.cs" />
+    <Compile Include="IGamesRetriever.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

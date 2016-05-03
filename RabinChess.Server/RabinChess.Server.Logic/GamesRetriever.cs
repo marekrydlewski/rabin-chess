@@ -6,7 +6,7 @@ using RubinChess.Server.Database.Entities;
 
 namespace RubinChess.Server.Logic
 {
-    public class GamesRetriever
+    public class GamesRetriever : IGamesRetriever
     {
         public List<GameListItemVM> GetGames(int userId)
         {
