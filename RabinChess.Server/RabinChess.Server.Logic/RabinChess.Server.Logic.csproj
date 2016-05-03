@@ -49,10 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextFactory.cs" />
-    <Compile Include="GamesContext.cs" />
-    <Compile Include="GamesRetriever.cs" />
-    <Compile Include="IGamesContext.cs" />
-    <Compile Include="IGamesRetriever.cs" />
+    <Compile Include="Contexts\GamesContext.cs" />
+    <Compile Include="Contexts\IGamesContext.cs" />
+    <Compile Include="Interactions\GamesRetriever.cs" />
+    <Compile Include="Interactions\IGamesRetriever.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +69,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

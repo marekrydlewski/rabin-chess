@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using RabinChess.Server.DataStructures;
+using RubinChess.Server.Logic.Interactions;
 
-namespace RubinChess.Server.Logic
+namespace RubinChess.Server.Logic.Contexts
 {
     public class GamesContext : IGamesContext
     {

@@ -1,4 +1,7 @@
-﻿namespace RubinChess.Server.Logic
+﻿using RubinChess.Server.Logic.Contexts;
+using RubinChess.Server.Logic.Interactions;
+
+namespace RubinChess.Server.Logic
 {
     public static class ContextFactory
     {

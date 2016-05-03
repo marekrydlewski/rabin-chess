@@ -4,7 +4,7 @@ using RabinChess.Server.DataStructures;
 using RubinChess.Server.Database;
 using RubinChess.Server.Database.Entities;
 
-namespace RubinChess.Server.Logic
+namespace RubinChess.Server.Logic.Interactions
 {
     public class GamesRetriever : IGamesRetriever
     {

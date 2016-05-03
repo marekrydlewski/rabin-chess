@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using RabinChess.Server.DataStructures;
 
-namespace RubinChess.Server.Logic
+namespace RubinChess.Server.Logic.Interactions
 {
     public interface IGamesRetriever
     {
