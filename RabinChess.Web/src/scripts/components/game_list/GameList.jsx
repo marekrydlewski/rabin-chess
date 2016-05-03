@@ -28,7 +28,7 @@ class GameList extends React.Component {
     })
     return (
       <List selectable ripple>
-        <ListSubHeader caption="Your games" />
+        <ListSubHeader className={style['game_list_header']} caption="Your games" />
         {gameListItems}
       </List>
     );
