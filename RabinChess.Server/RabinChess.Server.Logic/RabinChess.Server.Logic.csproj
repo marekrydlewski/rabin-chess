@@ -51,8 +51,12 @@
     <Compile Include="ContextFactory.cs" />
     <Compile Include="Contexts\GamesContext.cs" />
     <Compile Include="Contexts\IGamesContext.cs" />
+    <Compile Include="Contexts\IUserContext.cs" />
+    <Compile Include="Contexts\UserContext.cs" />
     <Compile Include="Interactions\GamesRetriever.cs" />
     <Compile Include="Interactions\IGamesRetriever.cs" />
+    <Compile Include="Interactions\IUserManager.cs" />
+    <Compile Include="Interactions\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
