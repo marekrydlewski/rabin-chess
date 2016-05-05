@@ -18,6 +18,8 @@ namespace RubinChess.Server.Database.Entities
         [Required]
         public string GameNotation { get; set; }
 
+        public string Name { get; set; }
+
         public virtual List<GameTag> Tags { get; set; } 
     }
 }
