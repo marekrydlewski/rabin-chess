@@ -36,7 +36,7 @@ export default class ChessboardLayout extends React.Component {
             Bd3+ 0-1`;
     return (
       <Grid>
-        <SmartChessBoard pgn = { pgnHeaders.join('\n') + pgnGame }/>
+        <SmartChessBoard pgnHeaders = { pgnHeaders.join('\n') } pgnGame = { pgnGame} />
       </Grid>
     )
   }
