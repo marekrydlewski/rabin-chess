@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { Chip } from 'react-toolbox'
+import { Chip, Avatar } from 'react-toolbox'
 
 class MoveWithNumber extends React.Component {
 

@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import { Chip } from 'react-toolbox'
 
 import Move from './Move'
+import MoveWithNumber from './MoveWithNumber'
 
 class FullMove extends React.Component {
 
