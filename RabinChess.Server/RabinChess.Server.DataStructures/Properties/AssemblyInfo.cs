@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Microsoft.Owin;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RabinChess.Server.API")]
+[assembly: AssemblyTitle("RabinChess.Server.DataStructures")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RabinChess.Server.API")]
+[assembly: AssemblyProduct("RabinChess.Server.DataStructures")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +20,7 @@ using Microsoft.Owin;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f84e2c5e-1276-4e32-b7fe-eab9755347bd")]
+[assembly: Guid("49ed3b65-a78d-463a-a288-cb995e3bc713")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -30,10 +29,8 @@ using Microsoft.Owin;
 //      Build Number
 //      Revision
 //
-// You can specify all the values or you can default the Revision and Build Numbers 
+// You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-// Additional assemblies
-[assembly: OwinStartup(typeof(RabinChess.Server.API.Startup))]
