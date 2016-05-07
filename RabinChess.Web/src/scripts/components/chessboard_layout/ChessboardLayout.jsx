@@ -25,7 +25,7 @@ export default class ChessboardLayout extends React.Component {
         '[WhiteElo "?"]',
         '[BlackElo "?"]',
         '[PlyCount "82"]',
-        `1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 exd5 5. cxd5 d6 6. Nc3 g6
+        `1. d4 Nf6 2. c4 e6  ( ... d6 3.c5 ) 3. Nf3 c5 4. d5 exd5 5. cxd5 d6 6. Nc3 g6
         7. Nd2 Nbd7 8. e4 Bg7 9. Be2 O-O 10. O-O Re8 11. Qc2 Nh5
         12. Bxh5 gxh5 13. Nc4 Ne5 14. Ne3 Qh4 15. Bd2 Ng4 16. Nxg4
         hxg4 17. Bf4 Qf6 18. g3 Bd7 19. a4 b6 20. Rfe1 a6 21. Re2 b5

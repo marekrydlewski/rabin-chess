@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import ChessJS from 'chess.js'
-
+import { Button } from 'react-toolbox'
 import ChessBoard from './ChessBoard'
 
 
@@ -21,10 +21,21 @@ class SmartChessBoard extends React.Component {
 
     let { pgn } = this.props;
     if (pgn) this.game.load_pgn(pgn.join('\n'));
+    this.game.undo();
+    console.log(this.game.pgn());
 
     this.state = {
       fen: this.game.fen()
     };
+  }
+
+  _undo() {
+    this.game.undo();
+    console.log(this.game.ascii());
+    console.log(this.game.pgn());
+    this.setState({
+      fen: this.game.fen()
+    });
   }
 
   _onDragStart(source, piece, position, orientation) {
@@ -55,15 +66,19 @@ class SmartChessBoard extends React.Component {
   * @returns {ChessBoard} Chessboard with logic
   */
   render () {
+
     return (
-      <ChessBoard
-        fen = { this.state.fen }
-        onlyValid = { true }
-        sparePieces = { false }
-        onDragStart = { this._onDragStart.bind(this) }
-        onDrop = { this._onDrop.bind(this) }
-        onSnapEnd = { this._onSnapEnd.bind(this) }
-      />
+      <div>
+        <Button label='Cofnij' onClick={this._undo.bind(this)}></Button>
+            <ChessBoard
+              fen = { this.state.fen }
+              onlyValid = { true }
+              sparePieces = { false }
+              onDragStart = { this._onDragStart.bind(this) }
+              onDrop = { this._onDrop.bind(this) }
+              onSnapEnd = { this._onSnapEnd.bind(this) }
+            />
+      </div>
     )
   }
 }
