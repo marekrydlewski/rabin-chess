@@ -16,7 +16,10 @@ class MoveWithNumber extends React.Component {
 
   return (
     <Chip>
-      <Avatar title={ number } /><span>{ move }</span>
+      <Avatar title={ number } />
+      <span>
+        { move }
+      </span>
     </Chip>
     )
   }

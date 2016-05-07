@@ -72,7 +72,7 @@ class SmartChessBoard extends React.Component {
     return (
       <div>
         <Button label='Cofnij' onClick={this._undo.bind(this)}></Button>
-        <FullMove number='17' moveWhite='Ne4' moveBlack='Kh7'/>
+        <FullMove number='7' moveWhite='Ne4' moveBlack='Kh7'/>
             <ChessBoard
               fen = { this.state.fen }
               onlyValid = { true }
