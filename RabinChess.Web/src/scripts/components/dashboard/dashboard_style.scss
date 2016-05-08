@@ -1,0 +1,7 @@
+$brdimg: url("../../../assets/border.jpg");
+.container {
+  background-image: $brdimg;
+  margin: auto ;
+  padding : 40px;
+  width: 100%;
+}

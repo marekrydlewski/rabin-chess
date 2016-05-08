@@ -14,7 +14,7 @@ export default class App extends React.Component {
   */
   render() {
     return (
-        <Layout>
+        <Layout route={this.props.routes[this.props.routes.length-1]}>  
           <Favicon url={logo} />
           { this.props.children }
         </Layout>
