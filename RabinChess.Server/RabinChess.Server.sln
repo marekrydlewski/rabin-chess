@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabinChess.Server.Database"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabinChess.Server.API", "RabinChess.Server.API\RabinChess.Server.API.csproj", "{81411047-62C5-46E3-88A4-B16F8688052B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabinChess.Server.DataStructures", "RabinChess.Server.DataStructures\RabinChess.Server.DataStructures.csproj", "{3D934DC5-2D2B-496C-AA69-17BC7A7D07A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{81411047-62C5-46E3-88A4-B16F8688052B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81411047-62C5-46E3-88A4-B16F8688052B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81411047-62C5-46E3-88A4-B16F8688052B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D934DC5-2D2B-496C-AA69-17BC7A7D07A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D934DC5-2D2B-496C-AA69-17BC7A7D07A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D934DC5-2D2B-496C-AA69-17BC7A7D07A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D934DC5-2D2B-496C-AA69-17BC7A7D07A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
