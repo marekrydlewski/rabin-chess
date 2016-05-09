@@ -73,10 +73,7 @@ class SmartChessBoard extends React.Component {
   * @returns {ChessBoard} Chessboard with logic
   */
   render () {
-    console.log(this.props.pgnGame);
-    console.log(this.props.pgnGame.split(' '));
     let moves = this._renderNotation();
-    console.log(moves);
     return (
       <div>
         <ChessBoard
