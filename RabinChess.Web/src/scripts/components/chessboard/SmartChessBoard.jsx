@@ -3,7 +3,7 @@ import ChessJS from 'chess.js'
 import { Button } from 'react-toolbox'
 
 import ChessBoard from './ChessBoard'
-import FullMove from './components/FullMove.jsx'
+import { FullMove, NumberOfMove, Move, Notation } from './components'
 
 
 /**
@@ -61,24 +61,34 @@ class SmartChessBoard extends React.Component {
     });
   }
 
+  _renderNotation() {
+    return this.props.pgnGame.split(' ').map((elem, index) => {
+        if ( index % 3 === 0) return (<NumberOfMove number={ elem } key={ index } />);
+        else return (<Move move= { elem } key={ index } />);
+    });
+  }
+
   /**
   * Renders wrapped chessboard
   * @returns {ChessBoard} Chessboard with logic
   */
   render () {
-
+    console.log(this.props.pgnGame);
+    console.log(this.props.pgnGame.split(' '));
+    let moves = this._renderNotation();
+    console.log(moves);
     return (
       <div>
+        <ChessBoard
+          fen = { this.state.fen }
+          onlyValid = { true }
+          sparePieces = { false }
+          onDragStart = { this._onDragStart.bind(this) }
+          onDrop = { this._onDrop.bind(this) }
+          onSnapEnd = { this._onSnapEnd.bind(this) }
+        />
         <Button label='Cofnij' onClick={this._undo.bind(this)}></Button>
-        <FullMove number='17' moveWhite='Ne4' moveBlack='Kh7'/>
-          <ChessBoard
-            fen = { this.state.fen }
-            onlyValid = { true }
-            sparePieces = { false }
-            onDragStart = { this._onDragStart.bind(this) }
-            onDrop = { this._onDrop.bind(this) }
-            onSnapEnd = { this._onSnapEnd.bind(this) }
-          />
+          { moves }
       </div>
     )
   }
