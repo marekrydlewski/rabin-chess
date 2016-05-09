@@ -23,8 +23,6 @@ class SmartChessBoard extends React.Component {
 
     let { pgnHeaders, pgnGame } = this.props;
     if (pgnGame) this.game.load_pgn( pgnHeaders + pgnGame );
-    this.game.undo();
-    console.log(this.game.pgn());
 
     this.state = {
       fen: this.game.fen()
@@ -72,15 +70,15 @@ class SmartChessBoard extends React.Component {
     return (
       <div>
         <Button label='Cofnij' onClick={this._undo.bind(this)}></Button>
-        <FullMove number='7' moveWhite='Ne4' moveBlack='Kh7'/>
-            <ChessBoard
-              fen = { this.state.fen }
-              onlyValid = { true }
-              sparePieces = { false }
-              onDragStart = { this._onDragStart.bind(this) }
-              onDrop = { this._onDrop.bind(this) }
-              onSnapEnd = { this._onSnapEnd.bind(this) }
-            />
+        <FullMove number='17' moveWhite='Ne4' moveBlack='Kh7'/>
+          <ChessBoard
+            fen = { this.state.fen }
+            onlyValid = { true }
+            sparePieces = { false }
+            onDragStart = { this._onDragStart.bind(this) }
+            onDrop = { this._onDrop.bind(this) }
+            onSnapEnd = { this._onSnapEnd.bind(this) }
+          />
       </div>
     )
   }
