@@ -3,6 +3,9 @@ import { Chip } from 'react-toolbox'
 
 import Move from './Move'
 import MoveWithNumber from './MoveWithNumber'
+import NumberOfMove from './NumberOfMove'
+
+import style from './full_move'
 
 class FullMove extends React.Component {
 
@@ -20,8 +23,9 @@ class FullMove extends React.Component {
   let { moveWhite, moveBlack, number } = this.props;
 
   return (
-      <div>
-        <MoveWithNumber move={ moveWhite } number={ number }/>
+      <div className= { style['move'] }>
+        <NumberOfMove number={ number }/>
+        <Move move={ moveWhite }/>
         <Move move={ moveBlack }/>
       </div>
     )
