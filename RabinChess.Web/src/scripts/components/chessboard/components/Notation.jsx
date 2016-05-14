@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Card, CardText } from 'react-toolbox'
+import {Grid, Row, Col} from 'react-flexbox-grid'
 
 import style from './notation_card'
 
@@ -13,7 +14,11 @@ class Notation extends React.Component {
   return (
     <Card className={style['notes']}>
       <CardText>
-        { this.props.children }
+        <Grid>
+          <Row>
+            { this.props.children }
+          </Row>
+        </Grid>
       </CardText>
     </Card>
     )

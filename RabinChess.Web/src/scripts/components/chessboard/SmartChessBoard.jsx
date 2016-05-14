@@ -68,12 +68,23 @@ class SmartChessBoard extends React.Component {
     });
   }
 
+  _renderNotation2() {
+    let game = this.props.pgnGame.split(' ');
+    let notes = [];
+    for (let i=0; i < game.length; i+=3)
+    {
+      notes.push((<FullMove key={ i } number={ game[i] } moveWhite={ game[i + 1] } moveBlack={ game[i + 2] } />));
+    }
+    return notes;
+  }
+
+
   /**
   * Renders wrapped chessboard
   * @returns {ChessBoard} Chessboard with logic
   */
   render () {
-    let moves = this._renderNotation();
+    let moves = this._renderNotation2();
     return (
       <div>
         <ChessBoard

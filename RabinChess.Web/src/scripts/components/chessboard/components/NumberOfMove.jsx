@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import { Chip } from 'react-toolbox'
 
+import style from './full_move'
+
 class NumberOfMove extends React.Component {
 
   static PropTypes = {
@@ -15,7 +17,7 @@ class NumberOfMove extends React.Component {
   let { number } = this.props;
 
   return (
-    <Chip>
+    <Chip className={style['number']}>
       <strong>
         { number }
       </strong>

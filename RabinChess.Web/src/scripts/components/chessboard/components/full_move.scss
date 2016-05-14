@@ -1,4 +1,13 @@
+@import '../../../../styles/colors';
 
 .move {
+  //background-color: $snowy-white;
+  display: inline-block;
+  margin: 0 5px 0 5px;
+  padding: 5px 10px 5px 10px;
+}
 
+
+.number {
+  margin-right: 7px;
 }
