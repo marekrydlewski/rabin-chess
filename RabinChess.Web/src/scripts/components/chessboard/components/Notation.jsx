@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { Card } from 'react-toolbox'
+import { Card, CardText } from 'react-toolbox'
 
 class Notation extends React.Component {
 
@@ -8,10 +8,11 @@ class Notation extends React.Component {
   }
 
   render() {
-
   return (
     <Card>
-      { this.props.children }
+      <CardText>
+        { this.props.children }
+      </CardText>
     </Card>
     )
   }
