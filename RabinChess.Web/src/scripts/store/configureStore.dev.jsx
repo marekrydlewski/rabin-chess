@@ -13,7 +13,7 @@ const enhancer = compose(
 * @returns Application store
 */
 export default function configureStore(initialState) {
-  const store = createStore(reducer, applyMiddleware(thunk), initialState, enhancer);
+  const store = createStore(reducer, initialState, enhancer, applyMiddleware(thunk));
 
   if (module.hot) {
     module.hot.accept('../reducers', () =>
