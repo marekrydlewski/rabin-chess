@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Microsoft.AspNet.Identity;
 using RabinChess.Server.API.Models;
 using RubinChess.Server.Logic;
 
@@ -13,7 +14,7 @@ namespace RabinChess.Server.API.Controllers
         [HttpGet]
         public List<GameListItemViewModel> Get()
         {
-            return ContextFactory.GetGamesContext().GetGames(1).Cast<GameListItemViewModel>().ToList();
+            return ContextFactory.GetGamesContext().GetGames(User.Identity.GetUserId<int>()).Cast<GameListItemViewModel>().ToList();
         }
     }
 }
