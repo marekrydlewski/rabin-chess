@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 import reducer from '../reducers';
 
 /**
@@ -7,5 +8,5 @@ import reducer from '../reducers';
 * @returns Application store
 */
 export default function configureStore(initialState) {
-  return createStore(reducer, initialState);
+  return createStore(reducer, applyMiddleware(thunk), initialState);
 };
