@@ -3,10 +3,10 @@ import { Chip } from 'react-toolbox'
 
 import style from './full_move'
 
-class Move extends React.Component {
+class NumberOfMove extends React.Component {
 
   static PropTypes = {
-    move: PropTypes.string
+    number: PropTypes.string
   }
 
   constructor(props) {
@@ -14,16 +14,16 @@ class Move extends React.Component {
   }
 
   render() {
-  let { move } = this.props;
+  let { number } = this.props;
 
   return (
-    <Chip>
-      <span>
-        { move }
-      </span>
+    <Chip className={style['number']}>
+      <strong>
+        { number }
+      </strong>
     </Chip>
     )
   }
 }
 
-export default Move
+export default NumberOfMove
