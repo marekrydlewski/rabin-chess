@@ -42,11 +42,12 @@ class LoginDialog extends React.Component{
   */
   render () {
     let divStyle ={
-      backgroundImage: 'url("../../../assets/LOGIN.jpg")'
+      backgroundImage: 'url("../../../assets/LOGINikona.jpg")'
     };
+    let label = 'Login\u00A0\u00A0'
     return (
       <div>
-        <Button style={divStyle} className={style['barButton']}  onClick={this.handleToggle} />
+        <Button style={divStyle} className={style['barButton']} label={label} onClick={this.handleToggle} />
         <Dialog
           actions={this.actions}
           active={this.state.active}

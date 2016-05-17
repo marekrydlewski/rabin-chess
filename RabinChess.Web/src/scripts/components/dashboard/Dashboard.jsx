@@ -1,6 +1,7 @@
 import React from 'react'
 import {browserHistory} from 'react-router'
 import {Button, Link} from 'react-toolbox'
+import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 import Slider from 'react-slick'
 import {Grid, Row, Col} from 'react-flexbox-grid'
 import andrzej from '../../../assets/andrzej.jpg'
@@ -41,7 +42,7 @@ browserHistory.push('/board');
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      centerMode: false,
+      centerMode: true,
       autoplay: true,
       arrows: false,
       pauseOnHover: true,
@@ -53,19 +54,16 @@ browserHistory.push('/board');
     return(
     <div style={divStyle} className={style['content']}>
       <div clasName={style['boxbuttons']}>
-        <div style={borderStyle} className={style['box']} >
-          <div className={style['boxtitle']}>
-            Rabin Chess to super apka
-          </div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident,
-          sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
+        <Card style={borderStyle} className={style['box']}>
+          <CardTitle
+            title="Welcome to Rabin Chess"
+            subtitle="Play now or sign up to get free access to"
+          />
+          <CardText>Game Database </CardText>
+          <CardText>Import/export games from files</CardText>
+          <CardText>Interactive chessboard</CardText>
+          <CardText>and more...</CardText>
+        </Card>
         <div id={style['buttons']}>
           <Login/>
           <Signup/>

@@ -42,12 +42,12 @@ class SignupDialog extends React.Component{
   */
   render () {
     let divStyle ={
-      backgroundImage: 'url("../../../assets/signup.jpg")',
+      backgroundImage: 'url("../../../assets/signinikona.jpg")',
       backgroundPosition: 'center'
     };
     return (
       <div>
-        <Button style={divStyle} className={style['barButton1']}  onClick={this.handleToggle} raised accent/>
+        <Button style={divStyle} className={style['barButton1']} label='Sign up' onClick={this.handleToggle} raised accent/>
         <Dialog
           actions={this.actions}
           active={this.state.active}
