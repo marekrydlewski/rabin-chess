@@ -32,10 +32,6 @@ class LoginDialog extends React.Component{
     this.setState({active: !this.state.active});
   }
 
-  actions = [
-    { label: 'Login', onClick: this.handleToggle, raised: true, active: true},
-  ];
-
   /**
   * Renders Login dialog.
   * @returns {div} Div containing signup dialog
@@ -45,13 +41,12 @@ class LoginDialog extends React.Component{
       <div>
         <Button className={style['barButton']} label='Login' onClick={this.handleToggle}/>
         <Dialog
-          actions={this.actions}
           active={this.state.active}
           onEscKeyDown={this.handleToggle}
           onOverlayClick={this.handleToggle}
           className={style['content']}
         >
-        <Login/>
+        <Login onClick={this.handleToggle}/>
         </Dialog>
       </div>
     );
