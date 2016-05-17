@@ -28,8 +28,8 @@ class ChessBoard extends React.Component {
 
   /**
   * Basic constructor.
-  * @param props Passed properties
-  * @returns New ChessBoard instance
+  * @param {object} props Passed properties
+  * @returns {ChessBoard} New ChessBoard instance
   */
   constructor(props) {
     super(props);
@@ -54,10 +54,18 @@ class ChessBoard extends React.Component {
       };
 
     setTimeout(()=>{
+      /**
+      * @type {object}
+      * @property {BoardJS} chessboard object
+      */
       this.board = BoardJS('board', cfg);
     }, 0);
   }
 
+  /**
+  * Pass props to component
+  * @param {object} nextProps New component props
+  */
   componentWillReceiveProps(nextProps) {
     this.board.position(nextProps.fen);
   }

@@ -7,8 +7,15 @@ import stonoga4 from '../../../assets/stonoga4.jpg'
 import stonoga5 from '../../../assets/stonoga5.jpg'
 
 
-
+/**
+* Main page dashboard
+*/
 export default class Dashboard extends React.Component{
+
+  /**
+  * Renders dashboard
+  * return {div} Div with Slider
+  */
   render() {
     let settings = {
       dots: true,

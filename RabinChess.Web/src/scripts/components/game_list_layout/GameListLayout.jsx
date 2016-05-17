@@ -6,7 +6,14 @@ import style from './game_list_layout'
 
 import SmartGameList from '../game_list/SmartGameList'
 
+/**
+* Grid with list of games
+*/
 class GameListLayout extends React.Component {
+  /**
+  * Renders grid with games list
+  * @return {Grid} List of games
+  */
   render() {
     return (
       <Grid className={style['game_list_grid']}>

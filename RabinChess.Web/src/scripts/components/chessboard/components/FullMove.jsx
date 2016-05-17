@@ -8,6 +8,9 @@ import NumberOfMove from './NumberOfMove'
 
 import style from './full_move'
 
+/**
+* One round with white and black move
+*/
 class FullMove extends React.Component {
 
   static PropTypes = {
@@ -16,10 +19,19 @@ class FullMove extends React.Component {
     number: PropTypes.number
   }
 
+  /**
+  * Basic constructor.
+  * @param {object} props Passed properties
+  * @returns {FullMove} One round with two moves
+  */
   constructor(props) {
     super(props);
   }
 
+  /**
+  * Render round moves
+  * @return {Col} One round moves
+  */
   render() {
   let { moveWhite, moveBlack, number } = this.props;
 
