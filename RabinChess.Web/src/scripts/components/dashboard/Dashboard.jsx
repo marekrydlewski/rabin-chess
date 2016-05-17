@@ -17,17 +17,17 @@ import style from './dashboard_style'
 
 export default class Dashboard extends React.Component{
 
-static contextTypes= {
+  static contextTypes= {
     router: React.PropTypes.object.isRequired
-};
+  };
 
-constructor(props, context) {
-  super(props, context);
-}
+  constructor(props, context) {
+    super(props, context);
+  }
 
-_onClick(){
-browserHistory.push('/board');
-}
+  _onClick(){
+    browserHistory.push('/board');
+  }
 
   render() {
     let divStyle ={
