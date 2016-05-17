@@ -1,7 +1,88 @@
-$brdimg: url("../../../assets/border.jpg");
-.container {
-  background-image: $brdimg;
-  margin: auto ;
+@import '../../../styles/colors';
+$font-size: 16px;
+
+.content {
+  background: url("../../../assets/3.jpg");
+  //background-size: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+.playslider {
+  clear: both;
+}
+
+.slider {
+  margin-left: auto ;
+  margin-right: auto;
   padding : 40px;
+  float: left;
+  position: relative;
   width: 100%;
+  text-align: center;
+  z-index: 5000;
+  display: block;
+  clear: both;
+}
+
+#buttons {
+  width: 20%;
+  float: right;
+  padding: 10px;
+  margin: 10px;
+  margin-top: -15px;
+  margin-right: 10px;
+  padding-right: 10px;
+  //width: 200px;
+}
+
+.box{
+    float: left;
+    min-width: 400px;
+    width: 50%;
+    border: 2px solid ;
+    //border-image: url("../../../assets/border.png") 30 stretch;
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 20%;
+    padding-top: 60px;
+    font-size: $font-size;
+    text-align: justify;
+}
+
+.littleBox{
+    position: absolute;
+    border :2px solid black;
+    top: -2px;
+    left: -2px;
+    width: auto;
+    height: 48px;
+    padding-top: 7px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5*$font-size;
+}
+
+.boxtitle{
+    @extend .littleBox;
+    background: $crimson-red;
+}
+
+#playbutton {
+  width: 170px;
+  margin: 15px;
+}
+
+#playnow {
+  width: 170px;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.sliderimg{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  box-shadow: 10px 10px 5px #888888;
+  z-index: 3;
 }

@@ -62,8 +62,6 @@ class Layout extends React.Component {
   * Renders application layout.
   * @returns {RTLayout} Layout containing header, footer and side menu
   */
-
-
   render() {
     let menu;
     if(this.props.route.path == "board" || this.props.route.component.name == "Dashboard") {
@@ -71,22 +69,21 @@ class Layout extends React.Component {
     } else {
       menu = <IconButton icon='menu' inverse={true} onClick={this.toggleDrawerActive}/>;
     }
-    return (
-      <RTLayout className={style['main']}>
-        <NavDrawer active={this.state.drawerActive} pinned={this.state.drawerPinned} onOverlayClick={this.toggleDrawerActive}>
-          <Grid className={style['menu']}>
-          <Menu/>
-          </Grid>
-        </NavDrawer>
-        <Panel>
-          <AppBar className={style['header']}>{menu}
-            <img className={style['logo']} src={logo} onClick={this.goHome.bind(this)}/>
-            <h1 onClick={this.goHome.bind(this)}>Rabin Chess</h1>
-            <LoginSignupForm/>
-          </AppBar>
-          <div className={style['content']}>
-            { this.props.children }
-          </div>
+  return (
+    <RTLayout className={style['main']}>
+      <NavDrawer active={this.state.drawerActive} pinned={this.state.drawerPinned} onOverlayClick={this.toggleDrawerActive}>
+        <Grid className={style['menu']}>
+        <Menu/>
+        </Grid>
+      </NavDrawer>
+      <Panel>
+        <AppBar className={style['header']}>{menu}
+          <img className={style['logo']} src={logo} onClick={this.goHome.bind(this)}/>
+          <h1 onClick={this.goHome.bind(this)}>Rabin Chess</h1>
+        </AppBar>
+        <div className={style['content']}>
+          { this.props.children }
+        </div>
           <footer className={style['footer']}>
             <h5 className={style['text']}>Software Engineering Project</h5>
           </footer>
