@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
+﻿using System.Linq;
 using Moq;
 using NUnit.Framework;
-using RabinChess.Server.DataStructures;
 using RubinChess.Server.Database;
-using RubinChess.Server.Database.Entities;
-using RubinChess.Server.Logic.Contexts;
 using RubinChess.Server.Logic.Interactions;
 
 namespace RabinChess.Server.Logic.Test
@@ -18,7 +12,7 @@ namespace RabinChess.Server.Logic.Test
         [Test]
         public void ListOfGamesIsRetrieved()
         {
-            var mockGamesSet = TestDataFactory.GetSampleGames();
+            var mockGamesSet = TestDataFactory.GetMockGamesSet();
 
             var mockDbContext = new Mock<RubinChessContext>();
             mockDbContext.Setup(m => m.Games).Returns(mockGamesSet.Object);

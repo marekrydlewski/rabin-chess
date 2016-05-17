@@ -9,7 +9,7 @@ namespace RabinChess.Server.Logic.Test
 {
     public static class TestDataFactory
     {
-        public static Mock<DbSet<Game>> GetSampleGames()
+        public static Mock<DbSet<Game>> GetMockGamesSet()
         {
             var games = new List<Game>
             {
@@ -82,7 +82,7 @@ namespace RabinChess.Server.Logic.Test
             return mockGamesSet;
         }
 
-        public static Mock<DbSet<User>> GetSampleUsers()
+        public static Mock<DbSet<User>> GetMockUsersSet()
         {
             var users = new List<User>
             {
@@ -105,6 +105,18 @@ namespace RabinChess.Server.Logic.Test
             mockUserSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(() => users.GetEnumerator());
 
             return mockUserSet;
+        }
+
+        public static User GetSampleUser()
+        {
+            return new User
+            {
+                Email = "test@test.com",
+                FirstName = "Name",
+                LastName = "Surname",
+                PasswordHash = "1a1dc91c907325c69271ddf0c944bc72",
+                UserName = "User123"
+            };
         }
     }
 }
