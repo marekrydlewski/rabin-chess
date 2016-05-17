@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using Moq;
 using NUnit.Framework;
 using RabinChess.Server.DataStructures;
+using RubinChess.Server.Database;
+using RubinChess.Server.Database.Entities;
 using RubinChess.Server.Logic.Contexts;
 using RubinChess.Server.Logic.Interactions;
 
@@ -14,26 +18,19 @@ namespace RabinChess.Server.Logic.Test
         [Test]
         public void ListOfGamesIsRetrieved()
         {
-            var mockRetriever = new Mock<IGamesRetriever>();
-            mockRetriever.Setup(t => t.GetGames(0))
-                .Returns(new List<GameListItemVM>
-            {
-                new GameListItemVM
-                {
-                    Id = new Guid("11111111-1111-1111-1111-111111111111"),
-                    Name = "Game 1",
-                    Tags = "Man vs. Woman | Some event"
-                },
-                new GameListItemVM
-                {
-                    Id = new Guid("22222222-2222-2222-2222-222222222222"),
-                    Name = "Game 2",
-                    Tags = "Someone vs. noone | None event"
-                }
-            });
+            var mockGamesSet = TestDataFactory.GetSampleGames();
 
-            IGamesContext context = new GamesContext(mockRetriever.Object);
-            Assert.AreEqual(context.GetGames(0).Count, 2);
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Games).Returns(mockGamesSet.Object);
+
+            var gamesRetriever = new GamesRetriever(mockDbContext.Object);
+            var games = gamesRetriever.GetGames(1);
+            
+            Assert.AreEqual(2, games.Count);
+            Assert.Contains("Test1", games.Select(g => g.Name).ToList());
+            Assert.Contains("Test2", games.Select(g => g.Name).ToList());
+            Assert.Contains("Tag1 vs. Tag2 | Tag3", games.Select(g => g.Tags).ToList());
+            Assert.Contains("Tag4 vs. Tag5 | Tag6", games.Select(g => g.Tags).ToList());
         }
     }
 }
