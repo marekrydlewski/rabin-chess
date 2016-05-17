@@ -18,7 +18,7 @@ namespace RubinChess.Server.Logic.Interactions
         public List<GameListItemVM> GetGames(int userId)
         {
             var gameListItems = new List<GameListItemVM>();
-            List<Game> games = _context.Users.FirstOrDefault(user => user.Id == userId).Games;
+            List<Game> games = _context.Games.Where(g => g.UserId == userId).ToList();
             games.ForEach(game => gameListItems.Add(new GameListItemVM{Id = game.Id, Name = game.Name, Tags = TagsStringCreator(game.Tags)}));
             return gameListItems;
         }
