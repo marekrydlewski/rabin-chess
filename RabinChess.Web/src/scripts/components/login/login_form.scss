@@ -1,14 +1,13 @@
+@import '../../../styles/colors';
+
 .content {
   padding: 0;
   min-width: 250px;
-
-  button {
-    width: 100px;
-    margin-right: 15px;
-  }
 }
 
 .input {
+  min-width: 100%;
+
   label {
     font-size: 20px;
     color: rgba(0, 0, 0, 0.6);
@@ -16,6 +15,15 @@
 
   span {
     color: rgba(0, 0, 0, 0.4);
+    &::after, &::before {
+      background-color: $crimson-red;
+    }
+  }
+
+  input:focus {
+    ~ label, ~ span {
+      color: $crimson-red !important;
+    }
   }
 }
 
@@ -23,7 +31,12 @@
   margin-right: 10px;
 }
 
-
 .buttons-grid {
   width: 100%;
+}
+
+.accept-button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
 }
