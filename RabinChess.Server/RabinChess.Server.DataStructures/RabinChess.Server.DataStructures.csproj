@@ -40,7 +40,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameListItemVM.cs" />
+    <Compile Include="GameTagVM.cs" />
+    <Compile Include="GameVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RabinChess.Server.Database\RabinChess.Server.Database.csproj">
+      <Project>{28073fba-2df2-4df6-a519-e4ddff3cded9}</Project>
+      <Name>RabinChess.Server.Database</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

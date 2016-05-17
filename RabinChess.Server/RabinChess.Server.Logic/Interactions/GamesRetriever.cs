@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RabinChess.Server.DataStructures;
 using RubinChess.Server.Database;
@@ -21,6 +22,26 @@ namespace RubinChess.Server.Logic.Interactions
             List<Game> games = _context.Games.Where(g => g.UserId == userId).ToList();
             games.ForEach(game => gameListItems.Add(new GameListItemVM{Id = game.Id, Name = game.Name, Tags = TagsStringCreator(game.Tags)}));
             return gameListItems;
+        }
+
+        public GameVM GetGame(Guid gameId)
+        {
+            return (GameVM) _context.Games.FirstOrDefault(g => g.Id == gameId);
+        }
+
+        public Guid AddGame(GameVM game)
+        {
+            var gameEntity = (Game) game;
+            Game res = _context.Games.Add(gameEntity);
+            _context.SaveChanges();
+            return res.Id;
+        }
+
+        public bool DeleteGame(Guid gameId)
+        {
+            _context.Games.Remove(_context.Games.FirstOrDefault(g => g.Id == gameId));
+            _context.SaveChanges();
+            return true;
         }
 
         private static string TagsStringCreator(List<GameTag> tags)
