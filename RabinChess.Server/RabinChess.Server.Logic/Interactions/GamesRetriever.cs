@@ -8,14 +8,18 @@ namespace RubinChess.Server.Logic.Interactions
 {
     public class GamesRetriever : IGamesRetriever
     {
+        private RubinChessContext _context;
+
+        public GamesRetriever(RubinChessContext context)
+        {
+            _context = context;
+        }
+
         public List<GameListItemVM> GetGames(int userId)
         {
             var gameListItems = new List<GameListItemVM>();
-            using (var ctx = new RubinChessContext())
-            {
-                List<Game> games = ctx.Users.FirstOrDefault(user => user.Id == userId).Games;
-                games.ForEach(game => gameListItems.Add(new GameListItemVM{Id = game.Id, Name = game.Name, Tags = TagsStringCreator(game.Tags)}));
-            }
+            List<Game> games = _context.Users.FirstOrDefault(user => user.Id == userId).Games;
+            games.ForEach(game => gameListItems.Add(new GameListItemVM{Id = game.Id, Name = game.Name, Tags = TagsStringCreator(game.Tags)}));
             return gameListItems;
         }
 

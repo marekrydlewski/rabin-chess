@@ -14,7 +14,7 @@ namespace RabinChess.Server.API.Controllers
         [HttpGet]
         public List<GameListItemViewModel> Get()
         {
-            return ContextFactory.GetGamesContext().GetGames(User.Identity.GetUserId<int>()).Cast<GameListItemViewModel>().ToList();
+            return ContextFactory.GetGamesContext().GetGames(User.Identity.GetUserId<int>()).Select(x => (GameListItemViewModel) x).ToList();
         }
     }
 }
