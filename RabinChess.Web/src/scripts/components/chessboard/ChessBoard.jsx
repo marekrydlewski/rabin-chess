@@ -58,6 +58,10 @@ class ChessBoard extends React.Component {
     }, 0);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.board.position(nextProps.fen);
+  }
+
   _onSnapEnd() {
     this.props.onSnapEnd();
     this.board.position(this.props.fen);

@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react'
 import ChessJS from 'chess.js'
+import { Button } from 'react-toolbox'
 
 import ChessBoard from './ChessBoard'
+import { FullMove, NumberOfMove, Move, Notation } from './components'
 
 
 /**
@@ -19,12 +21,21 @@ class SmartChessBoard extends React.Component {
     super(props);
     this.game = ChessJS();
 
-    let { pgn } = this.props;
-    if (pgn) this.game.load_pgn(pgn.join('\n'));
+    let { pgnHeaders, pgnGame } = this.props;
+    if (pgnGame) this.game.load_pgn( pgnHeaders + pgnGame );
 
     this.state = {
       fen: this.game.fen()
     };
+  }
+
+  _undo() {
+    this.game.undo();
+    console.log(this.game.ascii());
+    console.log(this.game.pgn());
+    this.setState({
+      fen: this.game.fen()
+    });
   }
 
   _onDragStart(source, piece, position, orientation) {
@@ -50,20 +61,45 @@ class SmartChessBoard extends React.Component {
     });
   }
 
+  _renderNotation() {
+    return this.props.pgnGame.split(' ').map((elem, index) => {
+        if ( index % 3 === 0) return (<NumberOfMove number={ elem } key={ index } />);
+        else return (<Move move= { elem } key={ index } />);
+    });
+  }
+
+  _renderNotation2() {
+    let game = this.props.pgnGame.split(' ');
+    let notes = [];
+    for (let i=0; i < game.length; i+=3)
+    {
+      notes.push((<FullMove key={ i } number={ game[i] } moveWhite={ game[i + 1] } moveBlack={ game[i + 2] } />));
+    }
+    return notes;
+  }
+
+
   /**
   * Renders wrapped chessboard
   * @returns {ChessBoard} Chessboard with logic
   */
   render () {
+    let moves = this._renderNotation2();
     return (
-      <ChessBoard
-        fen = { this.state.fen }
-        onlyValid = { true }
-        sparePieces = { false }
-        onDragStart = { this._onDragStart.bind(this) }
-        onDrop = { this._onDrop.bind(this) }
-        onSnapEnd = { this._onSnapEnd.bind(this) }
-      />
+      <div>
+        <ChessBoard
+          fen = { this.state.fen }
+          onlyValid = { true }
+          sparePieces = { false }
+          onDragStart = { this._onDragStart.bind(this) }
+          onDrop = { this._onDrop.bind(this) }
+          onSnapEnd = { this._onSnapEnd.bind(this) }
+        />
+        <Button label='Cofnij' onClick={this._undo.bind(this)}></Button>
+        <Notation>
+          { moves }
+        </Notation>
+      </div>
     )
   }
 }
