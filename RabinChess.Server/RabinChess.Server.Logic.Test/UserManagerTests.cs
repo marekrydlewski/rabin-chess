@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using Moq;
 using NUnit.Framework;
 using RubinChess.Server.Database;
@@ -26,6 +27,90 @@ namespace RabinChess.Server.Logic.Test
             mockDbContext.Verify(m => m.SaveChanges(), Times.Once);
 
             Assert.AreNotEqual(0, userId);
+        }
+
+        [Test]
+        public void UserIsRemoved()
+        {
+            var mockUserSet = TestDataFactory.GetMockUsersSet();
+
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Users).Returns(mockUserSet.Object);
+
+            var userManager = new UserManager(mockDbContext.Object);
+            bool deleted = userManager.DeleteUser(1);
+
+            mockUserSet.Verify(m => m.Remove(It.IsAny<User>()), Times.Once);
+            mockDbContext.Verify(m => m.SaveChanges(), Times.Once);
+
+            Assert.IsTrue(deleted);
+        }
+
+        [Test]
+        public void UserIsUpdated()
+        {
+            var updatedUser = TestDataFactory.GetSampleUser();
+            updatedUser.Id = 1;
+            updatedUser.Games = new List<Game>();
+            updatedUser.FirstName = "OtherName";
+
+            var mockUserSet = TestDataFactory.GetMockUsersSet();
+
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Users).Returns(mockUserSet.Object);
+
+            var userManager = new UserManager(mockDbContext.Object);
+            int userId = userManager.UpdateUser(updatedUser);
+
+            mockDbContext.Verify(m => m.SaveChanges(), Times.Once);
+
+            Assert.AreEqual(1, userId);
+        }
+
+        [Test]
+        [Ignore]
+        public void UserIsRetrievedById()
+        {
+            var mockUserSet = TestDataFactory.GetMockUsersSet();
+            var mockGameSet = TestDataFactory.GetMockGamesSet();
+            var mockTagSet = TestDataFactory.GetMockTagSet();
+
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Users).Returns(mockUserSet.Object);
+            mockDbContext.Setup(m => m.Games).Returns(mockGameSet.Object);
+            mockDbContext.Setup(m => m.GameTags).Returns(mockTagSet.Object);
+
+            var userManager = new UserManager(mockDbContext.Object);
+            var user = userManager.GetUser(1);
+
+            Assert.AreEqual(1, user.Id);
+            Assert.AreEqual("Name", user.FirstName);
+            Assert.AreEqual("Surname", user.LastName);
+            Assert.AreEqual("User123", user.UserName);
+            Assert.AreEqual("test@test.com", user.Email);
+        }
+
+        [Test]
+        [Ignore]
+        public void UserIsRetrievedByName()
+        {
+            var mockUserSet = TestDataFactory.GetMockUsersSet();
+            var mockGameSet = TestDataFactory.GetMockGamesSet();
+            var mockTagSet = TestDataFactory.GetMockTagSet();
+
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Users).Returns(mockUserSet.Object);
+            mockDbContext.Setup(m => m.Games).Returns(mockGameSet.Object);
+            mockDbContext.Setup(m => m.GameTags).Returns(mockTagSet.Object);
+
+            var userManager = new UserManager(mockDbContext.Object);
+            var user = userManager.GetUser("User123");
+
+            Assert.AreEqual(1, user.Id);
+            Assert.AreEqual("Name", user.FirstName);
+            Assert.AreEqual("Surname", user.LastName);
+            Assert.AreEqual("User123", user.UserName);
+            Assert.AreEqual("test@test.com", user.Email);
         }
     }
 }
