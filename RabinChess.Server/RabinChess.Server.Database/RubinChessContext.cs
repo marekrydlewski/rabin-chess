@@ -10,8 +10,8 @@ namespace RubinChess.Server.Database
             System.Data.Entity.Database.SetInitializer(new CreateDatabaseIfNotExists<RubinChessContext>());
         }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Game> Games { get; set; }
-        public DbSet<GameTag> GameTags { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Game> Games { get; set; }
+        public virtual DbSet<GameTag> GameTags { get; set; }
     }
 }

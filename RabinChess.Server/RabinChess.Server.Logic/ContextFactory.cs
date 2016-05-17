@@ -1,4 +1,5 @@
-﻿using RubinChess.Server.Logic.Contexts;
+﻿using RubinChess.Server.Database;
+using RubinChess.Server.Logic.Contexts;
 using RubinChess.Server.Logic.Interactions;
 
 namespace RubinChess.Server.Logic
@@ -11,8 +12,9 @@ namespace RubinChess.Server.Logic
 
         static ContextFactory()
         {
-            GamesContext = new GamesContext(new GamesRetriever());
-            UserContext = new UserContext(new UserManager());
+            var context = new RubinChessContext();
+            GamesContext = new GamesContext(new GamesRetriever(context));
+            UserContext = new UserContext(new UserManager(context));
         }
 
         public static IGamesContext GetGamesContext()
