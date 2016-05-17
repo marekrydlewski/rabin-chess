@@ -177,5 +177,38 @@ namespace RabinChess.Server.Logic.Test
 
             return games;
         }
+
+        public static Game GetSampleGame()
+        {
+            return new Game
+            {
+                Id = new Guid("11111111-1111-1111-1111-111111111111"),
+                Name = "Test1",
+                Tags =
+                    new List<GameTag>
+                    {
+                        new GameTag
+                        {
+                            GameId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Name = "White",
+                            Value = "Tag1"
+                        },
+                        new GameTag
+                        {
+                            GameId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Name = "Black",
+                            Value = "Tag2"
+                        },
+                        new GameTag
+                        {
+                            GameId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Name = "Event",
+                            Value = "Tag3"
+                        }
+                    },
+                GameNotation = "",
+                UserId = 1
+            };
+        }
     }
 }

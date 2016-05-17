@@ -83,7 +83,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="GameListTests.cs" />
+    <Compile Include="GameRetrieverTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestDataFactory.cs" />
     <Compile Include="UserManagerTests.cs" />
