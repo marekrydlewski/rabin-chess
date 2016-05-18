@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using RabinChess.Server.DataStructures;
 using RubinChess.Server.Database;
@@ -39,17 +40,31 @@ namespace RubinChess.Server.Logic.Interactions
 
         public bool DeleteGame(Guid gameId)
         {
-            _context.Games.Remove(_context.Games.FirstOrDefault(g => g.Id == gameId));
+            var game = _context.Games.FirstOrDefault(g => g.Id == gameId);
+
+            if (game == null)
+                return false;
+
+            _context.Games.Remove(game);
             _context.SaveChanges();
+
             return true;
         }
 
         public static string TagsStringCreator(List<GameTag> tags)
         {
             string tagsString = string.Empty;
+
+            if (tags.Count == 0)
+                return "This game has no tags. Click \"Edit\" to add some!";
+
             var white = tags.FirstOrDefault(tag => tag.Name == "White");
             var black = tags.FirstOrDefault(tag => tag.Name == "Black");
             var ev = tags.FirstOrDefault(tag => tag.Name == "Event");
+
+            if (white == null && black == null && ev == null)
+                return "Click \"View\" to see tags!";
+
             tagsString += white != null ? white.Value : "?";
             tagsString += " vs. ";
             tagsString += black != null ? black.Value : "?";

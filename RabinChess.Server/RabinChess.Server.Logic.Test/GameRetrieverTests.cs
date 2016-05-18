@@ -84,6 +84,46 @@ namespace RabinChess.Server.Logic.Test
         }
 
         [Test]
+        public void NonExistingGameIsRetrieved()
+        {
+            var mockGameSet = TestDataFactory.GetMockGamesSet();
+
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Games).Returns(mockGameSet.Object);
+
+            var gamesRetriever = new GamesRetriever(mockDbContext.Object);
+            Assert.Throws<System.NullReferenceException>(() => gamesRetriever.GetGame(new Guid("11111111-1111-1231-1111-111111111111")));
+        }
+
+        [Test]
+        public void NonExistingGameIsDeleted()
+        {
+            var mockGameSet = TestDataFactory.GetMockGamesSet();
+
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Games).Returns(mockGameSet.Object);
+
+            var gamesRetriever = new GamesRetriever(mockDbContext.Object);
+            bool result = gamesRetriever.DeleteGame(new Guid("11111111-1231-1111-1111-111111111111"));
+
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void EmptyListOfGamesIsRetrieved()
+        {
+            var mockGamesSet = TestDataFactory.GetMockGamesSet();
+
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Games).Returns(mockGamesSet.Object);
+
+            var gamesRetriever = new GamesRetriever(mockDbContext.Object);
+            var games = gamesRetriever.GetGames(2);
+
+            Assert.AreEqual(0, games.Count);
+        }
+
+        [Test]
         public void TagSubtitleIsCreatedProperly()
         {
             List<GameTag> tags = new List<GameTag>
@@ -153,15 +193,35 @@ namespace RabinChess.Server.Logic.Test
         }
 
         [Test]
-        public void NonExistingGameIsRetrieved()
+        public void TagSubtitleIsCreatedProperlyIfNoRequiredTagsPresent()
         {
-            var mockGameSet = TestDataFactory.GetMockGamesSet();
+            List<GameTag> tags = new List<GameTag>
+            {
+                new GameTag
+                {
+                    Name = "Elo",
+                    Value = "250"
+                },
+                new GameTag
+                {
+                    Name = "SomeTag",
+                    Value = "Lawl"
+                }
+            };
 
-            var mockDbContext = new Mock<RubinChessContext>();
-            mockDbContext.Setup(m => m.Games).Returns(mockGameSet.Object);
+            var tagSub = GamesRetriever.TagsStringCreator(tags);
 
-            var gamesRetriever = new GamesRetriever(mockDbContext.Object);
-            Assert.Throws<System.NullReferenceException>(() => gamesRetriever.GetGame(new Guid("11111111-1111-1231-1111-111111111111")));
+            Assert.AreEqual("Click \"View\" to see tags!", tagSub);
+        }
+
+        [Test]
+        public void TagsSubtitleIsCreatedProperlyIfNoTagsPresent()
+        {
+            List<GameTag> tags = new List<GameTag>();
+
+            var tagSub = GamesRetriever.TagsStringCreator(tags);
+
+            Assert.AreEqual("This game has no tags. Click \"Edit\" to add some!", tagSub);
         }
     }
 }

@@ -138,7 +138,7 @@ namespace RabinChess.Server.Logic.Test
         }
 
         [Test]
-        public void DeleteUserWithNonExistingId()
+        public void DeleteNonExistingUser()
         {
             var mockUserSet = TestDataFactory.GetMockUsersSet();
 
