@@ -51,6 +51,15 @@
     <Compile Include="Entities\Game.cs" />
     <Compile Include="Entities\GameTag.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Migrations\201605031506553_InitialCreate.cs" />
+    <Compile Include="Migrations\201605031506553_InitialCreate.Designer.cs">
+      <DependentUpon>201605031506553_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605171858497_UserIdAutoGenerate.cs" />
+    <Compile Include="Migrations\201605171858497_UserIdAutoGenerate.Designer.cs">
+      <DependentUpon>201605171858497_UserIdAutoGenerate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RubinChessContext.cs" />
   </ItemGroup>
@@ -61,6 +70,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605031506553_InitialCreate.resx">
+      <DependentUpon>201605031506553_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605171858497_UserIdAutoGenerate.resx">
+      <DependentUpon>201605171858497_UserIdAutoGenerate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

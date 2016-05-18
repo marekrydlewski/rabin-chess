@@ -25,7 +25,10 @@ namespace RubinChess.Server.Logic.Interactions
 
         public bool DeleteUser(int userId)
         {
-            _context.Users.Remove(_context.Users.FirstOrDefault(user => user.Id == userId));
+            var userToDelete = _context.Users.FirstOrDefault(user => user.Id == userId);
+            if (userToDelete == null)
+                return false;
+            _context.Users.Remove(userToDelete);
             _context.SaveChanges();
             
             return true;
