@@ -5,6 +5,9 @@ import {Button as RButton} from 'react-toolbox';
 
 import style from './button.scss';
 
+/**
+* Custom button
+*/
 export default class Button extends Component {
 
   static PropTypes = {
@@ -12,6 +15,10 @@ export default class Button extends Component {
     label: PropTypes.string
   }
 
+  /**
+  * Renders custom button
+  * @return {RButton} Button with custom style
+  */
   render() {
     let { label, className, ...other } = this.props;
     let buttonStyle = classnames(style['button'], className);

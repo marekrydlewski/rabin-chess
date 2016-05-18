@@ -11,19 +11,26 @@ import { FullMove, NumberOfMove, Move, Notation } from './components'
 */
 class SmartChessBoard extends React.Component {
 
-
   /**
   * Basic constructor.
-  * @param props Passed properties
-  * @returns New SmartChessBoard instance
+  * @param {object} props Passed properties
+  * @returns {SmartChessBoard} New SmartChessBoard instance
   */
   constructor(props) {
     super(props);
+    /**
+    * @type {object}
+    * @property {ChessJS} chessboard object
+    */
     this.game = ChessJS();
 
     let { pgnHeaders, pgnGame } = this.props;
     if (pgnGame) this.game.load_pgn( pgnHeaders + pgnGame );
 
+    /**
+    * @type {object}
+    * @property {string} fen Game notation
+    */
     this.state = {
       fen: this.game.fen()
     };
@@ -77,7 +84,6 @@ class SmartChessBoard extends React.Component {
     }
     return notes;
   }
-
 
   /**
   * Renders wrapped chessboard

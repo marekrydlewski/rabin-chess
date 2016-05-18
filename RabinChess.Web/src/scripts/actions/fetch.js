@@ -17,6 +17,9 @@ function getInitFetch(method, body, token) {
   return initFetch;
 }
 
+/**
+* Fetch data from api
+*/
 export function fetchData(dispatch, url) {
   const initFetch = getInitFetch(method, body, token);
   let status;

@@ -5,11 +5,23 @@ import style from './game_list'
 
 import GameListItem from './GameListItem'
 
+/**
+* List of user games
+*/
 class GameList extends React.Component {
 
+  /**
+  * Basic constructor.
+  * @param {object} props Passed properties
+  * @returns {GameList} List of games
+  */
   constructor(props) {
     super(props);
 
+    /**
+    * @type {object}
+    * @property {GameListItem} User games
+    */
     this.state = {
       games: props.games
     }
@@ -19,6 +31,10 @@ class GameList extends React.Component {
     games: PropTypes.arrayOf(PropTypes.object).isRequired
   }
 
+  /**
+  * Renders user games List
+  * @return {List} List of games
+  */
   render() {
     let {games} = this.props;
     let gameListItems = games.map((game, i) => {
