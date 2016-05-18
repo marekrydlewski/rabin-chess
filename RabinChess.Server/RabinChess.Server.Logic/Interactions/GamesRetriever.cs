@@ -44,15 +44,17 @@ namespace RubinChess.Server.Logic.Interactions
             return true;
         }
 
-        private static string TagsStringCreator(List<GameTag> tags)
+        public static string TagsStringCreator(List<GameTag> tags)
         {
             string tagsString = string.Empty;
-
-            tagsString += tags.FirstOrDefault(tag => tag.Name == "White").Value;
+            var white = tags.FirstOrDefault(tag => tag.Name == "White");
+            var black = tags.FirstOrDefault(tag => tag.Name == "Black");
+            var ev = tags.FirstOrDefault(tag => tag.Name == "Event");
+            tagsString += white != null ? white.Value : "?";
             tagsString += " vs. ";
-            tagsString += tags.FirstOrDefault(tag => tag.Name == "Black").Value;
+            tagsString += black != null ? black.Value : "?";
             tagsString += " | ";
-            tagsString += tags.FirstOrDefault(tag => tag.Name == "Event").Value;
+            tagsString += ev != null ? ev.Value : "?";
 
             return tagsString;
         }

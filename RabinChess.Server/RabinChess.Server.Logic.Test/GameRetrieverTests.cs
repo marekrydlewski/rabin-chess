@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using Moq;
@@ -80,6 +81,87 @@ namespace RabinChess.Server.Logic.Test
             mockDbContext.Verify(m => m.SaveChanges(), Times.Once);
 
             Assert.IsNotNull(id);
+        }
+
+        [Test]
+        public void TagSubtitleIsCreatedProperly()
+        {
+            List<GameTag> tags = new List<GameTag>
+            {
+                new GameTag
+                {
+                    Name = "Elo",
+                    Value = "250"
+                },
+                new GameTag
+                {
+                    Name = "Black",
+                    Value = "Black"
+                },
+                new GameTag
+                {
+                    Name = "Event",
+                    Value = "Event"
+                },
+                new GameTag
+                {
+                    Name = "SomeTag",
+                    Value = "Lawl"
+                },
+                new GameTag
+                {
+                    Name = "White",
+                    Value = "White"
+                }
+            };
+
+            var tagSub = GamesRetriever.TagsStringCreator(tags);
+
+            Assert.AreEqual("White vs. Black | Event", tagSub);
+        }
+
+        [Test]
+        public void TagSubtitleIsCreatedProperlyIfNotAllTagsPresent()
+        {
+            List<GameTag> tags = new List<GameTag>
+            {
+                new GameTag
+                {
+                    Name = "Elo",
+                    Value = "250"
+                },
+                new GameTag
+                {
+                    Name = "Event",
+                    Value = "Event"
+                },
+                new GameTag
+                {
+                    Name = "SomeTag",
+                    Value = "Lawl"
+                },
+                new GameTag
+                {
+                    Name = "White",
+                    Value = "White"
+                }
+            };
+
+            var tagSub = GamesRetriever.TagsStringCreator(tags);
+
+            Assert.AreEqual("White vs. ? | Event", tagSub);
+        }
+
+        [Test]
+        public void NonExistingGameIsRetrieved()
+        {
+            var mockGameSet = TestDataFactory.GetMockGamesSet();
+
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Games).Returns(mockGameSet.Object);
+
+            var gamesRetriever = new GamesRetriever(mockDbContext.Object);
+            Assert.Throws<System.NullReferenceException>(() => gamesRetriever.GetGame(new Guid("11111111-1111-1231-1111-111111111111")));
         }
     }
 }

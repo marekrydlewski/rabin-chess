@@ -112,5 +112,58 @@ namespace RabinChess.Server.Logic.Test
             Assert.AreEqual("User123", user.UserName);
             Assert.AreEqual("test@test.com", user.Email);
         }
+
+        [Test]
+        public void GetUserWithNonExistingId()
+        {
+            var mockUserSet = TestDataFactory.GetMockUsersSet();
+
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Users).Returns(mockUserSet.Object);
+
+            var userManager = new UserManager(mockDbContext.Object);
+            Assert.Throws<System.ArgumentNullException>(() => userManager.GetUser(8));
+        }
+
+        [Test]
+        public void GetUserWithNonExistingName()
+        {
+            var mockUserSet = TestDataFactory.GetMockUsersSet();
+
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Users).Returns(mockUserSet.Object);
+
+            var userManager = new UserManager(mockDbContext.Object);
+            Assert.Throws<System.ArgumentNullException>(() => userManager.GetUser("Hahahah"));
+        }
+
+        [Test]
+        public void DeleteUserWithNonExistingId()
+        {
+            var mockUserSet = TestDataFactory.GetMockUsersSet();
+
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Users).Returns(mockUserSet.Object);
+
+            var userManager = new UserManager(mockDbContext.Object);
+            bool result = userManager.DeleteUser(8);
+
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void UpdateNonExistingUser()
+        {
+            var userToUpdate = TestDataFactory.GetSampleUser();
+            userToUpdate.Id = 17;
+
+            var mockUserSet = TestDataFactory.GetMockUsersSet();
+
+            var mockDbContext = new Mock<RubinChessContext>();
+            mockDbContext.Setup(m => m.Users).Returns(mockUserSet.Object);
+
+            var userManager = new UserManager(mockDbContext.Object);
+            Assert.Throws<System.NullReferenceException>(() => userManager.UpdateUser(userToUpdate));
+        }
     }
 }
