@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react'
-import { CardMedia, Button, Input  } from 'react-toolbox';
+import { CardMedia, Input  } from 'react-toolbox';
+import { Button } from '../ui'
+import { Grid, Row, Col} from 'react-flexbox-grid'
 
 import style from './login_form'
 
@@ -33,6 +35,7 @@ class Signup extends React.Component {
     * @property {string} password User password
     */
     this.state = { firstname: '', surname: '', email: '', username: '', password: '' };
+
   }
 
   handleChange = (name, value) => {
@@ -47,11 +50,12 @@ class Signup extends React.Component {
     return (
         <CardMedia>
           <section className={style['content']}>
-              <Input className={style['input']} type='text' label='First name' value={this.state.firstname} onChange={this.handleChange.bind(this, 'firstname')}/>
-              <Input className={style['input']} type='text' label='Surname' value={this.state.surname} onChange={this.handleChange.bind(this, 'surname')}/>
+              <Input className={style['input']} type='text' label='First name' icon='title' required value={this.state.firstname} onChange={this.handleChange.bind(this, 'firstname')}/>
+              <Input className={style['input']} type='text' label='Surname' icon='title' value={this.state.surname} onChange={this.handleChange.bind(this, 'surname')}/>
               <Input className={style['input']} type='email' label='Email' icon='email' value={this.state.email} onChange={this.handleChange.bind(this, 'email')}/>
-              <Input className={style['input']} type='text' label='Username' icon='person' value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
-              <Input className={style['input']} type='password' label='Password' icon='lock' value={this.state.password} onChange={this.handleChange.bind(this, 'password')}/>
+              <Input className={style['input']} type='text' label='Username' icon='person' required value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
+              <Input className={style['input']} type='password' label='Password' icon='lock' required value={this.state.password} onChange={this.handleChange.bind(this, 'password')}/>
+              <Row><Col className={style['accept-button']}><Button label='Sign up' onClick={this.props.onClick}/></Col></Row>
           </section>
         </CardMedia>
     )

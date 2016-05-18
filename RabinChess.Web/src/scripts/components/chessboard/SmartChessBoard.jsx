@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import ChessJS from 'chess.js'
-import { Button } from 'react-toolbox'
+import { Button } from '.././ui'
 
 import ChessBoard from './ChessBoard'
 import { FullMove, NumberOfMove, Move, Notation } from './components'

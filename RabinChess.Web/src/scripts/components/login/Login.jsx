@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react'
-import { CardMedia, Button, Input } from 'react-toolbox'
+import { CardMedia, Input } from 'react-toolbox'
+import { Button } from '../ui'
+import { Grid, Row, Col} from 'react-flexbox-grid'
 
 import style from './login_form'
 
@@ -44,8 +46,9 @@ class Login extends React.Component {
     return (
         <CardMedia>
           <section className={style['content']}>
-              <Input className={style['input']} type='text' label='Username' icon='person' value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
-              <Input className={style['input']} type='password' label='Password' icon='lock' value={this.state.password} onChange={this.handleChange.bind(this, 'password')}/>
+            <Input className={style['input']} type='text' label='Username' icon='person' value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
+            <Input className={style['input']} type='password' label='Password' icon='lock' value={this.state.password} onChange={this.handleChange.bind(this, 'password')}/>
+            <Row><Col className={style['accept-button']}><Button label='Login' onClick={this.props.onClick}/></Col></Row>
           </section>
         </CardMedia>
     )

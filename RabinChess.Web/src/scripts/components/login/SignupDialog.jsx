@@ -32,10 +32,6 @@ class SignupDialog extends React.Component{
     this.setState({active: !this.state.active});
   }
 
-  actions = [
-    { label: 'Sign up', onClick: this.handleToggle, raised: true, active: true},
-  ];
-
   /**
   * Renders Signup dialog.
   * @returns {div} Div containing signup dialog
@@ -43,15 +39,14 @@ class SignupDialog extends React.Component{
   render () {
     return (
       <div>
-        <Button className={style['barButton']} label='Sign up' onClick={this.handleToggle} raised accent/>
+        <Button  className={style['barButton']} label='Sign up' onClick={this.handleToggle}/>
         <Dialog
-          actions={this.actions}
           active={this.state.active}
           onEscKeyDown={this.handleToggle}
           onOverlayClick={this.handleToggle}
           className={style['content']}
         >
-        <Signup/>
+        <Signup onClick={this.handleToggle}/>
         </Dialog>
       </div>
     );
