@@ -1,6 +1,10 @@
 .chessboard {
   width: 550px;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: content-box;
+  display: inline-block;
+  margin: 50px;
+}
+
+.notation {
+  display: inline-block;
+  max-width: 880px;
 }

@@ -4,6 +4,7 @@ import { Button } from '.././ui'
 
 import ChessBoard from './ChessBoard'
 import { FullMove, NumberOfMove, Move, Notation } from './components'
+import style from './chess_board'
 
 
 /**
@@ -125,11 +126,11 @@ class SmartChessBoard extends React.Component {
           onDrop = { this._onDrop.bind(this) }
           onSnapEnd = { this._onSnapEnd.bind(this) }
         />
-        <Button label='Cofnij' onClick={this._undo.bind(this)}></Button>
-        <Button label='Do przodu' onClick={this._next.bind(this)}></Button>
-        <Notation>
+        <Notation className={style['notation']}>
           { moves }
         </Notation>
+        <Button label='Cofnij' onClick={this._undo.bind(this)}></Button>
+        <Button label='Do przodu' onClick={this._next.bind(this)}></Button>
       </div>
     )
   }
