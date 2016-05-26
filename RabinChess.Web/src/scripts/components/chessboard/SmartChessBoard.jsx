@@ -47,16 +47,25 @@ class SmartChessBoard extends React.Component {
   _next() {
     let { pgnGame } = this.props;
     let fen = this.game.fen();
-    console.log(fen);
-    let moveNumber = fen.slice(fen.lastIndexOf(' ') + 1);
-    console.log(moveNumber);
-    let whiteOrBlack = fen.search(' b ');
-    if (whiteOrBlack == -1) whiteOrBlack = fen.search(' w ');
-    if (whiteOrBlack == -1) { console.log('Cos sie popsulo - error when parsing fen'); return; }
-    console.log(whiteOrBlack);
-    console.log(pgnGame);
-    let move = pgnGame.search(` ${moveNumber}.`);
-    console.log(move);
+    let whiteToMove = true;
+    if (fen.search(' b ') != -1)
+      whiteToMove = false;
+    else if (fen.search(' w ') != -1)
+      whiteToMove = true;
+
+    let moveString = ` ${fen.slice(fen.lastIndexOf(' ') + 1)}.`;
+    let move = pgnGame.search(moveString) + moveString.length + 1;
+    let endOfMove = pgnGame.indexOf(' ', move);
+    let foundMove = pgnGame.slice(move, endOfMove);
+    if (!whiteToMove) {
+      move = endOfMove + 1;
+      endOfMove = pgnGame.indexOf(' ', move);
+      foundMove = pgnGame.slice(move, endOfMove);
+    }
+    this.game.move(foundMove);
+    this.setState({
+      fen: this.game.fen()
+    });
   }
 
   _onDragStart(source, piece, position, orientation) {
