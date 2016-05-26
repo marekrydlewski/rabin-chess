@@ -126,8 +126,8 @@ class SmartChessBoard extends React.Component {
             onSnapEnd = { this._onSnapEnd.bind(this) }
           />
         <div className={style['buttons']}>
-          <Button label='Cofnij' onClick={this._undo.bind(this)}></Button>
-          <Button label='Do przodu' onClick={this._next.bind(this)}></Button>
+          <Button label='Back' onClick={this._undo.bind(this)}></Button>
+          <Button label='Next' onClick={this._next.bind(this)}></Button>
         </div>
         </div>
         <Notation className={style['notation']}>
