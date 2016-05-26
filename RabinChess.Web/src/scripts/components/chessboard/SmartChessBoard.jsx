@@ -117,20 +117,24 @@ class SmartChessBoard extends React.Component {
   render () {
     let moves = this._renderNotation2();
     return (
-      <div>
-        <ChessBoard
-          fen = { this.state.fen }
-          onlyValid = { true }
-          sparePieces = { false }
-          onDragStart = { this._onDragStart.bind(this) }
-          onDrop = { this._onDrop.bind(this) }
-          onSnapEnd = { this._onSnapEnd.bind(this) }
-        />
+      <div className={style['wrapper']}>
+        <div className={style['chessboard-wrapper']}>
+          <ChessBoard
+            fen = { this.state.fen }
+            onlyValid = { true }
+            sparePieces = { false }
+            onDragStart = { this._onDragStart.bind(this) }
+            onDrop = { this._onDrop.bind(this) }
+            onSnapEnd = { this._onSnapEnd.bind(this) }
+          />
+        <div className={style['buttons']}>
+          <Button label='Cofnij' onClick={this._undo.bind(this)}></Button>
+          <Button label='Do przodu' onClick={this._next.bind(this)}></Button>
+        </div>
+        </div>
         <Notation className={style['notation']}>
           { moves }
         </Notation>
-        <Button label='Cofnij' onClick={this._undo.bind(this)}></Button>
-        <Button label='Do przodu' onClick={this._next.bind(this)}></Button>
       </div>
     )
   }
