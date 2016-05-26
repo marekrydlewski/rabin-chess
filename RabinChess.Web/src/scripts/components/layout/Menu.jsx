@@ -2,13 +2,15 @@ import React from 'react'
 import {Drawer, Button} from 'react-toolbox'
 import {Grid, Row} from 'react-flexbox-grid'
 
-import style from './main_layout';
+import style from './main_layout'
 
 const menuElements = [
   { name: 'Home',       path: '/' },
+  { name: 'Your games', path: '/games'},
   { name: 'Chessboard', path: '/board' },
-  { name: 'Docs',       path: '/docs' }
+  { name: 'Test',       path: '/test-page' }
 ];
+
 /**
 * Side menu containig links to subpages
 */
@@ -23,8 +25,8 @@ class Menu extends React.Component {
 
   /**
   * Basic constructor.
-  * @param props Passed properties
-  * @param context Application context
+  * @param {object} props Passed properties
+  * @param {object} context Application context
   * @returns {Menu} New Menu instance
   */
   constructor(props, context) {
@@ -35,7 +37,7 @@ class Menu extends React.Component {
   * Routes to pointed path.
   * @param {string} path Path to route to
   */
-  goPage(path) {
+  _goPage(path) {
     this.context.router.push(path);
   }
 
@@ -44,11 +46,11 @@ class Menu extends React.Component {
   * @returns {div} Div containing menu
   */
   render() {
-    let rows = menuElements.map((elem) => {
+    let rows = menuElements.map((elem, i) => {
               return (
-                <Row>
-                  <Button className={style['menuItem']} onClick={this.goPage.bind(this, elem.path)}><p>{ elem.name }</p></Button>
-                </Row>)});
+                <div className={style['menuItem']} key={i}>
+                  <Button onClick={this._goPage.bind(this, elem.path)} label={ elem.name } flat/>
+                </div>)});
     return (
       <div>
         { rows }

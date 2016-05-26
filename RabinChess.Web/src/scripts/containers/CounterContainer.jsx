@@ -16,6 +16,11 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+/**
+* @type {object}
+* @property {object} mapStateToProps Counter state
+* @property {object} mapDispatchToProps Incremented counter
+*/
 const CounterContainer = connect(
   mapStateToProps,
   mapDispatchToProps
