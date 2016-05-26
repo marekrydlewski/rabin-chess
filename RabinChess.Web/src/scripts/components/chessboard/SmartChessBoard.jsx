@@ -39,7 +39,6 @@ class SmartChessBoard extends React.Component {
 
   _undo() {
     this.game.undo();
-    console.log(this.game.fen());
     this.setState({
       fen: this.game.fen()
     });
@@ -87,7 +86,6 @@ class SmartChessBoard extends React.Component {
   }
 
   _onSnapEnd() {
-    console.log(this.game.fen());
     this.setState({
       fen: this.game.fen()
     });
