@@ -38,11 +38,25 @@ class SmartChessBoard extends React.Component {
 
   _undo() {
     this.game.undo();
-    console.log(this.game.ascii());
-    console.log(this.game.pgn());
+    console.log(this.game.fen());
     this.setState({
       fen: this.game.fen()
     });
+  }
+
+  _next() {
+    let { pgnGame } = this.props;
+    let fen = this.game.fen();
+    console.log(fen);
+    let moveNumber = fen.slice(fen.lastIndexOf(' ') + 1);
+    console.log(moveNumber);
+    let whiteOrBlack = fen.search(' b ');
+    if (whiteOrBlack == -1) whiteOrBlack = fen.search(' w ');
+    if (whiteOrBlack == -1) { console.log('Cos sie popsulo - error when parsing fen'); return; }
+    console.log(whiteOrBlack);
+    console.log(pgnGame);
+    let move = pgnGame.search(` ${moveNumber}.`);
+    console.log(move);
   }
 
   _onDragStart(source, piece, position, orientation) {
@@ -63,6 +77,7 @@ class SmartChessBoard extends React.Component {
   }
 
   _onSnapEnd() {
+    console.log(this.game.fen());
     this.setState({
       fen: this.game.fen()
     });
@@ -102,6 +117,7 @@ class SmartChessBoard extends React.Component {
           onSnapEnd = { this._onSnapEnd.bind(this) }
         />
         <Button label='Cofnij' onClick={this._undo.bind(this)}></Button>
+        <Button label='Do przodu' onClick={this._next.bind(this)}></Button>
         <Notation>
           { moves }
         </Notation>
