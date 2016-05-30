@@ -1,6 +1,24 @@
 .chessboard {
   width: 550px;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: content-box;
+  margin: 50px;
+}
+
+.wrapper {
+  text-align: center;
+
+  .notation {
+    display: inline-block;
+    max-width: 880px;
+  }
+
+  .chessboard-wrapper {
+    display: inline-block;
+    .buttons {
+      margin: 0 auto;
+      text-align: center;
+      button {
+        margin: 0 10px 0 10px;
+      }
+    }
+  }
 }
