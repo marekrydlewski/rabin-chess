@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import ChessJS from 'chess.js'
 import { Button } from '.././ui'
 import { Tabs, Tab } from 'react-toolbox'
+import FileSaver from 'file-saver'
 import ChessBoard from './ChessBoard'
 import { FullMove, NumberOfMove, Move, Notation } from './components'
 import style from './chess_board'
@@ -70,6 +71,11 @@ class SmartChessBoard extends React.Component {
     });
   }
 
+  _exportToFile() {
+    let blob = new Blob([this.game.pgn()], {type: 'text/plain;charset=utf-8'});
+    FileSaver.saveAs(blob, 'my_game.pgn');
+  }
+
   _onDragStart(source, piece, position, orientation) {
     if (this.game.game_over() === true ||
       (this.game.turn() === 'w' && piece.search(/^b/) !== -1) ||
@@ -135,6 +141,7 @@ class SmartChessBoard extends React.Component {
         <div className={style['buttons']}>
           <Button label='Back' onClick={this._undo.bind(this)}></Button>
           <Button label='Next' onClick={this._next.bind(this)}></Button>
+          <Button label='Export to file' onClick={this._exportToFile.bind(this)}></Button>
         </div>
         </div>
         <Tabs index={ this.state.index } onChange={ this.handleTabChange.bind(this) } className={style['tabs']}>
