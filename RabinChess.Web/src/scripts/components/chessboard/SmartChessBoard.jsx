@@ -137,7 +137,7 @@ class SmartChessBoard extends React.Component {
           <Button label='Next' onClick={this._next.bind(this)}></Button>
         </div>
         </div>
-        <Tabs index={ this.state.index } onChange={ this.handleTabChange.bind(this) }>
+        <Tabs index={ this.state.index } onChange={ this.handleTabChange.bind(this) } className={style['tabs']}>
           <Tab label='Source'>
             <Notation className={style['notation']}>
               { moves }
