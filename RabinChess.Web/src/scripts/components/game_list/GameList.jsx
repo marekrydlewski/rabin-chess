@@ -31,6 +31,9 @@ class GameList extends React.Component {
     games: PropTypes.arrayOf(PropTypes.object).isRequired
   }
 
+  editTagsHandler() {
+    console.log('edited xD');
+  }
   /**
   * Renders user games List
   * @return {List} List of games
@@ -39,7 +42,7 @@ class GameList extends React.Component {
     let {games} = this.props;
     let gameListItems = games.map((game, i) => {
       return (
-        <GameListItem key={i} title={game.title} tags={game.tags} gameId={game.id} />
+        <GameListItem key={i} title={game.title} tags={game.tags} gameId={game.id} editTagsHandler={this.editTagsHandler.bind(this)}/>
       )
     })
     return (
