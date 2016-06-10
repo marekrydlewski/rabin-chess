@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import ChessJS from 'chess.js'
 import { Button } from '.././ui'
-
+import { Tabs, Tab } from 'react-toolbox'
 import ChessBoard from './ChessBoard'
 import { FullMove, NumberOfMove, Move, Notation } from './components'
 import style from './chess_board'
@@ -33,7 +33,8 @@ class SmartChessBoard extends React.Component {
     * @property {string} fen Game notation
     */
     this.state = {
-      fen: this.game.fen()
+      fen: this.game.fen(),
+      index: 0
     };
   }
 
@@ -42,6 +43,7 @@ class SmartChessBoard extends React.Component {
     this.setState({
       fen: this.game.fen()
     });
+    console.log(this.game.pgn());
   }
 
   _next() {
@@ -98,8 +100,7 @@ class SmartChessBoard extends React.Component {
     });
   }
 
-  _renderNotation2() {
-    let game = this.props.pgnGame.split(' ');
+  _renderNotation2(game) {
     let notes = [];
     for (let i=0; i < game.length; i+=3)
     {
@@ -108,12 +109,18 @@ class SmartChessBoard extends React.Component {
     return notes;
   }
 
+  handleTabChange = (index) => {
+    this.setState({index});
+  };
+
   /**
   * Renders wrapped chessboard
   * @returns {ChessBoard} Chessboard with logic
   */
   render () {
-    let moves = this._renderNotation2();
+    let moves = this._renderNotation2( this.props.pgnGame.split(' '));
+    let editedMoves = this._renderNotation2( this.game.pgn().replace(/(\[.*?\]?\n)/g, '').split(' '));
+
     return (
       <div className={style['wrapper']}>
         <div className={style['chessboard-wrapper']}>
@@ -130,9 +137,18 @@ class SmartChessBoard extends React.Component {
           <Button label='Next' onClick={this._next.bind(this)}></Button>
         </div>
         </div>
-        <Notation className={style['notation']}>
-          { moves }
-        </Notation>
+        <Tabs index={ this.state.index } onChange={ this.handleTabChange.bind(this) }>
+          <Tab label='Source'>
+            <Notation className={style['notation']}>
+              { moves }
+            </Notation>
+          </Tab>
+          <Tab label='Playground'>
+            <Notation className={style['notation']}>
+              { editedMoves }
+            </Notation>
+          </Tab>
+        </Tabs>
       </div>
     )
   }
