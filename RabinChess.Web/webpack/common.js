@@ -37,7 +37,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: '[hash].js',
+    filename: '[name].js',
     path: path.resolve('./build'),
   },
   plugins: [

@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react'
 import ChessJS from 'chess.js'
-import { Button } from 'react-toolbox'
+import { Button } from '.././ui'
 
 import ChessBoard from './ChessBoard'
 import { FullMove, NumberOfMove, Move, Notation } from './components'
+import style from './chess_board'
 
 
 /**
@@ -11,19 +12,26 @@ import { FullMove, NumberOfMove, Move, Notation } from './components'
 */
 class SmartChessBoard extends React.Component {
 
-
   /**
   * Basic constructor.
-  * @param props Passed properties
-  * @returns New SmartChessBoard instance
+  * @param {object} props Passed properties
+  * @returns {SmartChessBoard} New SmartChessBoard instance
   */
   constructor(props) {
     super(props);
+    /**
+    * @type {object}
+    * @property {ChessJS} chessboard object
+    */
     this.game = ChessJS();
 
     let { pgnHeaders, pgnGame } = this.props;
     if (pgnGame) this.game.load_pgn( pgnHeaders + pgnGame );
 
+    /**
+    * @type {object}
+    * @property {string} fen Game notation
+    */
     this.state = {
       fen: this.game.fen()
     };
@@ -31,8 +39,30 @@ class SmartChessBoard extends React.Component {
 
   _undo() {
     this.game.undo();
-    console.log(this.game.ascii());
-    console.log(this.game.pgn());
+    this.setState({
+      fen: this.game.fen()
+    });
+  }
+
+  _next() {
+    let { pgnGame } = this.props;
+    let fen = this.game.fen();
+    let whiteToMove = true;
+    if (fen.search(' b ') != -1)
+      whiteToMove = false;
+    else if (fen.search(' w ') != -1)
+      whiteToMove = true;
+
+    let moveString = ` ${fen.slice(fen.lastIndexOf(' ') + 1)}.`;
+    let move = pgnGame.search(moveString) + moveString.length + 1;
+    let endOfMove = pgnGame.indexOf(' ', move);
+    let foundMove = pgnGame.slice(move, endOfMove);
+    if (!whiteToMove) {
+      move = endOfMove + 1;
+      endOfMove = pgnGame.indexOf(' ', move);
+      foundMove = pgnGame.slice(move, endOfMove);
+    }
+    this.game.move(foundMove);
     this.setState({
       fen: this.game.fen()
     });
@@ -78,7 +108,6 @@ class SmartChessBoard extends React.Component {
     return notes;
   }
 
-
   /**
   * Renders wrapped chessboard
   * @returns {ChessBoard} Chessboard with logic
@@ -86,17 +115,22 @@ class SmartChessBoard extends React.Component {
   render () {
     let moves = this._renderNotation2();
     return (
-      <div>
-        <ChessBoard
-          fen = { this.state.fen }
-          onlyValid = { true }
-          sparePieces = { false }
-          onDragStart = { this._onDragStart.bind(this) }
-          onDrop = { this._onDrop.bind(this) }
-          onSnapEnd = { this._onSnapEnd.bind(this) }
-        />
-        <Button label='Cofnij' onClick={this._undo.bind(this)}></Button>
-        <Notation>
+      <div className={style['wrapper']}>
+        <div className={style['chessboard-wrapper']}>
+          <ChessBoard
+            fen = { this.state.fen }
+            onlyValid = { true }
+            sparePieces = { false }
+            onDragStart = { this._onDragStart.bind(this) }
+            onDrop = { this._onDrop.bind(this) }
+            onSnapEnd = { this._onSnapEnd.bind(this) }
+          />
+        <div className={style['buttons']}>
+          <Button label='Back' onClick={this._undo.bind(this)}></Button>
+          <Button label='Next' onClick={this._next.bind(this)}></Button>
+        </div>
+        </div>
+        <Notation className={style['notation']}>
           { moves }
         </Notation>
       </div>

@@ -6,11 +6,23 @@ import {Button} from '../ui'
 import style from './game_list'
 import avatar from '../../../assets/game_list_item_avatar.png'
 
+/**
+* Game item
+*/
 class GameListItem extends React.Component {
 
+  /**
+  * Basic constructor.
+  * @param {object} props Passed properties
+  * @returns {GameListItem} User game
+  */
   constructor(props) {
     super(props);
 
+    /**
+    * @type {object}
+    * @property {Integer} gameId Game ID
+    */
     this.state = {
       gameId: props.gameId
     }
@@ -22,6 +34,10 @@ class GameListItem extends React.Component {
     gameId: PropTypes.string.isRequired
   }
 
+  /**
+  * Renders game item
+  * @return {ListItem} User game
+  */
   render() {
     let {title, tags} = this.props;
     let viewButton = <Button key={1} className={style['game_list_button']} label='View' />
