@@ -44,7 +44,6 @@ class SmartChessBoard extends React.Component {
     this.setState({
       fen: this.game.fen()
     });
-    console.log(this.game.pgn());
   }
 
   _next() {

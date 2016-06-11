@@ -6,7 +6,7 @@ import { Grid, Row, Col} from 'react-flexbox-grid'
 import style from './game_list'
 
 /**
-* Signup Card Media.
+* EditDialog Card Media.
 */
 class EditDialog extends React.Component {
 
@@ -21,7 +21,7 @@ class EditDialog extends React.Component {
   * Basic constructor.
   * @param {object} props Passed properties
   * @param {object} context Application context
-  * @returns {Signup} Signup card media
+  * @returns {EditDialog} EditDialog card media
   */
   constructor(props, context) {
     super(props, context);
@@ -47,7 +47,7 @@ class EditDialog extends React.Component {
   };
 
   /**
-  * Renders Signup CardMedia.
+  * Renders EditDialog CardMedia.
   * @returns {CardMedia} CardMedia containing signup elements
   */
   render() {
