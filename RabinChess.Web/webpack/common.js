@@ -21,7 +21,7 @@ module.exports = {
         include: /assets/,
         loader: 'file',
         query: {
-          name: 'assets/[name].[ext]',
+          name: 'assets/[hash].[ext]',
         },
       },
       {

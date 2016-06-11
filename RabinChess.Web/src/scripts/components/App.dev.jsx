@@ -16,10 +16,10 @@ export default class App extends React.Component {
   */
   render() {
     return (
-        <Layout route={this.props.routes[this.props.routes.length-1]}>
+        <Layout>
           <Favicon url={logo} />
           { this.props.children }
-          <DevTools />
+          <DevTools />	
         </Layout>
     );
   }
