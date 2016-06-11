@@ -28,13 +28,13 @@ class EditDialog extends React.Component {
 
     /**
     * @type {object}
-    * @property {string} firstname User first name
-    * @property {string} surname User last name
-    * @property {string} email User email
-    * @property {string} username User name
-    * @property {string} password User password
+    * @property {string} white User first name
+    * @property {string} black User last name
+    * @property {string} WhiteElo User WhiteElo
+    * @property {string} BlackElo User name
+    * @property {string} Event User Event
     */
-    this.state = { firstname: '', surname: '', email: '', username: '', password: '' };
+    this.state = { white: '', black: '', whiteElo: '', blackElo: '', event: '' };
 
   }
 
@@ -50,12 +50,12 @@ class EditDialog extends React.Component {
     return (
         <CardMedia>
           <section className={style['edit']}>
-              <Input className={style['input']} type='text' label='First name' icon='title' required value={this.state.firstname} onChange={this.handleChange.bind(this, 'firstname')}/>
-              <Input className={style['input']} type='text' label='Surname' icon='title' value={this.state.surname} onChange={this.handleChange.bind(this, 'surname')}/>
-              <Input className={style['input']} type='email' label='Email' icon='email' value={this.state.email} onChange={this.handleChange.bind(this, 'email')}/>
-              <Input className={style['input']} type='text' label='Username' icon='person' required value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
-              <Input className={style['input']} type='password' label='Password' icon='lock' required value={this.state.password} onChange={this.handleChange.bind(this, 'password')}/>
-              <Row><Col className={style['accept-button']}><Button label='Sign up' onClick={this.props.onClick}/></Col></Row>
+              <Input className={style['input']} type='text' label='White' icon='title' required value={this.state.white} onChange={this.handleChange.bind(this, 'white')}/>
+              <Input className={style['input']} type='text' label='Black' icon='title' value={this.state.black} onChange={this.handleChange.bind(this, 'black')}/>
+              <Input className={style['input']} type='text' label='White Elo' icon='WhiteElo' value={this.state.whiteElo} onChange={this.handleChange.bind(this, 'whiteElo')}/>
+              <Input className={style['input']} type='text' label='Black Elo' icon='person' required value={this.state.blackElo} onChange={this.handleChange.bind(this, 'blackElo')}/>
+              <Input className={style['input']} type='text' label='Event' icon='lock' required value={this.state.event} onChange={this.handleChange.bind(this, 'event')}/>
+              <Row><Col className={style['accept-button']}><Button label='Edit Data' onClick={this.props.onClick}/></Col></Row>
           </section>
         </CardMedia>
     )

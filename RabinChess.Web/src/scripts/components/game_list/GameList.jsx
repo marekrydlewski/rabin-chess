@@ -51,7 +51,7 @@ class GameList extends React.Component {
     let {games} = this.props;
     let gameListItems = games.map((game, i) => {
       return (
-        <GameListItem key={i} title={game.title} tags={game.tags} gameId={game.id} editTagsHandler={this.editTagsHandler.bind(this, i)}/>
+        <GameListItem key={i} tags={game.tags} gameId={game.id} editTagsHandler={this.editTagsHandler.bind(this, i)}/>
       )
     })
     return (

@@ -29,8 +29,7 @@ class GameListItem extends React.Component {
   }
 
   static PropTypes = {
-    title: PropTypes.string.isRequired,
-    tags: PropTypes.string.isRequired,
+    tags: PropTypes.object.isRequired,
     gameId: PropTypes.string.isRequired
   }
 
@@ -39,12 +38,12 @@ class GameListItem extends React.Component {
   * @return {ListItem} User game
   */
   render() {
-    let {title, tags} = this.props;
+    let {tags} = this.props;
     let viewButton = <Button key={1} className={style['game_list_button']} label='View' />
     let editButton = <Button key={2} className={style['game_list_button']} label='Edit' onClick={this.props.editTagsHandler} />
     let deleteButton = <Button key={3} className={style['game_list_button']} label='Delete' />
     return(
-      <ListItem className={style['game_list_item']} avatar={avatar} caption={title} legend={tags} rightActions={[viewButton, editButton, deleteButton]} ripple={false} />
+      <ListItem className={style['game_list_item']} avatar={avatar} caption={"dsfdsf"} legend={"ssdf"} rightActions={[viewButton, editButton, deleteButton]} ripple={false} />
     );
   }
 }
