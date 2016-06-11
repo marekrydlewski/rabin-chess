@@ -65,7 +65,7 @@ class GameList extends React.Component {
           onEscKeyDown={this.handleToggle.bind(this)}
           onOverlayClick={this.handleToggle.bind(this)}
         >
-        <EditDialog/>
+        <EditDialog gameTags={games[this.state.currentGame]}/>
         </Dialog>
       </div>
     );

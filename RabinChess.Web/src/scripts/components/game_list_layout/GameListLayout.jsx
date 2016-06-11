@@ -18,7 +18,7 @@ class GameListLayout extends React.Component {
     return (
       <Grid className={style['game_list_grid']}>
         <Row>
-          <Col xs={6} smOffset={1} sm={6} mdOffset={1} md={6} lgOffset={1} lg={6}>
+          <Col xs={12} smOffset={1} sm={12} mdOffset={1} md={9} lgOffset={1} lg={8}>
             <Card>
               <SmartGameList />
             </Card>

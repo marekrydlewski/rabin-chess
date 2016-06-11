@@ -34,8 +34,12 @@ class EditDialog extends React.Component {
     * @property {string} BlackElo User name
     * @property {string} Event User Event
     */
-    this.state = { white: '', black: '', whiteElo: '', blackElo: '', event: '' };
 
+    this.state = { white: this.props.gameTags.tags.white,
+      black: this.props.gameTags.tags.black,
+      whiteElo: this.props.gameTags.tags.whiteElo,
+      blackElo: this.props.gameTags.tags.blackElo,
+      event: this.props.gameTags.tags.event };
   }
 
   handleChange = (name, value) => {
@@ -50,11 +54,11 @@ class EditDialog extends React.Component {
     return (
         <CardMedia>
           <section className={style['edit']}>
-              <Input className={style['input']} type='text' label='White' icon='title' required value={this.state.white} onChange={this.handleChange.bind(this, 'white')}/>
+              <Input className={style['input']} type='text' label='White' icon='title' value={this.state.white} onChange={this.handleChange.bind(this, 'white')}/>
               <Input className={style['input']} type='text' label='Black' icon='title' value={this.state.black} onChange={this.handleChange.bind(this, 'black')}/>
-              <Input className={style['input']} type='text' label='White Elo' icon='WhiteElo' value={this.state.whiteElo} onChange={this.handleChange.bind(this, 'whiteElo')}/>
-              <Input className={style['input']} type='text' label='Black Elo' icon='person' required value={this.state.blackElo} onChange={this.handleChange.bind(this, 'blackElo')}/>
-              <Input className={style['input']} type='text' label='Event' icon='lock' required value={this.state.event} onChange={this.handleChange.bind(this, 'event')}/>
+              <Input className={style['input']} type='text' label='White Elo' icon='title' value={this.state.whiteElo} onChange={this.handleChange.bind(this, 'whiteElo')}/>
+              <Input className={style['input']} type='text' label='Black Elo' icon='title' value={this.state.blackElo} onChange={this.handleChange.bind(this, 'blackElo')}/>
+              <Input className={style['input']} type='text' label='Event' icon='title' value={this.state.event} onChange={this.handleChange.bind(this, 'event')}/>
               <Row><Col className={style['accept-button']}><Button label='Edit Data' onClick={this.props.onClick}/></Col></Row>
           </section>
         </CardMedia>
