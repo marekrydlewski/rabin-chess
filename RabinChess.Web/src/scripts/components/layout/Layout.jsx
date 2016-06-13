@@ -63,6 +63,12 @@ class Layout extends React.Component {
   * @returns {RTLayout} Layout containing header, footer and side menu
   */
   render() {
+    let menu;
+    if(this.props.route.component.name == "Dashboard") {
+      ;
+    } else {
+      menu = <IconButton icon='menu' inverse={true} onClick={this.toggleDrawerActive}/>;
+    }
     return (
       <RTLayout className={style['main']}>
         <NavDrawer active={this.state.drawerActive} pinned={this.state.drawerPinned} onOverlayClick={this.toggleDrawerActive}>
@@ -71,10 +77,9 @@ class Layout extends React.Component {
           </Grid>
         </NavDrawer>
         <Panel>
-          <AppBar className={style['header']}><IconButton icon='menu' inverse={true} onClick={this.toggleDrawerActive}/>
+          <AppBar className={style['header']}>{menu}
             <img className={style['logo']} src={logo} onClick={this.goHome.bind(this)}/>
             <h1 onClick={this.goHome.bind(this)}>Rabin Chess</h1>
-            <LoginSignupForm/>
           </AppBar>
           <div className={style['content']}>
             { this.props.children }

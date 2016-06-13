@@ -12,10 +12,19 @@ $font-size: 16px;
   clear: both;
 }
 
+#boxbuttons {
+  width: 100%;
+  clear: both;
+  background-color: $light-blue;
+  background-position: right top;
+  background-repeat: repeat-y;
+  overflow: hidden;
+}
+
 .slider {
-  margin-left:  -0.25%;
+  margin: auto;
   padding-top : 40px;
-  width:90%;
+  width:100%;
   clear: both;
 }
 
@@ -42,16 +51,18 @@ $font-size: 16px;
     margin-left: calc(50% - 210px);
     font-size: $font-size;
     text-align: center;
+
 }
 
 
 #playbutton {
-  width: 170px;
-  margin: 15px;
+  width: 100%;
+  background-color: $black;
+  margin-top: 15px;
 }
 
 #playnow {
-  width: 170px;
+  width: 100%;
   box-shadow: 10px 10px 5px #888888;
 }
 
