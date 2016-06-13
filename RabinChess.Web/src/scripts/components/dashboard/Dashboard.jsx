@@ -4,7 +4,7 @@ import {Button, Link} from 'react-toolbox'
 import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 import Slider from 'react-slick'
 import {Grid, Row, Col} from 'react-flexbox-grid'
-import andrzej from 'assets/andrzej.jpg'
+import andrzej from 'assets/andrzej1.jpg'
 import stonoga2 from '../../../assets/rabin1.jpg'
 import stonoga3 from '../../../assets/rabin2.jpg'
 import stonoga4 from '../../../assets/rabin3.jpg'
