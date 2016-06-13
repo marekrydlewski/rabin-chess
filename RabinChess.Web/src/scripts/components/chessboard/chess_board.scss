@@ -1,3 +1,5 @@
+@import '../../../styles/colors';
+
 .chessboard {
   width: 550px;
   margin: 50px;
@@ -5,10 +7,17 @@
 
 .wrapper {
   text-align: center;
+  .tabs {
+    display: inline-block;
+    & > span {
+      background-color: $crimson-red;
+    }
+    max-width: 880px;
+  }
 
   .notation {
     display: inline-block;
-    max-width: 880px;
+    max-width: 860px;
   }
 
   .chessboard-wrapper {

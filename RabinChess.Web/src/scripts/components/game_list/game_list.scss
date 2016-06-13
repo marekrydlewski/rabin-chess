@@ -1,5 +1,21 @@
 @import './game_list_variables';
 
+.edit {
+  padding: 0;
+  min-width: 250px;
+
+  .accept-button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    button {
+      height: 50px;
+      min-width: 140px;
+      font-size: 20px;
+    }
+  }
+}
+
 .game_list_header {
   font-size: 15px;
 }

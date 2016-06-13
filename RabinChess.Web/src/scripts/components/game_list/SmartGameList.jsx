@@ -16,7 +16,20 @@ class SmartGameList extends React.Component {
     super(props);
 
     //get games from api
-    let gameList = [{title: 'Title 1', tags: 'Some tags 1', id: 'ID1'}, {title: 'Title 2', tags: 'Some tags 2', id: 'ID2'}];
+    let gameList = [{tags:
+      {
+        event: 'Fischer - Spassky World Championship Match',
+        white: 'Boris Spassky',
+        black: 'Robet James Ficher',
+        whiteElo: '?',
+        blackElo: '?'
+      }, id: 'ID1'}, {tags: {
+        event: 'Hoogovens (1996)',
+        white: 'Vassily Ivanchuk',
+        black: 'Alexey Shirov',
+        whiteElo: '2755',
+        blackElo: '2688'
+      }, id: 'ID2'}];
 
     /**
     * @type {object}

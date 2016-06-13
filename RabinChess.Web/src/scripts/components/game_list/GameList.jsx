@@ -1,9 +1,10 @@
 import React, {PropTypes} from 'react'
-import {List, ListSubHeader} from 'react-toolbox'
+import {List, ListSubHeader, Dialog} from 'react-toolbox'
 
 import style from './game_list'
 
 import GameListItem from './GameListItem'
+import EditDialog from './EditDialog'
 
 /**
 * List of user games
@@ -23,12 +24,23 @@ class GameList extends React.Component {
     * @property {GameListItem} User games
     */
     this.state = {
-      games: props.games
+      games: props.games,
+      showEditDialog: false,
+      currentGame: 0
     }
   }
 
   static PropTypes = {
     games: PropTypes.arrayOf(PropTypes.object).isRequired
+  }
+
+  editTagsHandler(i) {
+    this.setState({showEditDialog: !this.state.showEditDialog,
+    currentGame: i});
+  }
+
+  handleToggle() {
+    this.setState({showEditDialog: !this.state.showEditDialog});
   }
 
   /**
@@ -39,14 +51,23 @@ class GameList extends React.Component {
     let {games} = this.props;
     let gameListItems = games.map((game, i) => {
       return (
-        <GameListItem key={i} title={game.title} tags={game.tags} gameId={game.id} />
+        <GameListItem key={i} tags={game.tags} gameId={game.id} editTagsHandler={this.editTagsHandler.bind(this, i)}/>
       )
     })
     return (
-      <List selectable ripple>
-        <ListSubHeader className={style['game_list_header']} caption="Your games" />
-        {gameListItems}
-      </List>
+      <div>
+        <List selectable ripple>
+          <ListSubHeader className={style['game_list_header']} caption="Your games" />
+          {gameListItems}
+        </List>
+        <Dialog
+          active={this.state.showEditDialog}
+          onEscKeyDown={this.handleToggle.bind(this)}
+          onOverlayClick={this.handleToggle.bind(this)}
+        >
+        <EditDialog gameTags={games[this.state.currentGame]}/>
+        </Dialog>
+      </div>
     );
   }
 
