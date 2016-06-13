@@ -37,9 +37,13 @@ class SignupDialog extends React.Component{
   * @returns {div} Div containing signup dialog
   */
   render () {
+    let divStyle ={
+      backgroundImage: 'url("../../../assets/signinikona.jpg")',
+      backgroundPosition: 'center',
+    };
     return (
       <div>
-        <Button  className={style['barButton']} label='Sign up' onClick={this.handleToggle}/>
+        <Button style={divStyle} className={style['barButton1']} label='Sign up' onClick={this.handleToggle}/>
         <Dialog
           active={this.state.active}
           onEscKeyDown={this.handleToggle}

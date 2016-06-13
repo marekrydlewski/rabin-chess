@@ -27,9 +27,26 @@
   }
 }
 
-.barButton {
-  margin-right: 10px;
+#barButton {
+  width: 170px;
+  font-size: 30px;
+  text-align: center;
+  background-image: url("../../../assets/LOGINikona.jpg");
+  background-position: center;
+  box-shadow: 10px 10px 5px #888888;
+  margin: 15px;
 }
+
+.barButton1 {
+  width: 170px;
+  font-size: 30px;
+  text-align: center;
+  background-image: url("../../../assets/signinikona.jpg");
+  background-position: center;
+  box-shadow: 10px 10px 5px #888888;
+  margin: 15px;
+}
+
 
 .buttons-grid {
   width: 100%;

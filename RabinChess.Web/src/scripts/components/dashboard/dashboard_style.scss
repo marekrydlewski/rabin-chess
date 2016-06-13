@@ -1,0 +1,74 @@
+@import '../../../styles/colors';
+$font-size: 16px;
+
+.content {
+  background: url("../../../assets/3.jpg");
+  //background-size: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+.playslider {
+  clear: both;
+}
+
+#boxbuttons {
+  width: 100%;
+  clear: both;
+  background-color: $light-blue;
+  background-position: right top;
+  background-repeat: repeat-y;
+  overflow: hidden;
+}
+
+.slider {
+  margin: auto;
+  padding-top : 40px;
+  width:100%;
+  clear: both;
+}
+
+#buttons {
+  width: 20%;
+  float: right;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding-right: 10px;
+  //width: 200px;
+}
+
+.box{
+    float: left;
+    min-width: 420px;
+    width: auto;
+    border: 2px solid ;
+    //border-image: url("../../../assets/border.png") 30 stretch;
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+    margin-left: calc(50% - 210px);
+    font-size: $font-size;
+    text-align: center;
+
+}
+
+
+#playbutton {
+  width: 100%;
+  background-color: $black;
+  margin-top: 15px;
+}
+
+#playnow {
+  width: 100%;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+img.sliderimg{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  box-shadow: 10px 10px 5px #888888;
+}
