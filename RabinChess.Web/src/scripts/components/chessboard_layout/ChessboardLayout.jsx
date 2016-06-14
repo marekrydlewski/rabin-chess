@@ -8,6 +8,12 @@ import style from './chessboard_layout'
  * Layout containing playable chessboard.
  */
 class ChessboardLayout extends React.Component {
+
+
+  componentDidMount() {
+
+  }
+
   /**
    * Display chessboard layout.
    * @returns {Grid} Grid containing playable chessboard

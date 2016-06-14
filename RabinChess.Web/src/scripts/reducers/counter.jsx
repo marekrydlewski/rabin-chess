@@ -3,7 +3,7 @@
 */
 import * as Action from '../actions/actionTypes'
 
-const counter = (state = 0, action) => {
+const counter = (state = 666, action) => {
   switch (action.type) {
     case Action.INCREMENT: {
       var newState = state + 1
