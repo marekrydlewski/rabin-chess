@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux'
-import counter from './sample.jsx'
+import counter from './counter'
+import currentGame from './game'
 
 /**
-* Root reducer for RubinChess
+* Root reducer for RabinChess
 */
-const reducer = combineReducers({counter})
+const reducer = combineReducers({counter, currentGame})
 
 export default reducer

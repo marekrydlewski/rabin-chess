@@ -1,8 +1,2 @@
-/**
-* Increment
-*/
-export function increment() {
-  return {
-    type: 'INCREMENT'
-  }
-}
+export * from './game'
+export * from './increment'

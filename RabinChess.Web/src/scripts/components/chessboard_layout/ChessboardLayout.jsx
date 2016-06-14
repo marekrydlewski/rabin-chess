@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {Grid, Row, Col} from 'react-flexbox-grid'
 
 import SmartChessBoard from  '../chessboard'
@@ -6,12 +7,13 @@ import style from './chessboard_layout'
 /**
  * Layout containing playable chessboard.
  */
-export default class ChessboardLayout extends React.Component {
+class ChessboardLayout extends React.Component {
   /**
    * Display chessboard layout.
    * @returns {Grid} Grid containing playable chessboard
    */
   render() {
+    console.log(this.props.counter);
     //This is one of my favorites, super cool 11 ...Nh5
     let pgnHeaders = ['[Event "Fischer - Spassky World Championship Match"]',
         '[Site "Reykjavik ISL"]',
@@ -33,3 +35,11 @@ export default class ChessboardLayout extends React.Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+  counter: state.counter,
+  game: state.currentGame }
+}
+
+export default connect(mapStateToProps)(ChessboardLayout)
