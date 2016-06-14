@@ -1,7 +1,7 @@
-import * from './actionTypes'
+import * as Action from './actionTypes'
 
 export function increment(text) {
   return {
-    type: INCREMENT
+    type: Action.INCREMENT
   }
 }

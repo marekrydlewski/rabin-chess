@@ -3,7 +3,7 @@ import apiConfig from '../api_config';
 function getInitFetch(method, body, token) {
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
-  headers.append('Authorization', `Jabol jaka mamy autoryzacje ${token}`);
+  headers.append('Authorization', `bearer ${token}`);
 
   const initFetch = {
     method,

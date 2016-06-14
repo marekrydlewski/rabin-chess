@@ -1,5 +1,5 @@
-import * from './actionTypes'
+import * as Action from './actionTypes'
 
-export function changeTags(game) {
-  return { type: CHANGE_CURRENT_TAGS, game }
+export function changeTags(tags) {
+  return { type: Action.CHANGE_CURRENT_TAGS, tags }
 }
