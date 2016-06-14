@@ -37,7 +37,9 @@ class ChessboardLayout extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { counter: state.counter }
+  return {
+  counter: state.counter,
+  game: state.currentGame }
 }
 
 export default connect(mapStateToProps)(ChessboardLayout)
