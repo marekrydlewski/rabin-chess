@@ -1,13 +1,13 @@
 /**
-* Default game
+* Default tags
 */
 import * as Action from '../actions/actionTypes'
 
-const game = (state = {}, action) => {
+const tags = (state = {}, action) => {
   switch (action.type) {
-    case Action.CHANGE_CURRENT_GAME: {
+    case Action.CHANGE_CURRENT_TAGS: {
       return Object.assign({}, state, {
-       currentGame: action.game
+       currentTags: action.tags
      });
     }
     default: {
@@ -16,4 +16,4 @@ const game = (state = {}, action) => {
   }
 }
 
-export default game
+export default tags
