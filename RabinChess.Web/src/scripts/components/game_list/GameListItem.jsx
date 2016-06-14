@@ -40,7 +40,7 @@ class GameListItem extends React.Component {
   render() {
     let {tags} = this.props;
     let {white, black, whiteElo, blackElo, event} = tags;
-    let viewButton = <Button key={1} className={style['game_list_button']} label='View' />
+    let viewButton = <Button key={1} className={style['game_list_button']} label='View' onClick={this.props.viewHandler} />
     let editButton = <Button key={2} className={style['game_list_button']} label='Edit' onClick={this.props.editTagsHandler} />
     let deleteButton = <Button key={3} className={style['game_list_button']} label='Delete' />
     return(

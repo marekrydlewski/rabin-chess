@@ -1,5 +1,5 @@
-import * from './actionTypes'
+import * as Action from './actionTypes'
 
 export function changeGame(game) {
-  return { type: CHANGE_CURRENT_GAME, game }
+  return { type: Action.CHANGE_CURRENT_GAME, game }
 }

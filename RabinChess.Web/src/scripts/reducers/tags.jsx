@@ -3,12 +3,23 @@
 */
 import * as Action from '../actions/actionTypes'
 
-const tags = (state = {}, action) => {
+const pgnHeaders = ['[Event "Fischer - Spassky World Championship Match"]',
+    '[Site "Reykjavik ISL"]',
+    '[Date "1972.07.16"]',
+    '[EventDate "?"]',
+    '[Round "3"]',
+    '[Result "0-1"]',
+    '[White "Boris Spassky"]',
+    '[Black "Robert James Fischer"]',
+    '[ECO "A61"]',
+    '[WhiteElo "?"]',
+    '[BlackElo "?"]',
+    '[PlyCount "82"]'];
+
+const tags = (state = pgnHeaders, action) => {
   switch (action.type) {
     case Action.CHANGE_CURRENT_TAGS: {
-      return Object.assign({}, state, {
-       currentTags: action.tags
-     });
+      return action.tags
     }
     default: {
       return state
