@@ -63,11 +63,12 @@ class Layout extends React.Component {
   * @returns {RTLayout} Layout containing header, footer and side menu
   */
   render() {
-    let menu;
-    if(this.props.route.component.name == "Dashboard") {
-      ;
-    } else {
+    let menu, login;
+    if(this.props.route.path == "board" || this.props.route.path == "games" || this.props.route.path == "test-page" ) {
       menu = <IconButton icon='menu' inverse={true} onClick={this.toggleDrawerActive}/>;
+      login = <LoginSignupForm />
+    } else {
+      ;
     }
     return (
       <RTLayout className={style['main']}>
@@ -80,6 +81,7 @@ class Layout extends React.Component {
           <AppBar className={style['header']}>{menu}
             <img className={style['logo']} src={logo} onClick={this.goHome.bind(this)}/>
             <h1 onClick={this.goHome.bind(this)}>Rabin Chess</h1>
+            {login}
           </AppBar>
           <div className={style['content']}>
             { this.props.children }
