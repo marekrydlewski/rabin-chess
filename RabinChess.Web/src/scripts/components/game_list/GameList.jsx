@@ -37,6 +37,11 @@ class GameList extends React.Component {
   editTagsHandler(i) {
     this.setState({showEditDialog: !this.state.showEditDialog,
     currentGame: i});
+    this.props.editTagsHandler(i);
+  }
+
+  viewHandler(i) {
+    this.props.viewHandler(i);
   }
 
   handleToggle() {
@@ -48,10 +53,16 @@ class GameList extends React.Component {
   * @return {List} List of games
   */
   render() {
-    let {games} = this.props;
+    let {games, editTagsHandler} = this.props;
     let gameListItems = games.map((game, i) => {
       return (
-        <GameListItem key={i} tags={game.tags} gameId={game.id} editTagsHandler={this.editTagsHandler.bind(this, i)}/>
+        <GameListItem
+          key={i}
+          tags={game.tags}
+          gameId={game.id}
+          editTagsHandler={this.editTagsHandler.bind(this, i)}
+          viewHandler={this.viewHandler.bind(this, i)}
+        />
       )
     })
     return (

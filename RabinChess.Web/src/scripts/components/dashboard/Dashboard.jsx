@@ -30,9 +30,6 @@ export default class Dashboard extends React.Component{
   }
 
   render() {
-    let divStyle ={
-      backgroundImage: 'url("../../../assets/3.jpg")',
-    };
     let borderStyle ={
       //borderImage: 'url("../../../assets/border.png") 30 stretch'
     };
@@ -52,7 +49,7 @@ export default class Dashboard extends React.Component{
     };
     let height=Math.floor(window.innerHeight * 0.4);
     return(
-    <div style={divStyle} className={style['content']}>
+    <div className={style['content']}>
       <div id={style['boxbuttons']}>
         <Card style={borderStyle} className={style['box']}>
           <CardTitle
