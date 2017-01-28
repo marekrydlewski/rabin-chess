@@ -1,6 +1,7 @@
 # rabin-chess
-## Web chess app - c# backend - react frontend
-Software Engineering project
+Software Engineering project [studies]
 
-## Documentation
+### Web chess app - c# backend - react frontend
+
+### Documentation
 Documentation available here: [docs](http://panowiczmichal.ddns.net/docs/)
